@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace OtoServis.DataAccess.Entities
 {
+    [Table("Tamir")]
     public class Tamir
     {
         [Key]
