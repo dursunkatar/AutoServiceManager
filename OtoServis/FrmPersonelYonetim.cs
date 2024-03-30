@@ -125,6 +125,7 @@ namespace OtoServis
             personel.Data.Ad = ad;
             personel.Data.Soyad = soyad;
             personel.Data.Email = email;
+            personel.Data.Sifre = sifre;
             personel.Data.RolID = rol.RolID;
             personel.Data.Aktifmi = aktifPasifDurum.Value.Value;
 

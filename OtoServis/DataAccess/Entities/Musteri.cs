@@ -17,6 +17,8 @@ namespace OtoServis.DataAccess.Entities
         public string Soyad { get; set; }
         public string Telefon { get; set; }
         public string Email { get; set; }
+        public bool Silindimi { get; set; }
+        public DateTime KayitTarihi { get; set; }
         public virtual ICollection<Arac> Araclar { get; set; }
     }
 }
