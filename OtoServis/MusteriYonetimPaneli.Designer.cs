@@ -129,10 +129,10 @@
             groupBox6.Location = new Point(246, 12);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(5);
-            groupBox6.Size = new Size(750, 455);
+            groupBox6.Size = new Size(925, 455);
             groupBox6.TabIndex = 7;
             groupBox6.TabStop = false;
-            groupBox6.Text = "Personeller";
+            groupBox6.Text = "Müşteriler";
             // 
             // dgvMusteri
             // 
@@ -140,8 +140,9 @@
             dgvMusteri.Dock = DockStyle.Fill;
             dgvMusteri.Location = new Point(5, 21);
             dgvMusteri.Name = "dgvMusteri";
-            dgvMusteri.Size = new Size(740, 429);
+            dgvMusteri.Size = new Size(915, 429);
             dgvMusteri.TabIndex = 0;
+            dgvMusteri.CellClick += dgvMusteri_CellClick;
             // 
             // btnKaydet
             // 
@@ -157,13 +158,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1395, 802);
+            ClientSize = new Size(1179, 477);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox6);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "MusteriYonetimPaneli";
             Text = "MusteriYonetimPaneli";
             FormClosing += MusteriYonetimPaneli_FormClosing;

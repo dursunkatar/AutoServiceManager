@@ -4,15 +4,7 @@ using OtoServis.DataAccess.Context;
 using OtoServis.DataAccess.Entities;
 using OtoServis.Dto;
 using OtoServis.Helper;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace OtoServis
 {
@@ -55,10 +47,6 @@ namespace OtoServis
             });
             dbContext.SaveChanges();
         }
-        void MusteriGuncelle()
-        {
-
-        }
 
         void MusterileriYukle()
         {
@@ -76,14 +64,81 @@ namespace OtoServis
             DataGridViewHelper.LoadData<MusteriDto>(dgvMusteri, musteriler);
         }
 
+        void MusteriGuncelle()
+        {
+            var (ok, musteri) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
+
+            if (!ok)
+            {
+                MessageBox.Show("Güncellenecek Kayıt Yok", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            string ad = txtAd.Text;
+            string soyad = txtSoyad.Text;
+            string email = txtEmail.Text;
+            string telefon = txtTelefon.Text;
+
+            if (dbContext.Musteriler.Any(p => musteri.Data.MusteriID != p.MusteriID && (p.Telefon == telefon || p.Email == email)))
+            {
+                MessageBox.Show("Bu bilgiler başka bir müşteride kullanılıyor", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            musteri.Data.Ad = ad;
+            musteri.Data.Soyad = soyad;
+            musteri.Data.Email = email;
+            musteri.Data.Telefon = telefon;
+
+            dbContext.Entry<Musteri>(musteri.Data).State = EntityState.Modified;
+
+            dbContext.SaveChanges();
+
+            isSaving = true;
+            InputlariTemizle();
+            MusterileriYukle();
+
+            MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        void InputlariTemizle()
+        {
+            txtAd.Clear();
+            txtSoyad.Clear();
+            txtEmail.Clear();
+            txtTelefon.Clear();
+        }
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            MusteriEkle();
+            try
+            {
+              
+                if (isSaving) MusteriEkle(); else MusteriGuncelle();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void MusteriYonetimPaneli_Load(object sender, EventArgs e)
         {
             MusterileriYukle();
+        }
+
+        private void dgvMusteri_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var (ok, personel) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
+
+            if (!ok) return;
+
+            txtAd.Text = personel.Ad;
+            txtSoyad.Text = personel.Soyad;
+            txtEmail.Text = personel.Email;
+            txtTelefon.Text = personel.Telefon;
+            isSaving = false;
         }
     }
 }
