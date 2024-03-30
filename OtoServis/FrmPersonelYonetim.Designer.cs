@@ -41,6 +41,8 @@
             btnKaydet = new Button();
             groupBox6 = new GroupBox();
             dgvPersonel = new DataGridView();
+            groupBox7 = new GroupBox();
+            cmbPersonelAktifPasif = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -48,6 +50,7 @@
             groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPersonel).BeginInit();
+            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -151,7 +154,7 @@
             // 
             // btnKaydet
             // 
-            btnKaydet.Location = new Point(12, 297);
+            btnKaydet.Location = new Point(5, 349);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(248, 23);
             btnKaydet.TabIndex = 5;
@@ -176,12 +179,36 @@
             dgvPersonel.Name = "dgvPersonel";
             dgvPersonel.Size = new Size(662, 280);
             dgvPersonel.TabIndex = 0;
+            dgvPersonel.CellClick += dgvPersonel_CellClick;
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(cmbPersonelAktifPasif);
+            groupBox7.Location = new Point(12, 297);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Padding = new Padding(7, 3, 7, 3);
+            groupBox7.Size = new Size(248, 51);
+            groupBox7.TabIndex = 7;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Personel Aktif/Pasif";
+            // 
+            // cmbPersonelAktifPasif
+            // 
+            cmbPersonelAktifPasif.Dock = DockStyle.Fill;
+            cmbPersonelAktifPasif.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPersonelAktifPasif.FormattingEnabled = true;
+            cmbPersonelAktifPasif.Items.AddRange(new object[] { "Seçiniz" });
+            cmbPersonelAktifPasif.Location = new Point(7, 19);
+            cmbPersonelAktifPasif.Name = "cmbPersonelAktifPasif";
+            cmbPersonelAktifPasif.Size = new Size(234, 23);
+            cmbPersonelAktifPasif.TabIndex = 0;
             // 
             // FrmPersonelYonetim
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(967, 535);
+            Controls.Add(groupBox7);
             Controls.Add(groupBox6);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox5);
@@ -204,6 +231,7 @@
             groupBox5.ResumeLayout(false);
             groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPersonel).EndInit();
+            groupBox7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -222,5 +250,7 @@
         private Button btnKaydet;
         private GroupBox groupBox6;
         private DataGridView dgvPersonel;
+        private GroupBox groupBox7;
+        private ComboBox cmbPersonelAktifPasif;
     }
 }
