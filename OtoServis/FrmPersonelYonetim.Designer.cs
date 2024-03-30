@@ -167,17 +167,17 @@
             groupBox6.Controls.Add(dgvPersonel);
             groupBox6.Location = new Point(266, 12);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(674, 308);
+            groupBox6.Size = new Size(674, 360);
             groupBox6.TabIndex = 6;
             groupBox6.TabStop = false;
-            groupBox6.Text = "groupBox6";
+            groupBox6.Text = "Personeller";
             // 
             // dgvPersonel
             // 
             dgvPersonel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPersonel.Location = new Point(6, 22);
             dgvPersonel.Name = "dgvPersonel";
-            dgvPersonel.Size = new Size(662, 280);
+            dgvPersonel.Size = new Size(662, 332);
             dgvPersonel.TabIndex = 0;
             dgvPersonel.CellClick += dgvPersonel_CellClick;
             // 
@@ -190,14 +190,13 @@
             groupBox7.Size = new Size(248, 51);
             groupBox7.TabIndex = 7;
             groupBox7.TabStop = false;
-            groupBox7.Text = "Personel Aktif/Pasif";
+            groupBox7.Text = "Personel Durum Aktif/Pasif";
             // 
             // cmbPersonelAktifPasif
             // 
             cmbPersonelAktifPasif.Dock = DockStyle.Fill;
             cmbPersonelAktifPasif.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPersonelAktifPasif.FormattingEnabled = true;
-            cmbPersonelAktifPasif.Items.AddRange(new object[] { "Seçiniz" });
             cmbPersonelAktifPasif.Location = new Point(7, 19);
             cmbPersonelAktifPasif.Name = "cmbPersonelAktifPasif";
             cmbPersonelAktifPasif.Size = new Size(234, 23);
@@ -207,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(967, 535);
+            ClientSize = new Size(949, 380);
             Controls.Add(groupBox7);
             Controls.Add(groupBox6);
             Controls.Add(btnKaydet);
@@ -216,8 +215,10 @@
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmPersonelYonetim";
-            Text = "FrmPersonelYonetim";
+            Text = "Personel Yönetim Paneli";
             FormClosing += FrmPersonelYonetim_FormClosing;
             Load += FrmPersonelYonetim_Load;
             groupBox1.ResumeLayout(false);

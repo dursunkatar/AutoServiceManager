@@ -33,6 +33,12 @@ namespace OtoServis
         void RolleriYukle()
         {
             var roller = dbContext.Roller.ToList();
+            roller.Insert(0, new Rol
+            {
+                RolAdi = "Seçiniz",
+                RolID = -1
+            });
+
             ComboBoxHelper.LoadData(cmbRol, roller, "RolAdi", "RolID");
         }
 
@@ -56,10 +62,12 @@ namespace OtoServis
 
         void PersonelAktifPasifDurumlariYukle()
         {
-            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool> { Text = "Aktif", Value = true });
-            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool> { Text = "Pasif", Value = false });
+            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool?> { Text = "Seçiniz", Value = null });
+            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool?> { Text = "Aktif", Value = true });
+            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool?> { Text = "Pasif", Value = false });
             cmbPersonelAktifPasif.DisplayMember = "Text";
             cmbPersonelAktifPasif.ValueMember = "Value";
+            cmbPersonelAktifPasif.SelectedIndex = 0;
         }
         void LoadData()
         {
@@ -94,6 +102,9 @@ namespace OtoServis
             });
 
             dbContext.SaveChanges();
+            inputlariTemizle();
+            PersonelleriYukle();
+            MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         void PersonelGuncelle()
@@ -121,12 +132,6 @@ namespace OtoServis
                 return;
             }
 
-            if (aktifPasifDurum is null)
-            {
-                MessageBox.Show("Personel Durum Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
             personel.Data.Ad = ad;
             personel.Data.Soyad = soyad;
             personel.Data.Email = email;
@@ -140,6 +145,7 @@ namespace OtoServis
             isSaving = true;
             inputlariTemizle();
             PersonelleriYukle();
+            MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         void inputlariTemizle()
@@ -156,12 +162,17 @@ namespace OtoServis
         {
             try
             {
-                if (isSaving)
-
-                    PersonelEkle();
-                else
-                    PersonelGuncelle();
-
+                if (cmbRol.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Rol Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                if (cmbPersonelAktifPasif.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Personel Durum Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                if (isSaving) PersonelEkle(); else PersonelGuncelle();
 
             }
             catch (Exception ex)
@@ -178,9 +189,6 @@ namespace OtoServis
         private void FrmPersonelYonetim_Load(object sender, EventArgs e)
         {
             LoadData();
-
-
-
         }
 
         private void dgvPersonel_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -194,7 +202,7 @@ namespace OtoServis
             txtEmail.Text = personel.Email;
             txtSifre.Text = personel.Data.Sifre;
             cmbRol.SelectedItem = personel.Data.Rol;
-            ComboBoxHelper.SelectItemByValue(cmbPersonelAktifPasif, personel.Data.Aktifmi);
+            ComboBoxHelper.SelectItemByValue<bool?>(cmbPersonelAktifPasif, personel.Data.Aktifmi);
             isSaving = false;
         }
     }

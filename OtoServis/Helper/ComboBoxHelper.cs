@@ -9,7 +9,7 @@ namespace OtoServis.Helper
 {
     public static class ComboBoxHelper
     {
-        public static void LoadData(ComboBox comboBox, object? dataSource,string displayMember,string valueMember)
+        public static void LoadData(ComboBox comboBox, object? dataSource, string displayMember, string valueMember)
         {
             comboBox.DataSource = dataSource;
             comboBox.DisplayMember = displayMember;
@@ -20,10 +20,10 @@ namespace OtoServis.Helper
         {
             for (int i = 0; i < comboBox.Items.Count; i++)
             {
-                if (comboBox.Items[i] is TextValueDto<T> item && item.Value.Equals(value))
+                if (comboBox.Items[i] is TextValueDto<T> item && item.Value != null && item.Value.Equals(value))
                 {
                     comboBox.SelectedIndex = i;
-                    break; 
+                    break;
                 }
             }
         }
