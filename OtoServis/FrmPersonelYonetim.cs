@@ -32,6 +32,22 @@ namespace OtoServis
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            string ad = txtAd.Text;
+            string soyad = txtSoyad.Text;
+            string email = txtEmail.Text;
+            string sifre = txtSifre.Text;
+            var rol = cmbRol.SelectedItem as Rol;
+
+            dbContext.Personeller.Add(new Personel
+            {
+                Ad = ad,
+                Soyad = soyad,
+                Email = email,
+                Sifre = sifre,
+                RolID = rol.RolID
+            });
+
+            dbContext.SaveChanges();
 
         }
 
