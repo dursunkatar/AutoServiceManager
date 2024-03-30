@@ -3,17 +3,7 @@ using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
 using OtoServis.DataAccess.Entities;
 using OtoServis.Helper;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using System.Xml.Linq;
 using OtoServis.Dto;
 
 namespace OtoServis
