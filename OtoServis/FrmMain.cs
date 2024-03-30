@@ -5,6 +5,9 @@ namespace OtoServis
         public FrmMain()
         {
             InitializeComponent();
+
+            var s = new FrmPersonelYonetim();
+            s.Show();
         }
     }
 }
