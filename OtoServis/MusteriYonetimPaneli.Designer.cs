@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBox3 = new GroupBox();
             txtEmail = new TextBox();
             groupBox2 = new GroupBox();
@@ -38,6 +39,8 @@
             txtTelefon = new TextBox();
             groupBox6 = new GroupBox();
             dgvMusteri = new DataGridView();
+            ctxMenuDgvMusteri = new ContextMenuStrip(components);
+            toolStripMenuMusteriSil = new ToolStripMenuItem();
             btnKaydet = new Button();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -45,6 +48,7 @@
             groupBox4.SuspendLayout();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMusteri).BeginInit();
+            ctxMenuDgvMusteri.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox3
@@ -137,6 +141,7 @@
             // dgvMusteri
             // 
             dgvMusteri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMusteri.ContextMenuStrip = ctxMenuDgvMusteri;
             dgvMusteri.Dock = DockStyle.Fill;
             dgvMusteri.Location = new Point(5, 21);
             dgvMusteri.Name = "dgvMusteri";
@@ -144,8 +149,22 @@
             dgvMusteri.TabIndex = 0;
             dgvMusteri.CellClick += dgvMusteri_CellClick;
             // 
+            // ctxMenuDgvMusteri
+            // 
+            ctxMenuDgvMusteri.Items.AddRange(new ToolStripItem[] { toolStripMenuMusteriSil });
+            ctxMenuDgvMusteri.Name = "ctxMenuDgvMusteri";
+            ctxMenuDgvMusteri.Size = new Size(87, 26);
+            // 
+            // toolStripMenuMusteriSil
+            // 
+            toolStripMenuMusteriSil.Name = "toolStripMenuMusteriSil";
+            toolStripMenuMusteriSil.Size = new Size(86, 22);
+            toolStripMenuMusteriSil.Text = "Sil";
+            toolStripMenuMusteriSil.Click += toolStripMenuMusteriSil_Click;
+            // 
             // btnKaydet
             // 
+            btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 240);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(228, 227);
@@ -168,7 +187,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "MusteriYonetimPaneli";
-            Text = "MusteriYonetimPaneli";
+            Text = "Müşteri Yönetim Paneli";
             FormClosing += MusteriYonetimPaneli_FormClosing;
             Load += MusteriYonetimPaneli_Load;
             groupBox3.ResumeLayout(false);
@@ -181,6 +200,7 @@
             groupBox4.PerformLayout();
             groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMusteri).EndInit();
+            ctxMenuDgvMusteri.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -197,5 +217,7 @@
         private GroupBox groupBox6;
         private DataGridView dgvMusteri;
         private Button btnKaydet;
+        private ContextMenuStrip ctxMenuDgvMusteri;
+        private ToolStripMenuItem toolStripMenuMusteriSil;
     }
 }

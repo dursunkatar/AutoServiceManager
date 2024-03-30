@@ -154,6 +154,7 @@
             // 
             // btnKaydet
             // 
+            btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(5, 349);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(248, 23);

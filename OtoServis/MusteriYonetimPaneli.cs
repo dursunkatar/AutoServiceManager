@@ -51,6 +51,7 @@ namespace OtoServis
         void MusterileriYukle()
         {
             var musteriler = dbContext.Musteriler
+                .Where(p => !p.Silindimi)
                .Select(p => new MusteriDto
                {
                    Ad = p.Ad,
@@ -101,6 +102,22 @@ namespace OtoServis
             MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        void MusteriSil()
+        {
+            var (ok, musteri) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
+
+            if (!ok) return;
+
+            musteri.Data.Silindimi = true;
+            dbContext.Entry<Musteri>(musteri.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            isSaving = true;
+            InputlariTemizle();
+            MusterileriYukle();
+
+            MessageBox.Show("Müşteri Silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         void InputlariTemizle()
         {
             txtAd.Clear();
@@ -113,7 +130,7 @@ namespace OtoServis
         {
             try
             {
-              
+
                 if (isSaving) MusteriEkle(); else MusteriGuncelle();
 
             }
@@ -130,15 +147,20 @@ namespace OtoServis
 
         private void dgvMusteri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var (ok, personel) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
+            var (ok, musteri) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
 
             if (!ok) return;
 
-            txtAd.Text = personel.Ad;
-            txtSoyad.Text = personel.Soyad;
-            txtEmail.Text = personel.Email;
-            txtTelefon.Text = personel.Telefon;
+            txtAd.Text = musteri.Ad;
+            txtSoyad.Text = musteri.Soyad;
+            txtEmail.Text = musteri.Email;
+            txtTelefon.Text = musteri.Telefon;
             isSaving = false;
+        }
+
+        private void toolStripMenuMusteriSil_Click(object sender, EventArgs e)
+        {
+            MusteriSil();
         }
     }
 }
