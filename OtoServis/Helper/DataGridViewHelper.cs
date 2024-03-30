@@ -20,8 +20,9 @@ namespace OtoServis.Helper
             return (true, selectedItem);
         }
 
-        public static void InitializeColumns<T>(DataGridView dataGridView)
+        public static void LoadData<T>(DataGridView dataGridView, List<T> data) where T : class
         {
+            dataGridView.Columns.Clear();
             dataGridView.AutoGenerateColumns = false;
             var properties = typeof(T).GetProperties()
                 .Where(
@@ -42,6 +43,7 @@ namespace OtoServis.Helper
             }
 
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.DataSource = data;
         }
     }
 }

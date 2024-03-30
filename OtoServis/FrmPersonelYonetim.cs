@@ -51,14 +51,21 @@ namespace OtoServis
                     Data = p
                 }).ToList();
 
-            DataGridViewHelper.InitializeColumns<PersonelDto>(dgvPersonel);
-            dgvPersonel.DataSource = personeller;
+            DataGridViewHelper.LoadData<PersonelDto>(dgvPersonel, personeller);
         }
 
+        void PersonelAktifPasifDurumlariYukle()
+        {
+            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool> { Text = "Aktif", Value = true });
+            cmbPersonelAktifPasif.Items.Add(new TextValueDto<bool> { Text = "Pasif", Value = false });
+            cmbPersonelAktifPasif.DisplayMember = "Text";
+            cmbPersonelAktifPasif.ValueMember = "Value";
+        }
         void LoadData()
         {
             RolleriYukle();
             PersonelleriYukle();
+            PersonelAktifPasifDurumlariYukle();
         }
 
         void PersonelEkle()
@@ -99,11 +106,12 @@ namespace OtoServis
                 return;
             }
 
-            txtAd.Text = personel.Ad;
-            txtSoyad.Text = personel.Soyad;
-            txtEmail.Text = personel.Email;
-            txtSifre.Text = personel.Data.Sifre;
-            cmbRol.SelectedItem = personel.Data.Rol;
+            string ad = txtAd.Text;
+            string soyad = txtSoyad.Text;
+            string email = txtEmail.Text;
+            string sifre = txtSifre.Text;
+            var rol = cmbRol.SelectedItem as Rol;
+            var aktifPasifDurum = cmbPersonelAktifPasif.SelectedItem as TextValueDto<bool>;
 
             bool emailKayitlimi = dbContext.Personeller.Any(p => personel.Data.PersonelID != p.PersonelID && p.Email == email);
 
@@ -113,23 +121,48 @@ namespace OtoServis
                 return;
             }
 
-            dbContext.Personeller.Add(new Personel
+            if (aktifPasifDurum is null)
             {
-                Ad = ad,
-                Soyad = soyad,
-                Email = email,
-                Sifre = sifre,
-                RolID = rol.RolID
-            });
+                MessageBox.Show("Personel Durum Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            personel.Data.Ad = ad;
+            personel.Data.Soyad = soyad;
+            personel.Data.Email = email;
+            personel.Data.RolID = rol.RolID;
+            personel.Data.Aktifmi = aktifPasifDurum.Value;
+
+            dbContext.Entry<Personel>(personel.Data).State = EntityState.Modified;
 
             dbContext.SaveChanges();
+
+            isSaving = true;
+            inputlariTemizle();
+            PersonelleriYukle();
+        }
+
+        void inputlariTemizle()
+        {
+            txtAd.Clear();
+            txtSoyad.Clear();
+            txtEmail.Clear();
+            txtSifre.Clear();
+            cmbRol.SelectedIndex = 0;
+            cmbPersonelAktifPasif.SelectedIndex = 0;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             try
             {
-                PersonelEkle();
+                if (isSaving)
+
+                    PersonelEkle();
+                else
+                    PersonelGuncelle();
+
+
             }
             catch (Exception ex)
             {
@@ -147,25 +180,21 @@ namespace OtoServis
             LoadData();
 
 
-            cmbPersonelAktifPasif.Items.Add(new { Text = "Aktif", Value = true });
-            cmbPersonelAktifPasif.Items.Add(new { Text = "Pasif", Value = false });
 
-            cmbPersonelAktifPasif.DisplayMember = "Text";
-            cmbPersonelAktifPasif.ValueMember = "Value";
         }
 
         private void dgvPersonel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var currentRow = dgvPersonel.CurrentRow;
-            if (currentRow == null) return;
-            var selectedItem = currentRow.DataBoundItem as PersonelDto;
-            if (selectedItem == null) return;
+            var (ok, personel) = DataGridViewHelper.GetSelectedValue<PersonelDto>(dgvPersonel);
 
-            txtAd.Text = selectedItem.Ad;
-            txtSoyad.Text = selectedItem.Soyad;
-            txtEmail.Text = selectedItem.Email;
-            txtSifre.Text = selectedItem.Data.Sifre;
-            cmbRol.SelectedItem = selectedItem.Data.Rol;
+            if (!ok) return;
+
+            txtAd.Text = personel.Ad;
+            txtSoyad.Text = personel.Soyad;
+            txtEmail.Text = personel.Email;
+            txtSifre.Text = personel.Data.Sifre;
+            cmbRol.SelectedItem = personel.Data.Rol;
+            ComboBoxHelper.SelectItemByValue(cmbPersonelAktifPasif, personel.Data.Aktifmi);
             isSaving = false;
         }
     }
