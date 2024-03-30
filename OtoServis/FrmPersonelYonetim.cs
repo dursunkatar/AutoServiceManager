@@ -122,7 +122,7 @@ namespace OtoServis
             string email = txtEmail.Text;
             string sifre = txtSifre.Text;
             var rol = cmbRol.SelectedItem as Rol;
-            var aktifPasifDurum = cmbPersonelAktifPasif.SelectedItem as TextValueDto<bool>;
+            var aktifPasifDurum = cmbPersonelAktifPasif.SelectedItem as TextValueDto<bool?>;
 
             bool emailKayitlimi = dbContext.Personeller.Any(p => personel.Data.PersonelID != p.PersonelID && p.Email == email);
 
@@ -136,7 +136,7 @@ namespace OtoServis
             personel.Data.Soyad = soyad;
             personel.Data.Email = email;
             personel.Data.RolID = rol.RolID;
-            personel.Data.Aktifmi = aktifPasifDurum.Value;
+            personel.Data.Aktifmi = aktifPasifDurum.Value.Value;
 
             dbContext.Entry<Personel>(personel.Data).State = EntityState.Modified;
 
