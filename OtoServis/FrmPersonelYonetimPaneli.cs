@@ -8,12 +8,12 @@ using OtoServis.Dto;
 
 namespace OtoServis
 {
-    public partial class FrmPersonelYonetim : Form
+    public partial class FrmPersonelYonetimPaneli : Form
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
 
-        public FrmPersonelYonetim()
+        public FrmPersonelYonetimPaneli()
         {
             InitializeComponent();
 

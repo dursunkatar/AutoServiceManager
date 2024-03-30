@@ -1,6 +1,6 @@
 ﻿namespace OtoServis
 {
-    partial class MusteriYonetimPaneli
+    partial class FrmMusteriYonetimPaneli
     {
         /// <summary>
         /// Required designer variable.
