@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace OtoServis.DataAccess.Entities
 {
-    [Table("Rol")]
-    public class Rol
+    [Table("Yetkiler")]
+    public class Yetki
     {
         [Key]
-        public int RolID { get; set; }
-        public string RolAdi { get; set; }
-        public virtual ICollection<Personel> Personeller { get; set; }
+        public int Id { get; set; }
+        public string Baslik { get; set; }
         public virtual ICollection<RolYetkisi> RolYetkileri { get; set; }
     }
 }
