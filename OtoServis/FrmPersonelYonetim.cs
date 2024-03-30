@@ -21,6 +21,8 @@ namespace OtoServis
     public partial class FrmPersonelYonetim : Form
     {
         private readonly AppDbContext dbContext;
+        private bool isSaving = true;
+
         public FrmPersonelYonetim()
         {
             InitializeComponent();
@@ -87,6 +89,42 @@ namespace OtoServis
             dbContext.SaveChanges();
         }
 
+        void PersonelGuncelle()
+        {
+            var (ok, personel) = DataGridViewHelper.GetSelectedValue<PersonelDto>(dgvPersonel);
+
+            if (!ok)
+            {
+                MessageBox.Show("Güncellenecek Kayıt Yok", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            txtAd.Text = personel.Ad;
+            txtSoyad.Text = personel.Soyad;
+            txtEmail.Text = personel.Email;
+            txtSifre.Text = personel.Data.Sifre;
+            cmbRol.SelectedItem = personel.Data.Rol;
+
+            bool emailKayitlimi = dbContext.Personeller.Any(p => personel.Data.PersonelID != p.PersonelID && p.Email == email);
+
+            if (emailKayitlimi)
+            {
+                MessageBox.Show("Bu email kullanımda", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            dbContext.Personeller.Add(new Personel
+            {
+                Ad = ad,
+                Soyad = soyad,
+                Email = email,
+                Sifre = sifre,
+                RolID = rol.RolID
+            });
+
+            dbContext.SaveChanges();
+        }
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             try
@@ -119,10 +157,8 @@ namespace OtoServis
         private void dgvPersonel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var currentRow = dgvPersonel.CurrentRow;
-
             if (currentRow == null) return;
             var selectedItem = currentRow.DataBoundItem as PersonelDto;
-
             if (selectedItem == null) return;
 
             txtAd.Text = selectedItem.Ad;
@@ -130,6 +166,7 @@ namespace OtoServis
             txtEmail.Text = selectedItem.Email;
             txtSifre.Text = selectedItem.Data.Sifre;
             cmbRol.SelectedItem = selectedItem.Data.Rol;
+            isSaving = false;
         }
     }
 }

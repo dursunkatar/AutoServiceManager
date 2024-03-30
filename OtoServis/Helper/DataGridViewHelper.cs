@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OtoServis.Dto;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,16 @@ namespace OtoServis.Helper
 {
     public static class DataGridViewHelper
     {
+        public static (bool, T?) GetSelectedValue<T>(DataGridView dataGridView) where T : class
+        {
+            var currentRow = dataGridView.CurrentRow;
+            if (currentRow == null) return (false, default);
+            var selectedItem = currentRow.DataBoundItem as T;
+            if (selectedItem == null) return (false, default);
+
+            return (true, selectedItem);
+        }
+
         public static void InitializeColumns<T>(DataGridView dataGridView)
         {
             dataGridView.AutoGenerateColumns = false;
