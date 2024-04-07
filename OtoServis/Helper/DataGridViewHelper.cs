@@ -1,4 +1,6 @@
-﻿namespace OtoServis.Helper
+﻿using System.Collections;
+
+namespace OtoServis.Helper
 {
     public static class DataGridViewHelper
     {
@@ -16,7 +18,12 @@
         {
             dataGridView.Columns.Clear();
             dataGridView.AutoGenerateColumns = false;
-            var properties = typeof(T).GetProperties();
+            var properties = typeof(T).GetProperties()
+                .Where(
+                      p => !(typeof(IEnumerable).IsAssignableFrom(p.PropertyType) &&
+                      p.PropertyType != typeof(string))
+                      && !(p.PropertyType.IsClass && p.PropertyType != typeof(string))
+                    );
 
             foreach (var prop in properties)
             {
