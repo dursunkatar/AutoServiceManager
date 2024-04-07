@@ -50,7 +50,7 @@
             groupBox6.Location = new Point(266, 12);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(5);
-            groupBox6.Size = new Size(537, 236);
+            groupBox6.Size = new Size(537, 407);
             groupBox6.TabIndex = 7;
             groupBox6.TabStop = false;
             groupBox6.Text = "Parçalar";
@@ -61,7 +61,7 @@
             dgvParca.Dock = DockStyle.Fill;
             dgvParca.Location = new Point(5, 21);
             dgvParca.Name = "dgvParca";
-            dgvParca.Size = new Size(527, 210);
+            dgvParca.Size = new Size(527, 381);
             dgvParca.TabIndex = 0;
             dgvParca.CellClick += dgvParca_CellClick;
             // 
@@ -127,7 +127,7 @@
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 183);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(248, 60);
+            btnKaydet.Size = new Size(248, 236);
             btnKaydet.TabIndex = 11;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
@@ -137,13 +137,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1196, 703);
+            ClientSize = new Size(809, 424);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(groupBox6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmParcaYonetimPaneli";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmParcaYonetimPaneli";
             Load += FrmParcaYonetimPaneli_Load;
             groupBox6.ResumeLayout(false);
