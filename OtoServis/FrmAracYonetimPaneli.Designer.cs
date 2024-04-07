@@ -43,6 +43,7 @@
             groupBox7 = new GroupBox();
             txtPlaka = new TextBox();
             btnKaydet = new Button();
+            btnTemizle = new Button();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArac).BeginInit();
             groupBox5.SuspendLayout();
@@ -95,6 +96,7 @@
             cmbMusteri.Name = "cmbMusteri";
             cmbMusteri.Size = new Size(325, 23);
             cmbMusteri.TabIndex = 0;
+            cmbMusteri.SelectedIndexChanged += cmbMusteri_SelectedIndexChanged;
             // 
             // groupBox1
             // 
@@ -203,17 +205,29 @@
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 354);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(339, 23);
+            btnKaydet.Size = new Size(176, 23);
             btnKaydet.TabIndex = 15;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
             btnKaydet.Click += btnKaydet_Click;
+            // 
+            // btnTemizle
+            // 
+            btnTemizle.Cursor = Cursors.Hand;
+            btnTemizle.Location = new Point(194, 354);
+            btnTemizle.Name = "btnTemizle";
+            btnTemizle.Size = new Size(157, 23);
+            btnTemizle.TabIndex = 16;
+            btnTemizle.Text = "Temizle";
+            btnTemizle.UseVisualStyleBackColor = true;
+            btnTemizle.Click += btnTemizle_Click;
             // 
             // FrmAracYonetimPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1276, 386);
+            Controls.Add(btnTemizle);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
@@ -259,5 +273,6 @@
         private GroupBox groupBox7;
         private TextBox txtPlaka;
         private Button btnKaydet;
+        private Button btnTemizle;
     }
 }

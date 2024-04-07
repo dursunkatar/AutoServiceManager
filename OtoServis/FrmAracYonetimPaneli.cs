@@ -20,7 +20,7 @@ namespace OtoServis
 
         void MusterileriYukle()
         {
-            var data = dbContext.Musteriler.Select(x => new TextValueDto<int>
+            var data = dbContext.Musteriler.Where(x => !x.Silindimi).Select(x => new TextValueDto<int>
             {
                 Text = $"{x.Ad} {x.Soyad} - ({x.Telefon})",
                 Value = x.MusteriID
@@ -43,13 +43,16 @@ namespace OtoServis
             txtRenk.Clear();
             cmbMarka.SelectedIndex = 0;
             cmbMusteri.SelectedIndex = 0;
+            isSaving = true;
+            cmbMusteri.Enabled = true;
         }
-        void AraclariYukle()
+        void AraclariYukle(int musteriId = -1)
         {
             var data = dbContext.Araclar
                 .Include(x => x.Musteri)
                 .Include(x => x.Marka)
                 .Include(x => x.Model)
+                .Where(x => musteriId == -1 || x.MusteriID == musteriId)
                 .Select(x => new AracDto
                 {
                     Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad} - ({x.Musteri.Telefon})",
@@ -129,7 +132,6 @@ namespace OtoServis
 
             dbContext.Entry<Arac>(arac.Data).State = EntityState.Modified;
             dbContext.SaveChanges();
-            isSaving = true;
             MessageBox.Show("Güncelleme başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -285,8 +287,23 @@ namespace OtoServis
             txtPlaka.Text = data.Plaka;
             txtRenk.Text = data.Renk;
             txtYil.Text = data.Yil.ToString();
-
+            cmbMusteri.Enabled = false;
             isSaving = false;
+        }
+
+        private void cmbMusteri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TextValueDto<int> selectedData = cmbMusteri.SelectedItem as TextValueDto<int>;
+
+            if (selectedData != null)
+            {
+                AraclariYukle(selectedData.Value);
+            }
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            InputlariTemizle();
         }
     }
 }
