@@ -119,7 +119,7 @@ namespace OtoServis
 
             dbContext.Entry<Parca>(data).State = EntityState.Modified;
             dbContext.SaveChanges();
-
+            isSaving = true;
             MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

@@ -72,6 +72,7 @@
             dgvArac.Name = "dgvArac";
             dgvArac.Size = new Size(902, 339);
             dgvArac.TabIndex = 0;
+            dgvArac.CellClick += dgvArac_CellClick;
             // 
             // groupBox5
             // 
