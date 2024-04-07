@@ -1,14 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OtoServis.DataAccess.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OtoServis.DataAccess.Context
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -24,5 +19,6 @@ namespace OtoServis.DataAccess.Context
         public DbSet<Rol> Roller { get; set; }
         public DbSet<Satis> Satislar { get; set; }
         public DbSet<Tamir> Tamirler { get; set; }
+        public DbSet<TamirDurum> TamirDurum { get; set; }
     }
 }

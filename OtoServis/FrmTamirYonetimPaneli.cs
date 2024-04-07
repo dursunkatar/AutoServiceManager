@@ -36,6 +36,23 @@ namespace OtoServis
             ComboBoxHelper.LoadData(cmbMusteri, data, "Text", "Value");
         }
 
+        void TamirDurumlariYukle()
+        {
+            var data = dbContext.TamirDurum.Select(x => new TextValueDto<int>
+            {
+                Text = x.Durum,
+                Value = x.Id
+            }).ToList();
+
+            data.Insert(0, new TextValueDto<int>
+            {
+                Text = "Seçiniz",
+                Value = -1
+            });
+
+            ComboBoxHelper.LoadData(cmbDurum, data, "Text", "Value");
+        }
+
         void AraclariYukle(int musteriId)
         {
             var data = dbContext.Araclar
@@ -62,6 +79,7 @@ namespace OtoServis
         private void FrmTamirYonetimPaneli_Load(object sender, EventArgs e)
         {
             MusterileriYukle();
+            TamirDurumlariYukle();
         }
 
         private void cmbMusteri_SelectedIndexChanged(object sender, EventArgs e)

@@ -32,8 +32,17 @@
             cmbArac = new ComboBox();
             groupBox5 = new GroupBox();
             cmbMusteri = new ComboBox();
+            groupBox2 = new GroupBox();
+            dtpTamirTarihi = new DateTimePicker();
+            groupBox3 = new GroupBox();
+            txtAciklama = new TextBox();
+            groupBox4 = new GroupBox();
+            cmbDurum = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -81,11 +90,76 @@
             cmbMusteri.TabIndex = 0;
             cmbMusteri.SelectedIndexChanged += cmbMusteri_SelectedIndexChanged;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(dtpTamirTarihi);
+            groupBox2.Location = new Point(12, 126);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(7, 3, 7, 3);
+            groupBox2.Size = new Size(339, 51);
+            groupBox2.TabIndex = 14;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Tamir Tarihi";
+            // 
+            // dtpTamirTarihi
+            // 
+            dtpTamirTarihi.Dock = DockStyle.Fill;
+            dtpTamirTarihi.Location = new Point(7, 19);
+            dtpTamirTarihi.Name = "dtpTamirTarihi";
+            dtpTamirTarihi.Size = new Size(325, 23);
+            dtpTamirTarihi.TabIndex = 14;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(txtAciklama);
+            groupBox3.Location = new Point(12, 183);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(7, 3, 7, 7);
+            groupBox3.Size = new Size(339, 148);
+            groupBox3.TabIndex = 15;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Açıklama";
+            // 
+            // txtAciklama
+            // 
+            txtAciklama.Dock = DockStyle.Fill;
+            txtAciklama.Location = new Point(7, 19);
+            txtAciklama.Multiline = true;
+            txtAciklama.Name = "txtAciklama";
+            txtAciklama.ScrollBars = ScrollBars.Vertical;
+            txtAciklama.Size = new Size(325, 122);
+            txtAciklama.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(cmbDurum);
+            groupBox4.Location = new Point(12, 337);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(7, 3, 7, 3);
+            groupBox4.Size = new Size(339, 51);
+            groupBox4.TabIndex = 16;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Durum";
+            // 
+            // cmbDurum
+            // 
+            cmbDurum.Dock = DockStyle.Fill;
+            cmbDurum.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDurum.FormattingEnabled = true;
+            cmbDurum.Items.AddRange(new object[] { "Seçiniz" });
+            cmbDurum.Location = new Point(7, 19);
+            cmbDurum.Name = "cmbDurum";
+            cmbDurum.Size = new Size(325, 23);
+            cmbDurum.TabIndex = 0;
+            // 
             // FrmTamirYonetimPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1187, 591);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(groupBox5);
             Name = "FrmTamirYonetimPaneli";
@@ -93,6 +167,10 @@
             Load += FrmTamirYonetimPaneli_Load;
             groupBox1.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -101,5 +179,11 @@
         private ComboBox cmbArac;
         private GroupBox groupBox5;
         private ComboBox cmbMusteri;
+        private GroupBox groupBox2;
+        private DateTimePicker dtpTamirTarihi;
+        private GroupBox groupBox3;
+        private TextBox txtAciklama;
+        private GroupBox groupBox4;
+        private ComboBox cmbDurum;
     }
 }
