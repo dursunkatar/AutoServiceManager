@@ -1,12 +1,4 @@
-﻿using OtoServis.Dto;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OtoServis.Helper
+﻿namespace OtoServis.Helper
 {
     public static class DataGridViewHelper
     {
@@ -24,13 +16,7 @@ namespace OtoServis.Helper
         {
             dataGridView.Columns.Clear();
             dataGridView.AutoGenerateColumns = false;
-            var properties = typeof(T).GetProperties()
-                .Where(
-                      p => p.PropertyType != typeof(int) &&
-                      !(typeof(IEnumerable).IsAssignableFrom(p.PropertyType) &&
-                      p.PropertyType != typeof(string))
-                      && !(p.PropertyType.IsClass && p.PropertyType != typeof(string))
-                    );
+            var properties = typeof(T).GetProperties();
 
             foreach (var prop in properties)
             {
