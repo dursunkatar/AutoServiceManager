@@ -1,5 +1,7 @@
-﻿using OtoServis.DataAccess;
+﻿using Microsoft.EntityFrameworkCore;
+using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
+using OtoServis.DataAccess.Entities;
 using OtoServis.Dto;
 using OtoServis.Helper;
 
@@ -33,12 +35,35 @@ namespace OtoServis
 
             ComboBoxHelper.LoadData(cmbMusteri, data, "Text", "Value");
         }
+        void AraclariYukle()
+        {
+            var data = dbContext.Araclar
+                .Include(x => x.Musteri)
+                .Include(x => x.Marka)
+                .Include(x => x.Model)
+                .Select(x => new AracDto
+                {
+                    Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad} - ({x.Musteri.Telefon})",
+                    Marka = x.Marka.MarkaAdi,
+                    Model = x.Model.ModelAdi,
+                    Plaka = x.Plaka,
+                    Renk = x.AracRenk,
+                    Yil = x.Yil,
+                    Data = x
+                }).ToList();
+            DataGridViewHelper.LoadData<AracDto>(dgvArac, data);
+        }
+
 
         void AracEkle()
         {
+            string plaka = txtPlaka.Text.Trim();
+            string renk = txtRenk.Text.Trim();
+            string yil = txtYil.Text.Trim();
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
             var secilenMarka = cmbMarka.SelectedItem as TextValueDto<int>;
             var secilenModel = cmbModel.SelectedItem as TextValueDto<int>;
+
 
             if (secilenMusteri.Value == -1)
             {
@@ -46,13 +71,51 @@ namespace OtoServis
                 return;
             }
 
+            if (secilenMarka.Value == -1)
+            {
+                MessageBox.Show("Marka seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
+            if (secilenModel.Value == -1)
+            {
+                MessageBox.Show("Model seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-            string plaka = txtPlaka.Text.Trim();
-            string renk = txtRenk.Text.Trim();
-            string yil = txtYil.Text.Trim();
+            if (plaka == string.Empty || renk == string.Empty || yil == string.Empty)
+            {
+                MessageBox.Show("Tüm alanları doldurunuz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
+            if (!int.TryParse(yil, out int aracYil))
+            {
+                MessageBox.Show("Yıl bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
+            bool aracEklenmismi = dbContext.Araclar.Any(x => x.Plaka == plaka);
+
+            if (aracEklenmismi)
+            {
+                MessageBox.Show("Bu palaka daha önce eklenmiş", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            dbContext.Araclar.Add(new Arac
+            {
+                Plaka = plaka,
+                Yil = aracYil,
+                AracRenk = renk,
+                MarkaID = secilenMarka.Value,
+                ModelID = secilenModel.Value,
+                MusteriID = secilenMusteri.Value
+            });
+
+            dbContext.SaveChanges();
+
+            MessageBox.Show("Kayıt başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         void MarkalariYukle()
@@ -96,6 +159,7 @@ namespace OtoServis
         {
             MusterileriYukle();
             MarkalariYukle();
+            AraclariYukle();
         }
 
         private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)

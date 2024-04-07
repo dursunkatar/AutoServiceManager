@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox6 = new GroupBox();
-            dgvParca = new DataGridView();
+            dgvArac = new DataGridView();
             groupBox5 = new GroupBox();
             cmbMusteri = new ComboBox();
             groupBox1 = new GroupBox();
@@ -44,7 +44,7 @@
             txtPlaka = new TextBox();
             btnKaydet = new Button();
             groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvParca).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvArac).BeginInit();
             groupBox5.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -55,23 +55,23 @@
             // 
             // groupBox6
             // 
-            groupBox6.Controls.Add(dgvParca);
+            groupBox6.Controls.Add(dgvArac);
             groupBox6.Location = new Point(357, 12);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(5);
-            groupBox6.Size = new Size(623, 365);
+            groupBox6.Size = new Size(912, 365);
             groupBox6.TabIndex = 8;
             groupBox6.TabStop = false;
             groupBox6.Text = "Araçlar";
             // 
-            // dgvParca
+            // dgvArac
             // 
-            dgvParca.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvParca.Dock = DockStyle.Fill;
-            dgvParca.Location = new Point(5, 21);
-            dgvParca.Name = "dgvParca";
-            dgvParca.Size = new Size(613, 339);
-            dgvParca.TabIndex = 0;
+            dgvArac.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvArac.Dock = DockStyle.Fill;
+            dgvArac.Location = new Point(5, 21);
+            dgvArac.Name = "dgvArac";
+            dgvArac.Size = new Size(902, 339);
+            dgvArac.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -212,7 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1103, 617);
+            ClientSize = new Size(1417, 617);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
@@ -225,7 +225,7 @@
             Text = "FrmAracYonetimPaneli";
             Load += FrmAracYonetimPaneli_Load;
             groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvParca).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvArac).EndInit();
             groupBox5.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
@@ -241,7 +241,7 @@
         #endregion
 
         private GroupBox groupBox6;
-        private DataGridView dgvParca;
+        private DataGridView dgvArac;
         private GroupBox groupBox5;
         private ComboBox cmbMusteri;
         private GroupBox groupBox1;
