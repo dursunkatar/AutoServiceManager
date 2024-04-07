@@ -213,7 +213,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1417, 617);
+            ClientSize = new Size(1276, 386);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
@@ -222,8 +222,11 @@
             Controls.Add(groupBox1);
             Controls.Add(groupBox5);
             Controls.Add(groupBox6);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmAracYonetimPaneli";
-            Text = "FrmAracYonetimPaneli";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Araç Yönetim Paneli";
             Load += FrmAracYonetimPaneli_Load;
             groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvArac).EndInit();
