@@ -6,7 +6,7 @@ namespace OtoServis
         {
             InitializeComponent();
 
-            var s = new FrmParcaYonetimPaneli();
+            var s = new FrmAracYonetimPaneli();
             s.Show();
         }
     }
