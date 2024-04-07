@@ -45,6 +45,7 @@ namespace OtoServis
             cmbMusteri.SelectedIndex = 0;
             isSaving = true;
             cmbMusteri.Enabled = true;
+            btnKaydet.Text = "Kaydet";
         }
         void AraclariYukle(int musteriId = -1)
         {
@@ -259,14 +260,15 @@ namespace OtoServis
                 if (isSaving)
                 {
                     AracEkle();
+                    InputlariTemizle();
                 }
                 else
                 {
                     AracGuncelle();
                 }
 
-                InputlariTemizle();
-                AraclariYukle();
+                var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+                AraclariYukle(secilenMusteri.Value);
             }
             catch (Exception ex)
             {
@@ -288,6 +290,7 @@ namespace OtoServis
             txtRenk.Text = data.Renk;
             txtYil.Text = data.Yil.ToString();
             cmbMusteri.Enabled = false;
+            btnKaydet.Text = "Güncelle";
             isSaving = false;
         }
 
