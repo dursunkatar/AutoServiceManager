@@ -162,25 +162,25 @@ namespace OtoServis
             var secilenDurum = cmbDurum.SelectedItem as TextValueDto<int>;
             var secilenUsta = cmbUsta.SelectedItem as TextValueDto<int>;
 
-            if (secilenMusteri.Value == -1)
+            if (secilenMusteri is null || secilenMusteri.Value == -1)
             {
                 MessageBox.Show("Müşteri seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            if (secilenArac.Value == -1)
+            if (secilenArac is null || secilenArac.Value == -1)
             {
                 MessageBox.Show("Araç seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            if (secilenDurum.Value == -1)
+            if (secilenDurum is null || secilenDurum.Value == -1)
             {
                 MessageBox.Show("Durum seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            if (secilenUsta.Value == -1)
+            if (secilenUsta is null || secilenUsta.Value == -1)
             {
                 MessageBox.Show("Usta seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
