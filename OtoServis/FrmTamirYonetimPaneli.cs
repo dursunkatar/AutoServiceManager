@@ -247,6 +247,7 @@ namespace OtoServis
             if (selectedData != null)
             {
                 AraclariYukle(selectedData.Value);
+                TamirKayitlariniYukle(selectedData.Value);
             }
         }
 
