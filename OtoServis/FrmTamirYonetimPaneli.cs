@@ -311,6 +311,12 @@ namespace OtoServis
                 return;
             }
 
+            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz ?", "OtoServis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
             tamir.Data.Silindimi = true;
 
             dbContext.Entry<Tamir>(tamir.Data).State = EntityState.Modified;
