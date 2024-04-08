@@ -2,18 +2,18 @@
 using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
 using OtoServis.DataAccess.Entities;
+using OtoServis.Dto;
 using OtoServis.Helper;
 using System.Data;
-using OtoServis.Dto;
 
 namespace OtoServis
 {
-    public partial class FrmPersonelYonetimPaneli : Form
+    public partial class FrmPersonelPaneli : Form
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
 
-        public FrmPersonelYonetimPaneli()
+        public FrmPersonelPaneli()
         {
             InitializeComponent();
 

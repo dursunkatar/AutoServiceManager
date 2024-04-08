@@ -8,11 +8,11 @@ using System.Data;
 
 namespace OtoServis
 {
-    public partial class FrmTamirYonetimPaneli : Form
+    public partial class FrmTamirPaneli : Form
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
-        public FrmTamirYonetimPaneli()
+        public FrmTamirPaneli()
         {
             InitializeComponent();
             dbContext = DbContextBuilder.Build();

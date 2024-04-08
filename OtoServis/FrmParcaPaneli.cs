@@ -6,11 +6,11 @@ using OtoServis.Helper;
 
 namespace OtoServis
 {
-    public partial class FrmParcaYonetimPaneli : Form
+    public partial class FrmParcaPaneli : Form
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
-        public FrmParcaYonetimPaneli()
+        public FrmParcaPaneli()
         {
             InitializeComponent();
             dbContext = DbContextBuilder.Build();

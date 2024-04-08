@@ -7,11 +7,11 @@ using OtoServis.Helper;
 
 namespace OtoServis
 {
-    public partial class FrmAracYonetimPaneli : Form
+    public partial class FrmAracPaneli : Form
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
-        public FrmAracYonetimPaneli()
+        public FrmAracPaneli()
         {
             InitializeComponent();
             dbContext = DbContextBuilder.Build();
