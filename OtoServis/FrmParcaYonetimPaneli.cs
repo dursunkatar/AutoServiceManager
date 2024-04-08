@@ -62,7 +62,7 @@ namespace OtoServis
             });
 
             dbContext.SaveChanges();
-
+            InputlariTemizle();
             MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -136,7 +136,7 @@ namespace OtoServis
                     ParcaGuncelle();
                 }
 
-                InputlariTemizle();
+
                 ParcalariYukle();
             }
             catch (Exception ex)

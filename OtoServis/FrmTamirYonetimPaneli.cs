@@ -74,7 +74,7 @@ namespace OtoServis
             ComboBoxHelper.LoadData(cmbUsta, data, "Text", "Value");
         }
 
-        void TamirKayitlariniYukle()
+        void TamirKayitlariniYukle(int musteriId = -1)
         {
             var data = dbContext.Tamirler
                 .Include(x => x.Arac)
@@ -85,6 +85,7 @@ namespace OtoServis
                 .ThenInclude(x => x.Marka)
                 .Include(x => x.TamirDurum)
                 .Include(x => x.MekanikUsta)
+                .Where(x => (musteriId == -1 || x.Arac.MusteriID == musteriId) && !x.Silindimi)
                 .Select(x => new TamirDto
                 {
                     Aciklama = x.Aciklama,
@@ -136,10 +137,64 @@ namespace OtoServis
                 Aciklama = aciklama,
                 TamirDurumId = secilenDurum.Value,
                 MekanikUstaID = secilenUsta.Value,
-                TamirTarihi = dtpTamirTarihi.Value
+                TamirTarihi = dtpTamirTarihi.Value,
+                Silindimi = false
             });
 
             dbContext.SaveChanges();
+            InputlariTemizle();
+            MessageBox.Show("Kayıt başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        void TamirGuncelle()
+        {
+            var (ok, tamir) = DataGridViewHelper.GetSelectedValue<TamirDto>(dgvTamir);
+
+            if (!ok)
+            {
+                MessageBox.Show("Güncellenecek Kayıt Yok", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            string aciklama = txtAciklama.Text.Trim();
+            var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+            var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
+            var secilenDurum = cmbDurum.SelectedItem as TextValueDto<int>;
+            var secilenUsta = cmbUsta.SelectedItem as TextValueDto<int>;
+
+            if (secilenMusteri.Value == -1)
+            {
+                MessageBox.Show("Müşteri seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (secilenArac.Value == -1)
+            {
+                MessageBox.Show("Araç seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (secilenDurum.Value == -1)
+            {
+                MessageBox.Show("Durum seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (secilenUsta.Value == -1)
+            {
+                MessageBox.Show("Usta seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            tamir.Data.AracID = secilenArac.Value;
+            tamir.Data.Aciklama = aciklama;
+            tamir.Data.TamirDurumId = secilenDurum.Value;
+            tamir.Data.MekanikUstaID = secilenUsta.Value;
+            tamir.Data.TamirTarihi = dtpTamirTarihi.Value;
+
+            dbContext.Entry<Tamir>(tamir.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            MessageBox.Show("Güncelleme başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         void AraclariYukle(int musteriId)
@@ -165,6 +220,18 @@ namespace OtoServis
             ComboBoxHelper.LoadData(cmbArac, data, "Text", "Value");
         }
 
+        void InputlariTemizle()
+        {
+            txtAciklama.Clear();
+            cmbMusteri.SelectedIndex = 0;
+            cmbDurum.SelectedIndex = 0;
+            cmbUsta.SelectedIndex = 0;
+            cmbMusteri.Enabled = true;
+            cmbArac.Enabled = true;
+            isSaving = true;
+            btnKaydet.Text = "Kaydet";
+            TamirKayitlariniYukle();
+        }
         private void FrmTamirYonetimPaneli_Load(object sender, EventArgs e)
         {
             MusterileriYukle();
@@ -185,7 +252,70 @@ namespace OtoServis
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            TamirEkle();
+            try
+            {
+                if (isSaving)
+                {
+                    TamirEkle();
+                }
+                else
+                {
+                    TamirGuncelle();
+                }
+
+                var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+                TamirKayitlariniYukle(secilenMusteri.Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvTamir_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var (ok, tamir) = DataGridViewHelper.GetSelectedValue<TamirDto>(dgvTamir);
+
+            if (!ok) return;
+
+            ComboBoxHelper.SelectItemByValue(cmbMusteri, tamir.Data.Arac.MusteriID);
+            ComboBoxHelper.SelectItemByValue(cmbArac, tamir.Data.AracID);
+            ComboBoxHelper.SelectItemByValue(cmbDurum, tamir.Data.TamirDurumId);
+            ComboBoxHelper.SelectItemByValue(cmbUsta, tamir.Data.MekanikUstaID);
+            cmbMusteri.Enabled = false;
+            cmbArac.Enabled = false;
+            dtpTamirTarihi.Value = tamir.TamirTarihi;
+            txtAciklama.Text = tamir.Aciklama;
+            btnKaydet.Text = "Güncelle";
+            isSaving = false;
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            InputlariTemizle();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (isSaving)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            var (ok, tamir) = DataGridViewHelper.GetSelectedValue<TamirDto>(dgvTamir);
+
+            if (!ok)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            tamir.Data.Silindimi = true;
+
+            dbContext.Entry<Tamir>(tamir.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            InputlariTemizle();
+            MessageBox.Show("Kayıt silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

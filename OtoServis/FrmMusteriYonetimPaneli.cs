@@ -46,6 +46,8 @@ namespace OtoServis
                 KayitTarihi = DateTime.Now
             });
             dbContext.SaveChanges();
+            InputlariTemizle();
+            MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         void MusterileriYukle()

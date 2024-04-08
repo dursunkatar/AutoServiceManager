@@ -19,6 +19,7 @@ namespace OtoServis.DataAccess.Entities
 
         [ForeignKey("TamirDurum")]
         public int TamirDurumId { get; set; }
+        public bool Silindimi { get; set; }
         public virtual Arac Arac { get; set; }
         public virtual Personel MekanikUsta { get; set; }
         public virtual TamirDurum TamirDurum { get; set; }

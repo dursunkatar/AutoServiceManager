@@ -43,6 +43,8 @@
             btnKaydet = new Button();
             groupBox7 = new GroupBox();
             cmbUsta = new ComboBox();
+            btnTemizle = new Button();
+            btnSil = new Button();
             groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -179,13 +181,14 @@
             dgvTamir.Name = "dgvTamir";
             dgvTamir.Size = new Size(1091, 436);
             dgvTamir.TabIndex = 0;
+            dgvTamir.CellClick += dgvTamir_CellClick;
             // 
             // btnKaydet
             // 
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(10, 451);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(339, 23);
+            btnKaydet.Size = new Size(114, 23);
             btnKaydet.TabIndex = 18;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
@@ -213,11 +216,35 @@
             cmbUsta.Size = new Size(325, 23);
             cmbUsta.TabIndex = 0;
             // 
+            // btnTemizle
+            // 
+            btnTemizle.Cursor = Cursors.Hand;
+            btnTemizle.Location = new Point(241, 451);
+            btnTemizle.Name = "btnTemizle";
+            btnTemizle.Size = new Size(108, 23);
+            btnTemizle.TabIndex = 20;
+            btnTemizle.Text = "Temizle";
+            btnTemizle.UseVisualStyleBackColor = true;
+            btnTemizle.Click += btnTemizle_Click;
+            // 
+            // btnSil
+            // 
+            btnSil.Cursor = Cursors.Hand;
+            btnSil.Location = new Point(130, 451);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(105, 23);
+            btnSil.TabIndex = 21;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
+            // 
             // FrmTamirYonetimPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1464, 479);
+            Controls.Add(btnSil);
+            Controls.Add(btnTemizle);
             Controls.Add(groupBox7);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox6);
@@ -258,5 +285,7 @@
         private Button btnKaydet;
         private GroupBox groupBox7;
         private ComboBox cmbUsta;
+        private Button btnTemizle;
+        private Button btnSil;
     }
 }

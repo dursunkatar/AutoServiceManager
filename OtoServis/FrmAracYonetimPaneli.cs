@@ -195,7 +195,7 @@ namespace OtoServis
             });
 
             dbContext.SaveChanges();
-
+            InputlariTemizle();
             MessageBox.Show("Kayıt başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -260,7 +260,7 @@ namespace OtoServis
                 if (isSaving)
                 {
                     AracEkle();
-                    InputlariTemizle();
+
                 }
                 else
                 {
