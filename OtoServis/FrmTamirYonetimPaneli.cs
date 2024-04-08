@@ -74,6 +74,11 @@ namespace OtoServis
             ComboBoxHelper.LoadData(cmbUsta, data, "Text", "Value");
         }
 
+        void TamirKayitlariniYukle()
+        {
+            var data = dbContext.Tamirler.ToList();
+            DataGridViewHelper.LoadData<Tamir>(dgvTamir, data);
+        }
         void TamirEkle()
         {
             string aciklama = txtAciklama.Text.Trim();
@@ -146,6 +151,7 @@ namespace OtoServis
             MusterileriYukle();
             TamirDurumlariYukle();
             UstalariYukle();
+            TamirKayitlariniYukle();
         }
 
         private void cmbMusteri_SelectedIndexChanged(object sender, EventArgs e)
