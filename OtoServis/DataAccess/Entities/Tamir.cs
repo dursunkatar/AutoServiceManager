@@ -12,7 +12,7 @@ namespace OtoServis.DataAccess.Entities
         [ForeignKey("Arac")]
         public int AracID { get; set; }
 
-        [ForeignKey("Personel")]
+        [ForeignKey("MekanikUsta")]
         public int MekanikUstaID { get; set; }
         public DateTime TamirTarihi { get; set; }
         public string Aciklama { get; set; }
@@ -20,7 +20,7 @@ namespace OtoServis.DataAccess.Entities
         [ForeignKey("TamirDurum")]
         public int TamirDurumId { get; set; }
         public virtual Arac Arac { get; set; }
-        public virtual Personel Personel { get; set; }
+        public virtual Personel MekanikUsta { get; set; }
         public virtual TamirDurum TamirDurum { get; set; }
     }
 }

@@ -76,8 +76,27 @@ namespace OtoServis
 
         void TamirKayitlariniYukle()
         {
-            var data = dbContext.Tamirler.ToList();
-            DataGridViewHelper.LoadData<Tamir>(dgvTamir, data);
+            var data = dbContext.Tamirler
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Musteri)
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Model)
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Marka)
+                .Include(x => x.TamirDurum)
+                .Include(x => x.MekanikUsta)
+                .Select(x => new TamirDto
+                {
+                    Aciklama = x.Aciklama,
+                    Arac = $"{x.Arac.Plaka} - ({x.Arac.Marka.MarkaAdi}  {x.Arac.Model.ModelAdi})",
+                    Musteri = $"{x.Arac.Musteri.Ad} {x.Arac.Musteri.Soyad} - ({x.Arac.Musteri.Telefon})",
+                    Durum = x.TamirDurum.Durum,
+                    TamirTarihi = x.TamirTarihi,
+                    Usta = $"{x.MekanikUsta.Ad} {x.MekanikUsta.Soyad}",
+                    Data = x
+                }).ToList();
+
+            DataGridViewHelper.LoadData<TamirDto>(dgvTamir, data);
         }
         void TamirEkle()
         {

@@ -101,7 +101,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dtpTamirTarihi);
-            groupBox2.Location = new Point(17, 239);
+            groupBox2.Location = new Point(10, 183);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(7, 3, 7, 3);
             groupBox2.Size = new Size(339, 51);
@@ -120,7 +120,7 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(txtAciklama);
-            groupBox3.Location = new Point(17, 296);
+            groupBox3.Location = new Point(10, 240);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(7, 3, 7, 7);
             groupBox3.Size = new Size(339, 148);
@@ -141,7 +141,7 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(cmbDurum);
-            groupBox4.Location = new Point(17, 450);
+            groupBox4.Location = new Point(10, 394);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(7, 3, 7, 3);
             groupBox4.Size = new Size(339, 51);
@@ -166,7 +166,7 @@
             groupBox6.Location = new Point(357, 12);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(5);
-            groupBox6.Size = new Size(666, 410);
+            groupBox6.Size = new Size(1101, 462);
             groupBox6.TabIndex = 17;
             groupBox6.TabStop = false;
             groupBox6.Text = "Tamir Kayıtları";
@@ -177,13 +177,13 @@
             dgvTamir.Dock = DockStyle.Fill;
             dgvTamir.Location = new Point(5, 21);
             dgvTamir.Name = "dgvTamir";
-            dgvTamir.Size = new Size(656, 384);
+            dgvTamir.Size = new Size(1091, 436);
             dgvTamir.TabIndex = 0;
             // 
             // btnKaydet
             // 
             btnKaydet.Cursor = Cursors.Hand;
-            btnKaydet.Location = new Point(17, 507);
+            btnKaydet.Location = new Point(10, 451);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(339, 23);
             btnKaydet.TabIndex = 18;
@@ -217,7 +217,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1187, 591);
+            ClientSize = new Size(1464, 479);
             Controls.Add(groupBox7);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox6);
@@ -227,6 +227,7 @@
             Controls.Add(groupBox1);
             Controls.Add(groupBox5);
             Name = "FrmTamirYonetimPaneli";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmTamirYonetimPaneli";
             Load += FrmTamirYonetimPaneli_Load;
             groupBox1.ResumeLayout(false);
