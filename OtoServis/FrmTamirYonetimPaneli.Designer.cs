@@ -38,11 +38,19 @@
             txtAciklama = new TextBox();
             groupBox4 = new GroupBox();
             cmbDurum = new ComboBox();
+            groupBox6 = new GroupBox();
+            dgvTamir = new DataGridView();
+            btnKaydet = new Button();
+            groupBox7 = new GroupBox();
+            cmbUsta = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
+            groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTamir).BeginInit();
+            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -93,7 +101,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dtpTamirTarihi);
-            groupBox2.Location = new Point(12, 126);
+            groupBox2.Location = new Point(17, 239);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(7, 3, 7, 3);
             groupBox2.Size = new Size(339, 51);
@@ -112,7 +120,7 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(txtAciklama);
-            groupBox3.Location = new Point(12, 183);
+            groupBox3.Location = new Point(17, 296);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(7, 3, 7, 7);
             groupBox3.Size = new Size(339, 148);
@@ -133,7 +141,7 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(cmbDurum);
-            groupBox4.Location = new Point(12, 337);
+            groupBox4.Location = new Point(17, 450);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(7, 3, 7, 3);
             groupBox4.Size = new Size(339, 51);
@@ -152,11 +160,67 @@
             cmbDurum.Size = new Size(325, 23);
             cmbDurum.TabIndex = 0;
             // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(dgvTamir);
+            groupBox6.Location = new Point(357, 12);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new Padding(5);
+            groupBox6.Size = new Size(666, 410);
+            groupBox6.TabIndex = 17;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Tamir Kayıtları";
+            // 
+            // dgvTamir
+            // 
+            dgvTamir.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTamir.Dock = DockStyle.Fill;
+            dgvTamir.Location = new Point(5, 21);
+            dgvTamir.Name = "dgvTamir";
+            dgvTamir.Size = new Size(656, 384);
+            dgvTamir.TabIndex = 0;
+            // 
+            // btnKaydet
+            // 
+            btnKaydet.Cursor = Cursors.Hand;
+            btnKaydet.Location = new Point(17, 507);
+            btnKaydet.Name = "btnKaydet";
+            btnKaydet.Size = new Size(339, 23);
+            btnKaydet.TabIndex = 18;
+            btnKaydet.Text = "Kaydet";
+            btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(cmbUsta);
+            groupBox7.Location = new Point(10, 126);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Padding = new Padding(7, 3, 7, 3);
+            groupBox7.Size = new Size(339, 51);
+            groupBox7.TabIndex = 19;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Usta";
+            // 
+            // cmbUsta
+            // 
+            cmbUsta.Dock = DockStyle.Fill;
+            cmbUsta.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUsta.FormattingEnabled = true;
+            cmbUsta.Items.AddRange(new object[] { "Seçiniz" });
+            cmbUsta.Location = new Point(7, 19);
+            cmbUsta.Name = "cmbUsta";
+            cmbUsta.Size = new Size(325, 23);
+            cmbUsta.TabIndex = 0;
+            // 
             // FrmTamirYonetimPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1187, 591);
+            Controls.Add(groupBox7);
+            Controls.Add(btnKaydet);
+            Controls.Add(groupBox6);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -171,6 +235,9 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvTamir).EndInit();
+            groupBox7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -185,5 +252,10 @@
         private TextBox txtAciklama;
         private GroupBox groupBox4;
         private ComboBox cmbDurum;
+        private GroupBox groupBox6;
+        private DataGridView dgvTamir;
+        private Button btnKaydet;
+        private GroupBox groupBox7;
+        private ComboBox cmbUsta;
     }
 }
