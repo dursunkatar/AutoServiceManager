@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox7 = new GroupBox();
-            cmbSatisPersonelID = new ComboBox();
+            cmbSatisPersonel = new ComboBox();
             groupBox1 = new GroupBox();
             cmbArac = new ComboBox();
             groupBox5 = new GroupBox();
@@ -37,7 +37,7 @@
             groupBox2 = new GroupBox();
             cmbParca = new ComboBox();
             groupBox3 = new GroupBox();
-            dtpTamirTarihi = new DateTimePicker();
+            dtpSatisTarihi = new DateTimePicker();
             groupBox4 = new GroupBox();
             txtMiktar = new TextBox();
             groupBox6 = new GroupBox();
@@ -57,7 +57,7 @@
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(cmbSatisPersonelID);
+            groupBox7.Controls.Add(cmbSatisPersonel);
             groupBox7.Location = new Point(12, 240);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(7, 3, 7, 3);
@@ -66,16 +66,16 @@
             groupBox7.TabStop = false;
             groupBox7.Text = "Satış Personeli";
             // 
-            // cmbSatisPersonelID
+            // cmbSatisPersonel
             // 
-            cmbSatisPersonelID.Dock = DockStyle.Fill;
-            cmbSatisPersonelID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSatisPersonelID.FormattingEnabled = true;
-            cmbSatisPersonelID.Items.AddRange(new object[] { "Seçiniz" });
-            cmbSatisPersonelID.Location = new Point(7, 19);
-            cmbSatisPersonelID.Name = "cmbSatisPersonelID";
-            cmbSatisPersonelID.Size = new Size(325, 23);
-            cmbSatisPersonelID.TabIndex = 0;
+            cmbSatisPersonel.Dock = DockStyle.Fill;
+            cmbSatisPersonel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSatisPersonel.FormattingEnabled = true;
+            cmbSatisPersonel.Items.AddRange(new object[] { "Seçiniz" });
+            cmbSatisPersonel.Location = new Point(7, 19);
+            cmbSatisPersonel.Name = "cmbSatisPersonel";
+            cmbSatisPersonel.Size = new Size(325, 23);
+            cmbSatisPersonel.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -146,7 +146,7 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(dtpTamirTarihi);
+            groupBox3.Controls.Add(dtpSatisTarihi);
             groupBox3.Location = new Point(12, 297);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(7, 3, 7, 3);
@@ -155,13 +155,13 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Tamir Tarihi";
             // 
-            // dtpTamirTarihi
+            // dtpSatisTarihi
             // 
-            dtpTamirTarihi.Dock = DockStyle.Fill;
-            dtpTamirTarihi.Location = new Point(7, 19);
-            dtpTamirTarihi.Name = "dtpTamirTarihi";
-            dtpTamirTarihi.Size = new Size(325, 23);
-            dtpTamirTarihi.TabIndex = 14;
+            dtpSatisTarihi.Dock = DockStyle.Fill;
+            dtpSatisTarihi.Location = new Point(7, 19);
+            dtpSatisTarihi.Name = "dtpSatisTarihi";
+            dtpSatisTarihi.Size = new Size(325, 23);
+            dtpSatisTarihi.TabIndex = 14;
             // 
             // groupBox4
             // 
@@ -252,7 +252,7 @@
         #endregion
 
         private GroupBox groupBox7;
-        private ComboBox cmbSatisPersonelID;
+        private ComboBox cmbSatisPersonel;
         private GroupBox groupBox1;
         private ComboBox cmbArac;
         private GroupBox groupBox5;
@@ -260,7 +260,7 @@
         private GroupBox groupBox2;
         private ComboBox cmbParca;
         private GroupBox groupBox3;
-        private DateTimePicker dtpTamirTarihi;
+        private DateTimePicker dtpSatisTarihi;
         private GroupBox groupBox4;
         private TextBox txtMiktar;
         private GroupBox groupBox6;

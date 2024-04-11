@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
+using OtoServis.DataAccess.Entities;
 using OtoServis.Dto;
 using OtoServis.Helper;
 using System.Data;
@@ -15,6 +16,71 @@ namespace OtoServis
         {
             InitializeComponent();
             dbContext = DbContextBuilder.Build();
+        }
+
+        void SaatisEkle()
+        {
+            var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+            var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
+            var secilenParca = cmbParca.SelectedItem as TextValueDto<int>;
+            var secilenSatisPersonel = cmbSatisPersonel.SelectedItem as TextValueDto<int>;
+
+            string miktarBilgisi = txtMiktar.Text.Trim();
+            string tutarBilgisi = txtTutar.Text.Trim();
+
+            if (secilenMusteri is null || secilenMusteri.Value == -1)
+            {
+                MessageBox.Show("Müşteri seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (secilenArac is null || secilenArac.Value == -1)
+            {
+                MessageBox.Show("Araç seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (secilenParca is null || secilenParca.Value == -1)
+            {
+                MessageBox.Show("Parça seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (secilenSatisPersonel is null || secilenSatisPersonel.Value == -1)
+            {
+                MessageBox.Show("Satış Personeli seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (!decimal.TryParse(tutarBilgisi, out decimal tutar))
+            {
+                MessageBox.Show("Tutar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(miktarBilgisi, out int miktar))
+            {
+                MessageBox.Show("Miktar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dbContext.Satislar.Add(new Satis
+            {
+                AracId = secilenParca.Value,
+                Miktar = miktar,
+                MusteriID = secilenMusteri.Value,
+                ParcaID = secilenParca.Value,
+                SatisPersonelID = secilenSatisPersonel.Value,
+                Tarih = dtpSatisTarihi.Value,
+                ToplamTutar = tutar
+            });
+
+            dbContext.SaveChanges();
+            InputlariTemizle();
+            MessageBox.Show("Kayıt başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        void InputlariTemizle()
+        {
+
         }
 
         void ParcalariYukle()
@@ -54,7 +120,7 @@ namespace OtoServis
                 Value = -1
             });
 
-            ComboBoxHelper.LoadData(cmbSatisPersonelID, data, "Text", "Value");
+            ComboBoxHelper.LoadData(cmbSatisPersonel, data, "Text", "Value");
         }
 
         void AraclariYukle(int musteriId)
