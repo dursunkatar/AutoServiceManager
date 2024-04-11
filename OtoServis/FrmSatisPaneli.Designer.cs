@@ -1,0 +1,271 @@
+﻿namespace OtoServis
+{
+    partial class FrmSatisPaneli
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            groupBox7 = new GroupBox();
+            cmbSatisPersonelID = new ComboBox();
+            groupBox1 = new GroupBox();
+            cmbArac = new ComboBox();
+            groupBox5 = new GroupBox();
+            cmbMusteri = new ComboBox();
+            groupBox2 = new GroupBox();
+            cmbParca = new ComboBox();
+            groupBox3 = new GroupBox();
+            dtpTamirTarihi = new DateTimePicker();
+            groupBox4 = new GroupBox();
+            txtMiktar = new TextBox();
+            groupBox6 = new GroupBox();
+            txtTutar = new TextBox();
+            groupBox8 = new GroupBox();
+            dgvPersonel = new DataGridView();
+            groupBox7.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPersonel).BeginInit();
+            SuspendLayout();
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(cmbSatisPersonelID);
+            groupBox7.Location = new Point(12, 240);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Padding = new Padding(7, 3, 7, 3);
+            groupBox7.Size = new Size(339, 51);
+            groupBox7.TabIndex = 22;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Satış Personeli";
+            // 
+            // cmbSatisPersonelID
+            // 
+            cmbSatisPersonelID.Dock = DockStyle.Fill;
+            cmbSatisPersonelID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSatisPersonelID.FormattingEnabled = true;
+            cmbSatisPersonelID.Items.AddRange(new object[] { "Seçiniz" });
+            cmbSatisPersonelID.Location = new Point(7, 19);
+            cmbSatisPersonelID.Name = "cmbSatisPersonelID";
+            cmbSatisPersonelID.Size = new Size(325, 23);
+            cmbSatisPersonelID.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(cmbArac);
+            groupBox1.Location = new Point(12, 69);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(7, 3, 7, 3);
+            groupBox1.Size = new Size(339, 51);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Araç";
+            // 
+            // cmbArac
+            // 
+            cmbArac.Dock = DockStyle.Fill;
+            cmbArac.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbArac.FormattingEnabled = true;
+            cmbArac.Items.AddRange(new object[] { "Seçiniz" });
+            cmbArac.Location = new Point(7, 19);
+            cmbArac.Name = "cmbArac";
+            cmbArac.Size = new Size(325, 23);
+            cmbArac.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(cmbMusteri);
+            groupBox5.Location = new Point(12, 12);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Padding = new Padding(7, 3, 7, 3);
+            groupBox5.Size = new Size(339, 51);
+            groupBox5.TabIndex = 20;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Müşteri";
+            // 
+            // cmbMusteri
+            // 
+            cmbMusteri.Dock = DockStyle.Fill;
+            cmbMusteri.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMusteri.FormattingEnabled = true;
+            cmbMusteri.Items.AddRange(new object[] { "Seçiniz" });
+            cmbMusteri.Location = new Point(7, 19);
+            cmbMusteri.Name = "cmbMusteri";
+            cmbMusteri.Size = new Size(325, 23);
+            cmbMusteri.TabIndex = 0;
+            cmbMusteri.SelectedIndexChanged += cmbMusteri_SelectedIndexChanged;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(cmbParca);
+            groupBox2.Location = new Point(12, 126);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new Padding(7, 3, 7, 3);
+            groupBox2.Size = new Size(339, 51);
+            groupBox2.TabIndex = 23;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Parça";
+            // 
+            // cmbParca
+            // 
+            cmbParca.Dock = DockStyle.Fill;
+            cmbParca.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbParca.FormattingEnabled = true;
+            cmbParca.Items.AddRange(new object[] { "Seçiniz" });
+            cmbParca.Location = new Point(7, 19);
+            cmbParca.Name = "cmbParca";
+            cmbParca.Size = new Size(325, 23);
+            cmbParca.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(dtpTamirTarihi);
+            groupBox3.Location = new Point(12, 297);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(7, 3, 7, 3);
+            groupBox3.Size = new Size(339, 51);
+            groupBox3.TabIndex = 24;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Tamir Tarihi";
+            // 
+            // dtpTamirTarihi
+            // 
+            dtpTamirTarihi.Dock = DockStyle.Fill;
+            dtpTamirTarihi.Location = new Point(7, 19);
+            dtpTamirTarihi.Name = "dtpTamirTarihi";
+            dtpTamirTarihi.Size = new Size(325, 23);
+            dtpTamirTarihi.TabIndex = 14;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(txtMiktar);
+            groupBox4.Location = new Point(12, 183);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new Padding(7, 3, 7, 3);
+            groupBox4.Size = new Size(339, 51);
+            groupBox4.TabIndex = 25;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Miktar";
+            // 
+            // txtMiktar
+            // 
+            txtMiktar.Dock = DockStyle.Fill;
+            txtMiktar.Location = new Point(7, 19);
+            txtMiktar.Name = "txtMiktar";
+            txtMiktar.Size = new Size(325, 23);
+            txtMiktar.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(txtTutar);
+            groupBox6.Location = new Point(12, 354);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new Padding(7, 3, 7, 3);
+            groupBox6.Size = new Size(339, 51);
+            groupBox6.TabIndex = 26;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Toplam Tutar";
+            // 
+            // txtTutar
+            // 
+            txtTutar.Dock = DockStyle.Fill;
+            txtTutar.Location = new Point(7, 19);
+            txtTutar.Name = "txtTutar";
+            txtTutar.Size = new Size(325, 23);
+            txtTutar.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(dgvPersonel);
+            groupBox8.Location = new Point(357, 12);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(674, 360);
+            groupBox8.TabIndex = 27;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "Personeller";
+            // 
+            // dgvPersonel
+            // 
+            dgvPersonel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPersonel.Location = new Point(6, 22);
+            dgvPersonel.Name = "dgvPersonel";
+            dgvPersonel.Size = new Size(662, 332);
+            dgvPersonel.TabIndex = 0;
+            // 
+            // FrmSatisPaneli
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1270, 482);
+            Controls.Add(groupBox8);
+            Controls.Add(groupBox6);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox7);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBox5);
+            Name = "FrmSatisPaneli";
+            Text = "FrmSatisPaneli";
+            Load += FrmSatisPaneli_Load;
+            groupBox7.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvPersonel).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private GroupBox groupBox7;
+        private ComboBox cmbSatisPersonelID;
+        private GroupBox groupBox1;
+        private ComboBox cmbArac;
+        private GroupBox groupBox5;
+        private ComboBox cmbMusteri;
+        private GroupBox groupBox2;
+        private ComboBox cmbParca;
+        private GroupBox groupBox3;
+        private DateTimePicker dtpTamirTarihi;
+        private GroupBox groupBox4;
+        private TextBox txtMiktar;
+        private GroupBox groupBox6;
+        private TextBox txtTutar;
+        private GroupBox groupBox8;
+        private DataGridView dgvPersonel;
+    }
+}

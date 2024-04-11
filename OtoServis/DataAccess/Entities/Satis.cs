@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OtoServis.DataAccess.Entities
 {
@@ -23,6 +18,9 @@ namespace OtoServis.DataAccess.Entities
         [ForeignKey("Musteri")]
         public int MusteriID { get; set; }
 
+        [ForeignKey("Arac")]
+        public int AracId { get; set; }
+
         public int Miktar { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
@@ -32,5 +30,6 @@ namespace OtoServis.DataAccess.Entities
         public virtual Parca Parca { get; set; }
         public virtual Personel Personel { get; set; }
         public virtual Musteri Musteri { get; set; }
+        public virtual Arac Arac { get; set; }
     }
 }
