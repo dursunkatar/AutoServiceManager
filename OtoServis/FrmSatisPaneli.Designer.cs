@@ -44,6 +44,7 @@
             txtTutar = new TextBox();
             groupBox8 = new GroupBox();
             dgvPersonel = new DataGridView();
+            btnKaydet = new Button();
             groupBox7.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -143,6 +144,7 @@
             cmbParca.Name = "cmbParca";
             cmbParca.Size = new Size(325, 23);
             cmbParca.TabIndex = 0;
+            cmbParca.SelectedIndexChanged += cmbParca_SelectedIndexChanged;
             // 
             // groupBox3
             // 
@@ -181,6 +183,7 @@
             txtMiktar.Name = "txtMiktar";
             txtMiktar.Size = new Size(325, 23);
             txtMiktar.TabIndex = 0;
+            txtMiktar.TextChanged += txtMiktar_TextChanged;
             // 
             // groupBox6
             // 
@@ -219,11 +222,23 @@
             dgvPersonel.Size = new Size(662, 332);
             dgvPersonel.TabIndex = 0;
             // 
+            // btnKaydet
+            // 
+            btnKaydet.Cursor = Cursors.Hand;
+            btnKaydet.Location = new Point(12, 411);
+            btnKaydet.Name = "btnKaydet";
+            btnKaydet.Size = new Size(114, 23);
+            btnKaydet.TabIndex = 28;
+            btnKaydet.Text = "Kaydet";
+            btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
+            // 
             // FrmSatisPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1270, 482);
+            Controls.Add(btnKaydet);
             Controls.Add(groupBox8);
             Controls.Add(groupBox6);
             Controls.Add(groupBox4);
@@ -267,5 +282,6 @@
         private TextBox txtTutar;
         private GroupBox groupBox8;
         private DataGridView dgvPersonel;
+        private Button btnKaydet;
     }
 }

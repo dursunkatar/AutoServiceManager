@@ -5,6 +5,7 @@ using OtoServis.DataAccess.Entities;
 using OtoServis.Dto;
 using OtoServis.Helper;
 using System.Data;
+using System.Globalization;
 
 namespace OtoServis
 {
@@ -18,7 +19,7 @@ namespace OtoServis
             dbContext = DbContextBuilder.Build();
         }
 
-        void SaatisEkle()
+        void SatisEkle()
         {
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
             var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
@@ -26,7 +27,7 @@ namespace OtoServis
             var secilenSatisPersonel = cmbSatisPersonel.SelectedItem as TextValueDto<int>;
 
             string miktarBilgisi = txtMiktar.Text.Trim();
-            string tutarBilgisi = txtTutar.Text.Trim();
+            string tutarBilgisi = txtTutar.Text.Trim().TrimStart('₺');
 
             if (secilenMusteri is null || secilenMusteri.Value == -1)
             {
@@ -49,15 +50,23 @@ namespace OtoServis
                 return;
             }
 
+            if (!int.TryParse(miktarBilgisi, out int miktar))
+            {
+                MessageBox.Show("Miktar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!decimal.TryParse(tutarBilgisi, out decimal tutar))
             {
                 MessageBox.Show("Tutar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!int.TryParse(miktarBilgisi, out int miktar))
+            var parca = dbContext.Parcalar.Where(p => p.ParcaID == secilenArac.Value).First();
+
+            if (miktar > parca.StokAdet)
             {
-                MessageBox.Show("Miktar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Girilen miktar, parçanın stok miktarından fazla!  Stok: {parca.StokAdet}", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -72,7 +81,10 @@ namespace OtoServis
                 ToplamTutar = tutar
             });
 
+            parca.StokAdet -= miktar;
+            dbContext.Entry<Parca>(parca).State = EntityState.Modified;
             dbContext.SaveChanges();
+
             InputlariTemizle();
             MessageBox.Show("Kayıt başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -80,7 +92,15 @@ namespace OtoServis
 
         void InputlariTemizle()
         {
-
+            txtMiktar.Clear();
+            txtTutar.Clear();
+            cmbMusteri.SelectedIndex = 0;
+            cmbArac.SelectedIndex = 0;
+            cmbParca.SelectedIndex = 0;
+            cmbMusteri.Enabled = true;
+            cmbArac.Enabled = true;
+            isSaving = true;
+            btnKaydet.Text = "Kaydet";
         }
 
         void ParcalariYukle()
@@ -179,6 +199,42 @@ namespace OtoServis
             {
                 AraclariYukle(selectedData.Value);
             }
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            SatisEkle();
+        }
+
+        void txtToplamTutarHesapla()
+        {
+            var secilenParca = cmbParca.SelectedItem as TextValueDto<int>;
+
+            if (secilenParca is null || secilenParca.Value == -1) return;
+
+            string miktarStr = txtMiktar.Text.Trim();
+
+            if (miktarStr == string.Empty) return;
+
+            if (!int.TryParse(miktarStr, out int miktar))
+            {
+                return;
+            }
+
+            var parca = dbContext.Parcalar.First(p => p.ParcaID == secilenParca.Value);
+
+            decimal toplamTutar = parca.Fiyat * miktar;
+            string toplamTutarStr = toplamTutar.ToString("C2", CultureInfo.CreateSpecificCulture("tr-TR"));
+            txtTutar.Text = toplamTutarStr;
+        }
+        private void txtMiktar_TextChanged(object sender, EventArgs e)
+        {
+            txtToplamTutarHesapla();
+        }
+
+        private void cmbParca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtToplamTutarHesapla();
         }
     }
 }
