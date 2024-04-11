@@ -43,7 +43,7 @@
             groupBox6 = new GroupBox();
             txtTutar = new TextBox();
             groupBox8 = new GroupBox();
-            dgvPersonel = new DataGridView();
+            dgvSatis = new DataGridView();
             btnKaydet = new Button();
             groupBox7.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -53,7 +53,7 @@
             groupBox4.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPersonel).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSatis).BeginInit();
             SuspendLayout();
             // 
             // groupBox7
@@ -206,21 +206,23 @@
             // 
             // groupBox8
             // 
-            groupBox8.Controls.Add(dgvPersonel);
+            groupBox8.Controls.Add(dgvSatis);
             groupBox8.Location = new Point(357, 12);
             groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(674, 360);
+            groupBox8.Padding = new Padding(7);
+            groupBox8.Size = new Size(1104, 360);
             groupBox8.TabIndex = 27;
             groupBox8.TabStop = false;
             groupBox8.Text = "Personeller";
             // 
-            // dgvPersonel
+            // dgvSatis
             // 
-            dgvPersonel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPersonel.Location = new Point(6, 22);
-            dgvPersonel.Name = "dgvPersonel";
-            dgvPersonel.Size = new Size(662, 332);
-            dgvPersonel.TabIndex = 0;
+            dgvSatis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSatis.Dock = DockStyle.Fill;
+            dgvSatis.Location = new Point(7, 23);
+            dgvSatis.Name = "dgvSatis";
+            dgvSatis.Size = new Size(1090, 330);
+            dgvSatis.TabIndex = 0;
             // 
             // btnKaydet
             // 
@@ -237,7 +239,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1270, 482);
+            ClientSize = new Size(1509, 482);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox8);
             Controls.Add(groupBox6);
@@ -260,7 +262,7 @@
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvPersonel).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSatis).EndInit();
             ResumeLayout(false);
         }
 
@@ -281,7 +283,7 @@
         private GroupBox groupBox6;
         private TextBox txtTutar;
         private GroupBox groupBox8;
-        private DataGridView dgvPersonel;
+        private DataGridView dgvSatis;
         private Button btnKaydet;
     }
 }

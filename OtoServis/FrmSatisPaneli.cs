@@ -19,6 +19,30 @@ namespace OtoServis
             dbContext = DbContextBuilder.Build();
         }
 
+        void SatislariYukle(int musteriId = -1)
+        {
+            var data = dbContext.Satislar
+                .Include(x => x.Musteri)
+                .Include(x => x.SatisPersonel)
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Model)
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Marka)
+                .Where(x => musteriId == -1 || x.MusteriID == musteriId)
+                .Select(x => new SatisDto
+                {
+                    Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad}",
+                    Arac = $"{x.Arac.Plaka} - ({x.Arac.Marka.MarkaAdi}  {x.Arac.Model.ModelAdi})",
+                    Miktar = x.Miktar,
+                    SatisPersonel = $"{x.SatisPersonel.Ad} {x.SatisPersonel.Soyad}",
+                    Parca = x.Parca.ParcaAdi,
+                    Tarih = x.Tarih,
+                    ToplamTutar = x.ToplamTutar,
+                    Data = x
+                }).ToList();
+
+            DataGridViewHelper.LoadData<SatisDto>(dgvSatis, data);
+        }
         void SatisEkle()
         {
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
@@ -189,6 +213,7 @@ namespace OtoServis
             MusterileriYukle();
             ParcalariYukle();
             SatisPersonelYukle();
+            SatislariYukle();
         }
 
         private void cmbMusteri_SelectedIndexChanged(object sender, EventArgs e)
