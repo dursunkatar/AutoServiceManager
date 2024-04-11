@@ -187,7 +187,7 @@
             groupBox8.Location = new Point(357, 12);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(7);
-            groupBox8.Size = new Size(1104, 422);
+            groupBox8.Size = new Size(902, 422);
             groupBox8.TabIndex = 27;
             groupBox8.TabStop = false;
             groupBox8.Text = "Satışlar";
@@ -198,7 +198,7 @@
             dgvSatis.Dock = DockStyle.Fill;
             dgvSatis.Location = new Point(7, 23);
             dgvSatis.Name = "dgvSatis";
-            dgvSatis.Size = new Size(1090, 392);
+            dgvSatis.Size = new Size(888, 392);
             dgvSatis.TabIndex = 0;
             dgvSatis.CellClick += dgvSatis_CellClick;
             // 
@@ -239,7 +239,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1466, 440);
+            ClientSize = new Size(1264, 440);
             Controls.Add(btnSil);
             Controls.Add(btnTemizle);
             Controls.Add(btnKaydet);
@@ -250,7 +250,10 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox7);
             Controls.Add(groupBox5);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmSatisPaneli";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmSatisPaneli";
             Load += FrmSatisPaneli_Load;
             groupBox7.ResumeLayout(false);

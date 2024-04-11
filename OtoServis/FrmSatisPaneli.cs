@@ -222,7 +222,7 @@ namespace OtoServis
             txtTutar.Clear();
             cmbMusteri.SelectedIndex = 0;
             cmbParca.SelectedIndex = 0;
-            cmbMusteri.Enabled = true;
+            cmbSatisPersonel.SelectedIndex = 0;
             isSaving = true;
             btnKaydet.Text = "Kaydet";
         }
