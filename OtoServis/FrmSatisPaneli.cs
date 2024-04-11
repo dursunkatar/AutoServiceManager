@@ -43,6 +43,116 @@ namespace OtoServis
 
             DataGridViewHelper.LoadData<SatisDto>(dgvSatis, data);
         }
+
+        void SatisGuncelle()
+        {
+            var (ok, satis) = DataGridViewHelper.GetSelectedValue<SatisDto>(dgvSatis);
+
+            if (!ok)
+            {
+                MessageBox.Show("Güncellenecek Kayıt Yok", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+            var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
+            var secilenParca = cmbParca.SelectedItem as TextValueDto<int>;
+            var secilenSatisPersonel = cmbSatisPersonel.SelectedItem as TextValueDto<int>;
+
+            string miktarBilgisi = txtMiktar.Text.Trim();
+            string tutarBilgisi = txtTutar.Text.Trim().TrimStart('₺');
+
+            if (secilenMusteri is null || secilenMusteri.Value == -1)
+            {
+                MessageBox.Show("Müşteri seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (secilenArac is null || secilenArac.Value == -1)
+            {
+                MessageBox.Show("Araç seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (secilenParca is null || secilenParca.Value == -1)
+            {
+                MessageBox.Show("Parça seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (secilenSatisPersonel is null || secilenSatisPersonel.Value == -1)
+            {
+                MessageBox.Show("Satış Personeli seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (!int.TryParse(miktarBilgisi, out int miktar))
+            {
+                MessageBox.Show("Miktar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (miktar <= 0)
+            {
+                MessageBox.Show("Miktar en az 1 olabilir", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!decimal.TryParse(tutarBilgisi, out decimal tutar))
+            {
+                MessageBox.Show("Tutar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var parca = dbContext.Parcalar.Where(p => p.ParcaID == secilenParca.Value).First();
+
+
+            if (secilenParca.Value == satis.Data.ParcaID)
+            {
+                if (miktar > satis.Data.Miktar)
+                {
+                    int artanMiktar = miktar - satis.Data.Miktar;
+
+                    if (artanMiktar > parca.StokAdet)
+                    {
+                        MessageBox.Show($"Girilen miktar, parçanın stok miktarından fazla!  Stok: {parca.StokAdet}", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+
+                    parca.StokAdet -= artanMiktar;
+                }
+                else if (miktar < satis.Data.Miktar)
+                {
+                    int eksilenMiktar = satis.Data.Miktar - miktar;
+                    parca.StokAdet += eksilenMiktar;
+                }
+            }
+            else
+            {
+                if (miktar > parca.StokAdet)
+                {
+                    MessageBox.Show($"Girilen miktar, parçanın stok miktarından fazla!  Stok: {parca.StokAdet}", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                satis.Data.Parca.StokAdet += satis.Data.Miktar;
+                parca.StokAdet -= miktar;
+                dbContext.Entry<Parca>(satis.Data.Parca).State = EntityState.Modified;
+
+            }
+
+            dbContext.Entry<Parca>(parca).State = EntityState.Modified;
+
+            satis.Data.AracId = secilenArac.Value;
+            satis.Data.Miktar = miktar;
+            satis.Data.MusteriID = secilenMusteri.Value;
+            satis.Data.ParcaID = secilenParca.Value;
+            satis.Data.SatisPersonelID = secilenSatisPersonel.Value;
+            satis.Data.Tarih = dtpSatisTarihi.Value;
+            satis.Data.ToplamTutar = tutar;
+            dbContext.Entry<Satis>(satis.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            SatislariYukle();
+            MessageBox.Show("Güncelleme başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
         void SatisEkle()
         {
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
@@ -80,6 +190,12 @@ namespace OtoServis
                 return;
             }
 
+            if (miktar <= 0)
+            {
+                MessageBox.Show("Miktar en az 1 olabilir", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!decimal.TryParse(tutarBilgisi, out decimal tutar))
             {
                 MessageBox.Show("Tutar bilgisi geçersiz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,7 +212,7 @@ namespace OtoServis
 
             dbContext.Satislar.Add(new Satis
             {
-                AracId = secilenParca.Value,
+                AracId = secilenArac.Value,
                 Miktar = miktar,
                 MusteriID = secilenMusteri.Value,
                 ParcaID = secilenParca.Value,
@@ -108,7 +224,7 @@ namespace OtoServis
             parca.StokAdet -= miktar;
             dbContext.Entry<Parca>(parca).State = EntityState.Modified;
             dbContext.SaveChanges();
-
+            SatislariYukle();
             InputlariTemizle();
             MessageBox.Show("Kayıt başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -228,7 +344,21 @@ namespace OtoServis
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            SatisEkle();
+            try
+            {
+                if (isSaving)
+                {
+                    SatisEkle();
+                }
+                else
+                {
+                    SatisGuncelle();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         void txtToplamTutarHesapla()
@@ -260,6 +390,26 @@ namespace OtoServis
         private void cmbParca_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtToplamTutarHesapla();
+        }
+
+        private void dgvSatis_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var (ok, satis) = DataGridViewHelper.GetSelectedValue<SatisDto>(dgvSatis);
+
+            if (!ok) return;
+
+            ComboBoxHelper.SelectItemByValue(cmbMusteri, satis.Data.MusteriID);
+            ComboBoxHelper.SelectItemByValue(cmbArac, satis.Data.AracId);
+            ComboBoxHelper.SelectItemByValue(cmbSatisPersonel, satis.Data.SatisPersonelID);
+            ComboBoxHelper.SelectItemByValue(cmbParca, satis.Data.ParcaID);
+
+            dtpSatisTarihi.Value = satis.Tarih;
+            txtMiktar.Text = satis.Miktar.ToString();
+
+            string toplamTutarStr = satis.ToplamTutar.ToString("C2", CultureInfo.CreateSpecificCulture("tr-TR"));
+            txtTutar.Text = toplamTutarStr;
+            btnKaydet.Text = "Güncelle";
+            isSaving = false;
         }
     }
 }

@@ -223,6 +223,7 @@
             dgvSatis.Name = "dgvSatis";
             dgvSatis.Size = new Size(1090, 330);
             dgvSatis.TabIndex = 0;
+            dgvSatis.CellClick += dgvSatis_CellClick;
             // 
             // btnKaydet
             // 
