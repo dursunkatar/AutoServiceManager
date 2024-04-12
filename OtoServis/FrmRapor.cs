@@ -158,5 +158,25 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportMusterilereGoreToplamHarcamaMiktari", "DataSetRaporMusterilereGoreToplamHarcamaMiktari");
         }
+
+        private void btnMusterilerinEnSonSatinAldiklariParcalar_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpMusterilerinEnSonSatinAldiklariParcalarTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportMusterilerinEnSonSatinAldiklariParcalar", "DataSetRaporMusterilerinEnSonSatinAldiklariParcalar");
+        }
+
+        private void btnMusterininTamirIcinHarcadigiToplamTutar_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpMusterininTamirIcinHarcadigiToplamTutarTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportMusterininTamirIcinHarcadigiToplamTutar", "DataSetRaporMusterininTamirIcinHarcadigiToplamTutar");
+        }
     }
 }

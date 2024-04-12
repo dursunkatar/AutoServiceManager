@@ -43,6 +43,8 @@
             btnMekanikUstalarinTamirEttigiAracSayisi = new Button();
             btnModelYilinaGoreAracSayisi = new Button();
             btnMusterilereGoreToplamHarcamaMiktari = new Button();
+            btnMusterilerinEnSonSatinAldiklariParcalar = new Button();
+            btnMusterininTamirIcinHarcadigiToplamTutar = new Button();
             SuspendLayout();
             // 
             // btn
@@ -225,11 +227,37 @@
             btnMusterilereGoreToplamHarcamaMiktari.UseVisualStyleBackColor = true;
             btnMusterilereGoreToplamHarcamaMiktari.Click += btnMusterilereGoreToplamHarcamaMiktari_Click;
             // 
+            // btnMusterilerinEnSonSatinAldiklariParcalar
+            // 
+            btnMusterilerinEnSonSatinAldiklariParcalar.Cursor = Cursors.Hand;
+            btnMusterilerinEnSonSatinAldiklariParcalar.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnMusterilerinEnSonSatinAldiklariParcalar.Location = new Point(12, 522);
+            btnMusterilerinEnSonSatinAldiklariParcalar.Name = "btnMusterilerinEnSonSatinAldiklariParcalar";
+            btnMusterilerinEnSonSatinAldiklariParcalar.Size = new Size(626, 28);
+            btnMusterilerinEnSonSatinAldiklariParcalar.TabIndex = 15;
+            btnMusterilerinEnSonSatinAldiklariParcalar.Text = "MÜŞTERİLERİN EN SON SATIN ALDIKLARI PARÇALAR";
+            btnMusterilerinEnSonSatinAldiklariParcalar.UseVisualStyleBackColor = true;
+            btnMusterilerinEnSonSatinAldiklariParcalar.Click += btnMusterilerinEnSonSatinAldiklariParcalar_Click;
+            // 
+            // btnMusterininTamirIcinHarcadigiToplamTutar
+            // 
+            btnMusterininTamirIcinHarcadigiToplamTutar.Cursor = Cursors.Hand;
+            btnMusterininTamirIcinHarcadigiToplamTutar.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnMusterininTamirIcinHarcadigiToplamTutar.Location = new Point(12, 556);
+            btnMusterininTamirIcinHarcadigiToplamTutar.Name = "btnMusterininTamirIcinHarcadigiToplamTutar";
+            btnMusterininTamirIcinHarcadigiToplamTutar.Size = new Size(626, 28);
+            btnMusterininTamirIcinHarcadigiToplamTutar.TabIndex = 16;
+            btnMusterininTamirIcinHarcadigiToplamTutar.Text = "MÜŞTERİNİN TAMİR İÇİN HARCADIĞI TOPLAM TUTAR";
+            btnMusterininTamirIcinHarcadigiToplamTutar.UseVisualStyleBackColor = true;
+            btnMusterininTamirIcinHarcadigiToplamTutar.Click += btnMusterininTamirIcinHarcadigiToplamTutar_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 710);
+            Controls.Add(btnMusterininTamirIcinHarcadigiToplamTutar);
+            Controls.Add(btnMusterilerinEnSonSatinAldiklariParcalar);
             Controls.Add(btnMusterilereGoreToplamHarcamaMiktari);
             Controls.Add(btnModelYilinaGoreAracSayisi);
             Controls.Add(btnMekanikUstalarinTamirEttigiAracSayisi);
@@ -271,5 +299,7 @@
         private Button btnMekanikUstalarinTamirEttigiAracSayisi;
         private Button btnModelYilinaGoreAracSayisi;
         private Button btnMusterilereGoreToplamHarcamaMiktari;
+        private Button btnMusterilerinEnSonSatinAldiklariParcalar;
+        private Button btnMusterininTamirIcinHarcadigiToplamTutar;
     }
 }
