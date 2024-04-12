@@ -6,7 +6,7 @@ namespace OtoServis
         {
             InitializeComponent();
 
-            var s = new FrmRaporBelirliBirMusterininTumAracBilgileri();
+            var s = new FrmRaporBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi();
             s.Show();
         }
     }

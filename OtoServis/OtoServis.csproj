@@ -32,6 +32,9 @@
     <None Update="Rapor\ReportBelirliBirMusterininTumAracBilgileri.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Rapor\ReportBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Rapor\ReportTamirEdilenAraclar.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
