@@ -30,8 +30,12 @@ namespace OtoServis
 
         private void btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi_Click(object sender, EventArgs e)
         {
-            var form = new FrmRaporBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi();
+            using OtoServisDataSetTableAdapters.SpBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
             form.Show();
+            form.RaporuYukle(dataTable, "ReportBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi", "DataSetReportBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi");
         }
 
         private void btnBirYildaYapilanToplamSatisMiktari_Click(object sender, EventArgs e)
