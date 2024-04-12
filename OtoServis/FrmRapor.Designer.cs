@@ -28,19 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnTamirEdilenAracRapor = new Button();
+            btnBelirliBirMusterininTumAracBilgileri = new Button();
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi = new Button();
             SuspendLayout();
+            // 
+            // btnTamirEdilenAracRapor
+            // 
+            btnTamirEdilenAracRapor.Cursor = Cursors.Hand;
+            btnTamirEdilenAracRapor.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnTamirEdilenAracRapor.Location = new Point(12, 12);
+            btnTamirEdilenAracRapor.Name = "btnTamirEdilenAracRapor";
+            btnTamirEdilenAracRapor.Size = new Size(812, 80);
+            btnTamirEdilenAracRapor.TabIndex = 0;
+            btnTamirEdilenAracRapor.Text = "TAMİR EDİLEN ARAÇLAR";
+            btnTamirEdilenAracRapor.UseVisualStyleBackColor = true;
+            btnTamirEdilenAracRapor.Click += btnTamirEdilenAracRapor_Click;
+            // 
+            // btnBelirliBirMusterininTumAracBilgileri
+            // 
+            btnBelirliBirMusterininTumAracBilgileri.Cursor = Cursors.Hand;
+            btnBelirliBirMusterininTumAracBilgileri.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnBelirliBirMusterininTumAracBilgileri.Location = new Point(12, 98);
+            btnBelirliBirMusterininTumAracBilgileri.Name = "btnBelirliBirMusterininTumAracBilgileri";
+            btnBelirliBirMusterininTumAracBilgileri.Size = new Size(812, 80);
+            btnBelirliBirMusterininTumAracBilgileri.TabIndex = 1;
+            btnBelirliBirMusterininTumAracBilgileri.Text = "MÜŞTERİNİN TÜM ARAÇ BİLGİLERİ";
+            btnBelirliBirMusterininTumAracBilgileri.UseVisualStyleBackColor = true;
+            btnBelirliBirMusterininTumAracBilgileri.Click += btnBelirliBirMusterininTumAracBilgileri_Click;
+            // 
+            // btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi
+            // 
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Cursor = Cursors.Hand;
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Location = new Point(12, 184);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Name = "btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi";
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Size = new Size(812, 80);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.TabIndex = 2;
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Text = "1 YILDA TAMİR EDİLEN HER BİR ARACIN BİLGİLERİ VE TAMİR SAYISI";
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.UseVisualStyleBackColor = true;
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Click += btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi_Click;
             // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 538);
+            ClientSize = new Size(834, 271);
+            Controls.Add(btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi);
+            Controls.Add(btnBelirliBirMusterininTumAracBilgileri);
+            Controls.Add(btnTamirEdilenAracRapor);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmRapor";
-            Text = "FrmRapor";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Raporlar";
             Load += FrmRapor_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnTamirEdilenAracRapor;
+        private Button btnBelirliBirMusterininTumAracBilgileri;
+        private Button btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi;
     }
 }

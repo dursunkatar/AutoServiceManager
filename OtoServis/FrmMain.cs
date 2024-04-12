@@ -42,5 +42,11 @@ namespace OtoServis
             var form = new FrmAracPaneli();
             form.Show();
         }
+
+        private void pictureBoxRapor_Click(object sender, EventArgs e)
+        {
+            var form = new FrmRapor();
+            form.Show();
+        }
     }
 }

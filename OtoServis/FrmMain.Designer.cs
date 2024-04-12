@@ -42,14 +42,14 @@
             label6 = new Label();
             pictureBoxAracPaneli = new PictureBox();
             label7 = new Label();
-            pictureBox7 = new PictureBox();
+            pictureBoxRapor = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMusteriPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTamirPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxParcaPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSatisPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPersonelPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAracPaneli).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRapor).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxMusteriPaneli
@@ -221,17 +221,18 @@
             label7.Text = "RAPORLAR";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox7
+            // pictureBoxRapor
             // 
-            pictureBox7.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox7.Cursor = Cursors.Hand;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(675, 7);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(379, 410);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 12;
-            pictureBox7.TabStop = false;
+            pictureBoxRapor.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxRapor.Cursor = Cursors.Hand;
+            pictureBoxRapor.Image = (Image)resources.GetObject("pictureBoxRapor.Image");
+            pictureBoxRapor.Location = new Point(675, 7);
+            pictureBoxRapor.Name = "pictureBoxRapor";
+            pictureBoxRapor.Size = new Size(379, 410);
+            pictureBoxRapor.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxRapor.TabIndex = 12;
+            pictureBoxRapor.TabStop = false;
+            pictureBoxRapor.Click += pictureBoxRapor_Click;
             // 
             // FrmMain
             // 
@@ -240,7 +241,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1061, 423);
             Controls.Add(label7);
-            Controls.Add(pictureBox7);
+            Controls.Add(pictureBoxRapor);
             Controls.Add(label6);
             Controls.Add(pictureBoxAracPaneli);
             Controls.Add(label5);
@@ -264,7 +265,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxSatisPaneli).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPersonelPaneli).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAracPaneli).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRapor).EndInit();
             ResumeLayout(false);
         }
 
@@ -283,6 +284,6 @@
         private Label label6;
         private PictureBox pictureBoxAracPaneli;
         private Label label7;
-        private PictureBox pictureBox7;
+        private PictureBox pictureBoxRapor;
     }
 }
