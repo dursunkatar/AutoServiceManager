@@ -40,10 +40,10 @@
             // btnTamirEdilenAracRapor
             // 
             btnTamirEdilenAracRapor.Cursor = Cursors.Hand;
-            btnTamirEdilenAracRapor.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnTamirEdilenAracRapor.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 162);
             btnTamirEdilenAracRapor.Location = new Point(12, 12);
             btnTamirEdilenAracRapor.Name = "btnTamirEdilenAracRapor";
-            btnTamirEdilenAracRapor.Size = new Size(812, 80);
+            btnTamirEdilenAracRapor.Size = new Size(812, 46);
             btnTamirEdilenAracRapor.TabIndex = 0;
             btnTamirEdilenAracRapor.Text = "TAMİR EDİLEN ARAÇLAR";
             btnTamirEdilenAracRapor.UseVisualStyleBackColor = true;
@@ -52,10 +52,10 @@
             // btnBelirliBirMusterininTumAracBilgileri
             // 
             btnBelirliBirMusterininTumAracBilgileri.Cursor = Cursors.Hand;
-            btnBelirliBirMusterininTumAracBilgileri.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnBelirliBirMusterininTumAracBilgileri.Location = new Point(12, 98);
+            btnBelirliBirMusterininTumAracBilgileri.Font = new Font("Arial", 18F);
+            btnBelirliBirMusterininTumAracBilgileri.Location = new Point(12, 64);
             btnBelirliBirMusterininTumAracBilgileri.Name = "btnBelirliBirMusterininTumAracBilgileri";
-            btnBelirliBirMusterininTumAracBilgileri.Size = new Size(812, 80);
+            btnBelirliBirMusterininTumAracBilgileri.Size = new Size(812, 46);
             btnBelirliBirMusterininTumAracBilgileri.TabIndex = 1;
             btnBelirliBirMusterininTumAracBilgileri.Text = "MÜŞTERİNİN TÜM ARAÇ BİLGİLERİ";
             btnBelirliBirMusterininTumAracBilgileri.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@
             // btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi
             // 
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Cursor = Cursors.Hand;
-            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Location = new Point(12, 184);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Font = new Font("Arial", 18F);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Location = new Point(12, 116);
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Name = "btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi";
-            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Size = new Size(812, 80);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Size = new Size(812, 46);
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.TabIndex = 2;
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Text = "1 YILDA TAMİR EDİLEN HER BİR ARACIN BİLGİLERİ VE TAMİR SAYISI";
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // btnBirYildaYapilanToplamSatisMiktari
             // 
             btnBirYildaYapilanToplamSatisMiktari.Cursor = Cursors.Hand;
-            btnBirYildaYapilanToplamSatisMiktari.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnBirYildaYapilanToplamSatisMiktari.Location = new Point(12, 270);
+            btnBirYildaYapilanToplamSatisMiktari.Font = new Font("Arial", 18F);
+            btnBirYildaYapilanToplamSatisMiktari.Location = new Point(12, 168);
             btnBirYildaYapilanToplamSatisMiktari.Name = "btnBirYildaYapilanToplamSatisMiktari";
-            btnBirYildaYapilanToplamSatisMiktari.Size = new Size(812, 80);
+            btnBirYildaYapilanToplamSatisMiktari.Size = new Size(812, 46);
             btnBirYildaYapilanToplamSatisMiktari.TabIndex = 3;
             btnBirYildaYapilanToplamSatisMiktari.Text = "1 YILDA YAPILAN TOPLAM SATIŞ MİKTARI";
             btnBirYildaYapilanToplamSatisMiktari.UseVisualStyleBackColor = true;
@@ -88,10 +88,10 @@
             // btnEnCokGelirGetirenIlkBesParca
             // 
             btnEnCokGelirGetirenIlkBesParca.Cursor = Cursors.Hand;
-            btnEnCokGelirGetirenIlkBesParca.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnEnCokGelirGetirenIlkBesParca.Location = new Point(10, 356);
+            btnEnCokGelirGetirenIlkBesParca.Font = new Font("Arial", 18F);
+            btnEnCokGelirGetirenIlkBesParca.Location = new Point(12, 220);
             btnEnCokGelirGetirenIlkBesParca.Name = "btnEnCokGelirGetirenIlkBesParca";
-            btnEnCokGelirGetirenIlkBesParca.Size = new Size(812, 80);
+            btnEnCokGelirGetirenIlkBesParca.Size = new Size(812, 46);
             btnEnCokGelirGetirenIlkBesParca.TabIndex = 4;
             btnEnCokGelirGetirenIlkBesParca.Text = "EN ÇOK GELİR GETİREN İLK 5 PARÇA";
             btnEnCokGelirGetirenIlkBesParca.UseVisualStyleBackColor = true;
@@ -100,10 +100,10 @@
             // btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi
             // 
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Cursor = Cursors.Hand;
-            btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Location = new Point(12, 442);
+            btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Font = new Font("Arial", 18F);
+            btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Location = new Point(12, 272);
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Name = "btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi";
-            btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Size = new Size(812, 80);
+            btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Size = new Size(812, 46);
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.TabIndex = 5;
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Text = "EN ÇOK KULLANILAN PARÇALAR VE ARAÇLARDAKİ KULLANIM SIKLIĞI";
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.UseVisualStyleBackColor = true;
@@ -112,10 +112,10 @@
             // btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari
             // 
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Cursor = Cursors.Hand;
-            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Location = new Point(10, 528);
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Font = new Font("Arial", 18F);
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Location = new Point(12, 324);
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Name = "btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari";
-            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Size = new Size(812, 80);
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Size = new Size(812, 46);
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.TabIndex = 6;
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Text = "HER BİR MARKAYA AİT ARAÇ SAYISI VE ORTALAMA YAŞLARI";
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1348, 661);
+            ClientSize = new Size(832, 377);
             Controls.Add(btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari);
             Controls.Add(btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi);
             Controls.Add(btnEnCokGelirGetirenIlkBesParca);
