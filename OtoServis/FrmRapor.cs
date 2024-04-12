@@ -31,5 +31,12 @@
             var form = new FrmRaporBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi();
             form.Show();
         }
+
+        private void btnBirYildaYapilanToplamSatisMiktari_Click(object sender, EventArgs e)
+        {
+            var form = new FrmRaporBirYildaYapilanToplamSatisMiktari();
+            form.Show();
+
+        }
     }
 }

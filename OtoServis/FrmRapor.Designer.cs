@@ -31,6 +31,7 @@
             btnTamirEdilenAracRapor = new Button();
             btnBelirliBirMusterininTumAracBilgileri = new Button();
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi = new Button();
+            btnBirYildaYapilanToplamSatisMiktari = new Button();
             SuspendLayout();
             // 
             // btnTamirEdilenAracRapor
@@ -69,11 +70,24 @@
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.UseVisualStyleBackColor = true;
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Click += btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi_Click;
             // 
+            // btnBirYildaYapilanToplamSatisMiktari
+            // 
+            btnBirYildaYapilanToplamSatisMiktari.Cursor = Cursors.Hand;
+            btnBirYildaYapilanToplamSatisMiktari.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnBirYildaYapilanToplamSatisMiktari.Location = new Point(12, 270);
+            btnBirYildaYapilanToplamSatisMiktari.Name = "btnBirYildaYapilanToplamSatisMiktari";
+            btnBirYildaYapilanToplamSatisMiktari.Size = new Size(812, 80);
+            btnBirYildaYapilanToplamSatisMiktari.TabIndex = 3;
+            btnBirYildaYapilanToplamSatisMiktari.Text = "1 YILDA YAPILAN TOPLAM SATIŞ MİKTARI";
+            btnBirYildaYapilanToplamSatisMiktari.UseVisualStyleBackColor = true;
+            btnBirYildaYapilanToplamSatisMiktari.Click += btnBirYildaYapilanToplamSatisMiktari_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 271);
+            ClientSize = new Size(834, 396);
+            Controls.Add(btnBirYildaYapilanToplamSatisMiktari);
             Controls.Add(btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi);
             Controls.Add(btnBelirliBirMusterininTumAracBilgileri);
             Controls.Add(btnTamirEdilenAracRapor);
@@ -91,5 +105,6 @@
         private Button btnTamirEdilenAracRapor;
         private Button btnBelirliBirMusterininTumAracBilgileri;
         private Button btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi;
+        private Button btnBirYildaYapilanToplamSatisMiktari;
     }
 }
