@@ -59,6 +59,15 @@
     <None Update="Rapor\ReportMarkayaGoreSatilanParcaSayisi.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Rapor\ReportMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Rapor\ReportMekanikUstalarinTamirEttigiAracSayisi.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Rapor\ReportModelYilinaGoreAracSayisi.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Rapor\ReportTamirEdilenAraclar.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

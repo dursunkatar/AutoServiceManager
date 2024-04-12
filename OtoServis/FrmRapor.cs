@@ -118,5 +118,35 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportMarkayaGoreSatilanParcaSayisi", "DataSetRaporMarkayaGoreSatilanParcaSayisi");
         }
+
+        private void btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleriTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri", "DataSetRaporMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri");
+        }
+
+        private void btnMekanikUstalarinTamirEttigiAracSayisi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpMekanikUstalarinTamirEttigiAracSayisiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportMekanikUstalarinTamirEttigiAracSayisi", "DataSetRaporMekanikUstalarinTamirEttigiAracSayisi");
+        }
+
+        private void btnModelYilinaGoreAracSayisi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpModelYilinaGoreAracSayisiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportModelYilinaGoreAracSayisi", "DataSetRaporModelYilinaGoreAracSayisi");
+        }
     }
 }
