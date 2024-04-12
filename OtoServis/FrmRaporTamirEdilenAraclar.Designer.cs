@@ -30,9 +30,8 @@
         {
             tableLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
-            btnListele = new Button();
-            dateTimePicker1 = new DateTimePicker();
             label1 = new Label();
+            dateTamirBaslangicTarih = new DateTimePicker();
             tableLayoutPanel.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -54,30 +53,12 @@
             // panel1
             // 
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(btnListele);
-            panel1.Controls.Add(dateTimePicker1);
+            panel1.Controls.Add(dateTamirBaslangicTarih);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(794, 43);
             panel1.TabIndex = 4;
-            // 
-            // btnListele
-            // 
-            btnListele.Location = new Point(328, 11);
-            btnListele.Name = "btnListele";
-            btnListele.Size = new Size(75, 23);
-            btnListele.TabIndex = 3;
-            btnListele.Text = "Listele";
-            btnListele.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(140, 11);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(182, 23);
-            dateTimePicker1.TabIndex = 2;
-            dateTimePicker1.Value = new DateTime(2024, 4, 12, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -88,6 +69,15 @@
             label1.TabIndex = 4;
             label1.Text = "Başlangıç Tamir tarihi :";
             // 
+            // dateTamirBaslangicTarih
+            // 
+            dateTamirBaslangicTarih.Location = new Point(140, 11);
+            dateTamirBaslangicTarih.Name = "dateTamirBaslangicTarih";
+            dateTamirBaslangicTarih.Size = new Size(197, 23);
+            dateTamirBaslangicTarih.TabIndex = 2;
+            dateTamirBaslangicTarih.Value = new DateTime(2024, 4, 12, 0, 0, 0, 0);
+            dateTamirBaslangicTarih.ValueChanged += dateTamirBaslangicTarih_ValueChanged;
+            // 
             // FrmRaporTamirEdilenAraclar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -95,7 +85,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel);
             Name = "FrmRaporTamirEdilenAraclar";
-            Text = "FrmRaporTamirEdilenAraclar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Tamir Edilen Araçlar Rapor";
             Load += FrmRaporTamirEdilenAraclar_Load;
             tableLayoutPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -108,7 +99,6 @@
         private TableLayoutPanel tableLayoutPanel;
         private Panel panel1;
         private Label label1;
-        private Button btnListele;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTamirBaslangicTarih;
     }
 }

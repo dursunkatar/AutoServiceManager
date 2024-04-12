@@ -199,7 +199,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>TamirTarihi</rd:DefaultName>
@@ -268,8 +270,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetTamirEdilenAraclar</DataSetName>
-            <Top>1.92828cm</Top>
-            <Left>1.21391cm</Left>
+            <Top>1.9812cm</Top>
+            <Left>2.35162cm</Left>
             <Height>1.2cm</Height>
             <Width>12.2625cm</Width>
             <Style>
@@ -286,18 +288,50 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!RParamTamirEdilenAraclar.Value</Value>
-                    <Style />
+                    <Style>
+                      <Format>d</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>RParamTamirEdilenAraclar</rd:DefaultName>
-            <Top>0.63182cm</Top>
-            <Left>2.35162cm</Left>
+            <Top>0.30523cm</Top>
+            <Left>10.52662cm</Left>
             <Height>0.6cm</Height>
             <Width>5.41042cm</Width>
             <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TAMİR EDİLEN ARAÇLAR</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>1.08106cm</Top>
+            <Left>5.88412cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.29917cm</Width>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>

@@ -24,9 +24,9 @@ namespace OtoServis
             using OtoServisDataSet dataSet = new OtoServisDataSet();
             using OtoServisDataSetTableAdapters.SpTamirEdilenAraclarTableAdapter tableAdapter = new();
 
-            DataTable dataTable = tableAdapter.GetData(dateTimePicker1.Value);
+            DataTable dataTable = tableAdapter.GetData(dateTamirBaslangicTarih.Value);
 
-            var parameters = new[] { new ReportParameter("RParamTamirEdilenAraclar", dateTimePicker1.Value.ToString("yyyy-MM-dd")) };
+            var parameters = new[] { new ReportParameter("RParamTamirEdilenAraclar", dateTamirBaslangicTarih.Value.ToString("yyyy-MM-dd")) };
 
             using var fs = new FileStream("ReportTamirEdilenAraclar.rdlc", FileMode.Open);
             reportViewer.LocalReport.LoadReportDefinition(fs);
@@ -36,7 +36,9 @@ namespace OtoServis
             reportViewer.RefreshReport();
         }
 
-        private void btnListele_Click(object sender, EventArgs e)
+
+
+        private void dateTamirBaslangicTarih_ValueChanged(object sender, EventArgs e)
         {
             RaporuYukle();
         }
