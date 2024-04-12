@@ -32,6 +32,7 @@
             btnBelirliBirMusterininTumAracBilgileri = new Button();
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi = new Button();
             btnBirYildaYapilanToplamSatisMiktari = new Button();
+            btnEnCokGelirGetirenIlkBesParca = new Button();
             SuspendLayout();
             // 
             // btnTamirEdilenAracRapor
@@ -82,11 +83,24 @@
             btnBirYildaYapilanToplamSatisMiktari.UseVisualStyleBackColor = true;
             btnBirYildaYapilanToplamSatisMiktari.Click += btnBirYildaYapilanToplamSatisMiktari_Click;
             // 
+            // btnEnCokGelirGetirenIlkBesParca
+            // 
+            btnEnCokGelirGetirenIlkBesParca.Cursor = Cursors.Hand;
+            btnEnCokGelirGetirenIlkBesParca.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnEnCokGelirGetirenIlkBesParca.Location = new Point(10, 356);
+            btnEnCokGelirGetirenIlkBesParca.Name = "btnEnCokGelirGetirenIlkBesParca";
+            btnEnCokGelirGetirenIlkBesParca.Size = new Size(812, 80);
+            btnEnCokGelirGetirenIlkBesParca.TabIndex = 4;
+            btnEnCokGelirGetirenIlkBesParca.Text = "EN ÇOK GELİR GETİREN İLK 5 PARÇA";
+            btnEnCokGelirGetirenIlkBesParca.UseVisualStyleBackColor = true;
+            btnEnCokGelirGetirenIlkBesParca.Click += btnEnCokGelirGetirenIlkBesParca_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 396);
+            ClientSize = new Size(834, 519);
+            Controls.Add(btnEnCokGelirGetirenIlkBesParca);
             Controls.Add(btnBirYildaYapilanToplamSatisMiktari);
             Controls.Add(btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi);
             Controls.Add(btnBelirliBirMusterininTumAracBilgileri);
@@ -106,5 +120,6 @@
         private Button btnBelirliBirMusterininTumAracBilgileri;
         private Button btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi;
         private Button btnBirYildaYapilanToplamSatisMiktari;
+        private Button btnEnCokGelirGetirenIlkBesParca;
     }
 }

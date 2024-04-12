@@ -48,5 +48,15 @@ namespace OtoServis
             form.RaporuYukle(dataTable, "ReportBirYildaYapilanToplamSatisMiktari", "DataSetReportBirYildaYapilanToplamSatisMiktari");
 
         }
+
+        private void btnEnCokGelirGetirenIlkBesParca_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpEnCokGelirGetirenIlkBesParcaTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportEnCokGelirGetirenIlkBesParca", "DataSetRaporEnCokGelirGetirenIlkBesParca");
+        }
     }
 }
