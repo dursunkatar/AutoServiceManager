@@ -60,22 +60,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.53187cm</Width>
+                  <Width>4.10073cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53187cm</Width>
+                  <Width>4.10073cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53187cm</Width>
+                  <Width>4.10073cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53187cm</Width>
+                  <Width>4.10073cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53187cm</Width>
+                  <Width>4.10073cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.53187cm</Width>
+                  <Width>4.10073cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -472,10 +472,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetBelirliBirMusterininTumAracBilgileri</DataSetName>
-            <Top>1.6896cm</Top>
-            <Left>1.74717cm</Left>
+            <Top>3.35648cm</Top>
+            <Left>1.19564cm</Left>
             <Height>1.2cm</Height>
-            <Width>21.19125cm</Width>
+            <Width>24.60437cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -499,8 +499,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>RParamMusteri</rd:DefaultName>
-            <Top>0.91321cm</Top>
-            <Left>14.0355cm</Left>
+            <Top>2.58009cm</Top>
+            <Left>1.19564cm</Left>
             <Height>0.6cm</Height>
             <Width>8.90292cm</Width>
             <ZIndex>1</ZIndex>
@@ -522,7 +522,10 @@
                 <TextRuns>
                   <TextRun>
                     <Value>MÜŞTERİNİN TÜM ARAÇ BİLGİLERİ</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -531,10 +534,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.91321cm</Top>
-            <Left>1.74717cm</Left>
-            <Height>0.6cm</Height>
-            <Width>11.12889cm</Width>
+            <Top>0.5428cm</Top>
+            <Left>1.19564cm</Left>
+            <Height>0.75875cm</Height>
+            <Width>14.52375cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -550,7 +553,7 @@
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>9.79167in</Width>
+      <Width>10.48958in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

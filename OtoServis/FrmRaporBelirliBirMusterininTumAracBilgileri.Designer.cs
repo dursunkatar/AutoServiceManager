@@ -30,7 +30,7 @@
         {
             tableLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
-            comboBox1 = new ComboBox();
+            cmbMusteri = new ComboBox();
             label1 = new Label();
             tableLayoutPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(cmbMusteri);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
@@ -60,22 +60,24 @@
             panel1.Size = new Size(798, 43);
             panel1.TabIndex = 4;
             // 
-            // comboBox1
+            // cmbMusteri
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(149, 12);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(230, 23);
-            comboBox1.TabIndex = 5;
+            cmbMusteri.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMusteri.FormattingEnabled = true;
+            cmbMusteri.Location = new Point(68, 12);
+            cmbMusteri.Name = "cmbMusteri";
+            cmbMusteri.Size = new Size(269, 23);
+            cmbMusteri.TabIndex = 5;
+            cmbMusteri.SelectedIndexChanged += cmbMusteri_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(9, 15);
             label1.Name = "label1";
-            label1.Size = new Size(125, 15);
+            label1.Size = new Size(53, 15);
             label1.TabIndex = 4;
-            label1.Text = "Başlangıç Tamir tarihi :";
+            label1.Text = "Müşteri :";
             // 
             // FrmRaporBelirliBirMusterininTumAracBilgileri
             // 
@@ -84,7 +86,7 @@
             ClientSize = new Size(804, 450);
             Controls.Add(tableLayoutPanel);
             Name = "FrmRaporBelirliBirMusterininTumAracBilgileri";
-            Text = "FrmBelirliBirMusterininTumAracBilgileri";
+            Text = "Müşterinin Tüm Araç Bilgileri";
             tableLayoutPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -95,7 +97,7 @@
 
         private TableLayoutPanel tableLayoutPanel;
         private Panel panel1;
-        private ComboBox comboBox1;
+        private ComboBox cmbMusteri;
         private Label label1;
     }
 }
