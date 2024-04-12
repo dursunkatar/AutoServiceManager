@@ -30,7 +30,7 @@
       <LastGenOutput>OtoServisDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Update="Report1.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
