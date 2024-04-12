@@ -42,6 +42,7 @@
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri = new Button();
             btnMekanikUstalarinTamirEttigiAracSayisi = new Button();
             btnModelYilinaGoreAracSayisi = new Button();
+            btnMusterilereGoreToplamHarcamaMiktari = new Button();
             SuspendLayout();
             // 
             // btn
@@ -212,11 +213,24 @@
             btnModelYilinaGoreAracSayisi.UseVisualStyleBackColor = true;
             btnModelYilinaGoreAracSayisi.Click += btnModelYilinaGoreAracSayisi_Click;
             // 
+            // btnMusterilereGoreToplamHarcamaMiktari
+            // 
+            btnMusterilereGoreToplamHarcamaMiktari.Cursor = Cursors.Hand;
+            btnMusterilereGoreToplamHarcamaMiktari.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnMusterilereGoreToplamHarcamaMiktari.Location = new Point(12, 488);
+            btnMusterilereGoreToplamHarcamaMiktari.Name = "btnMusterilereGoreToplamHarcamaMiktari";
+            btnMusterilereGoreToplamHarcamaMiktari.Size = new Size(626, 28);
+            btnMusterilereGoreToplamHarcamaMiktari.TabIndex = 14;
+            btnMusterilereGoreToplamHarcamaMiktari.Text = "MÜŞTERİLERE GÖRE TOPLAM HARCAMA MİKTARI";
+            btnMusterilereGoreToplamHarcamaMiktari.UseVisualStyleBackColor = true;
+            btnMusterilereGoreToplamHarcamaMiktari.Click += btnMusterilereGoreToplamHarcamaMiktari_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 710);
+            Controls.Add(btnMusterilereGoreToplamHarcamaMiktari);
             Controls.Add(btnModelYilinaGoreAracSayisi);
             Controls.Add(btnMekanikUstalarinTamirEttigiAracSayisi);
             Controls.Add(btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri);
@@ -256,5 +270,6 @@
         private Button btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri;
         private Button btnMekanikUstalarinTamirEttigiAracSayisi;
         private Button btnModelYilinaGoreAracSayisi;
+        private Button btnMusterilereGoreToplamHarcamaMiktari;
     }
 }

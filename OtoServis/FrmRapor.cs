@@ -148,5 +148,15 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportModelYilinaGoreAracSayisi", "DataSetRaporModelYilinaGoreAracSayisi");
         }
+
+        private void btnMusterilereGoreToplamHarcamaMiktari_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpMusterilereGoreToplamHarcamaMiktariTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportMusterilereGoreToplamHarcamaMiktari", "DataSetRaporMusterilereGoreToplamHarcamaMiktari");
+        }
     }
 }
