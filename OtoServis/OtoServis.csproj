@@ -47,6 +47,9 @@
     <None Update="Rapor\ReportEncokTamirEdilenAraclarListesi.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Rapor\ReportEnCokTamirEdilenAracModelleri.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Rapor\ReportHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -208,5 +208,11 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportEnCokTamirEdilenAraclarListesi", "DataSetRaporEnCokTamirEdilenAraclarListesi");
         }
+
+        private void btnEnCokTamirEdilenAracModelleri_Click(object sender, EventArgs e)
+        {
+            var form = new FrmRaporEnCokTamirEdilenAracModelleri();
+            form.Show();
+        }
     }
 }

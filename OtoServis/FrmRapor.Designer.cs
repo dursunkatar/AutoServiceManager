@@ -48,6 +48,7 @@
             btnStoktakiParcalarinToplamDegeri = new Button();
             btnTamirIslemiGorenAracBilgileri = new Button();
             btnEnCokTamirEdilenAraclarListesi = new Button();
+            btnEnCokTamirEdilenAracModelleri = new Button();
             SuspendLayout();
             // 
             // btn
@@ -286,15 +287,28 @@
             btnEnCokTamirEdilenAraclarListesi.Name = "btnEnCokTamirEdilenAraclarListesi";
             btnEnCokTamirEdilenAraclarListesi.Size = new Size(626, 28);
             btnEnCokTamirEdilenAraclarListesi.TabIndex = 19;
-            btnEnCokTamirEdilenAraclarListesi.Text = "TAMİR İŞLEMİ GÖREN ARAÇ BİLGİLERİ";
+            btnEnCokTamirEdilenAraclarListesi.Text = "EN ÇOK TAMİR EDİLEN ARAÇLAR LİSTESİ";
             btnEnCokTamirEdilenAraclarListesi.UseVisualStyleBackColor = true;
             btnEnCokTamirEdilenAraclarListesi.Click += btnEnCokTamirEdilenAraclarListesi_Click;
+            // 
+            // btnEnCokTamirEdilenAracModelleri
+            // 
+            btnEnCokTamirEdilenAracModelleri.Cursor = Cursors.Hand;
+            btnEnCokTamirEdilenAracModelleri.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnEnCokTamirEdilenAracModelleri.Location = new Point(640, 12);
+            btnEnCokTamirEdilenAracModelleri.Name = "btnEnCokTamirEdilenAracModelleri";
+            btnEnCokTamirEdilenAracModelleri.Size = new Size(626, 28);
+            btnEnCokTamirEdilenAracModelleri.TabIndex = 20;
+            btnEnCokTamirEdilenAracModelleri.Text = "EN ÇOK TAMİR EDİLEN ARAÇ MODELLERİ";
+            btnEnCokTamirEdilenAracModelleri.UseVisualStyleBackColor = true;
+            btnEnCokTamirEdilenAracModelleri.Click += btnEnCokTamirEdilenAracModelleri_Click;
             // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1127, 710);
+            ClientSize = new Size(1291, 710);
+            Controls.Add(btnEnCokTamirEdilenAracModelleri);
             Controls.Add(btnEnCokTamirEdilenAraclarListesi);
             Controls.Add(btnTamirIslemiGorenAracBilgileri);
             Controls.Add(btnStoktakiParcalarinToplamDegeri);
@@ -346,5 +360,6 @@
         private Button btnStoktakiParcalarinToplamDegeri;
         private Button btnTamirIslemiGorenAracBilgileri;
         private Button btnEnCokTamirEdilenAraclarListesi;
+        private Button btnEnCokTamirEdilenAracModelleri;
     }
 }
