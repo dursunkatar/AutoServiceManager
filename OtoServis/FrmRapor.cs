@@ -188,5 +188,25 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportStoktakiParcalarinToplamDegeri", "DataSetRaporStoktakiParcalarinToplamDegeri");
         }
+
+        private void btnTamirIslemiGorenAracBilgileri_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpTamirIslemiGorenAracBilgileriTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportTamirIslemiGorenAracBilgileri", "DataSetRaporTamirIslemiGorenAracBilgileri");
+        }
+
+        private void btnEnCokTamirEdilenAraclarListesi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpEncokTamirEdilenAraclarListesiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportEnCokTamirEdilenAraclarListesi", "DataSetRaporEnCokTamirEdilenAraclarListesi");
+        }
     }
 }

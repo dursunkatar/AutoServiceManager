@@ -46,6 +46,8 @@
             btnMusterilerinEnSonSatinAldiklariParcalar = new Button();
             btnMusterininTamirIcinHarcadigiToplamTutar = new Button();
             btnStoktakiParcalarinToplamDegeri = new Button();
+            btnTamirIslemiGorenAracBilgileri = new Button();
+            btnEnCokTamirEdilenAraclarListesi = new Button();
             SuspendLayout();
             // 
             // btn
@@ -264,11 +266,37 @@
             btnStoktakiParcalarinToplamDegeri.UseVisualStyleBackColor = true;
             btnStoktakiParcalarinToplamDegeri.Click += btnStoktakiParcalarinToplamDegeri_Click;
             // 
+            // btnTamirIslemiGorenAracBilgileri
+            // 
+            btnTamirIslemiGorenAracBilgileri.Cursor = Cursors.Hand;
+            btnTamirIslemiGorenAracBilgileri.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnTamirIslemiGorenAracBilgileri.Location = new Point(12, 624);
+            btnTamirIslemiGorenAracBilgileri.Name = "btnTamirIslemiGorenAracBilgileri";
+            btnTamirIslemiGorenAracBilgileri.Size = new Size(626, 28);
+            btnTamirIslemiGorenAracBilgileri.TabIndex = 18;
+            btnTamirIslemiGorenAracBilgileri.Text = "TAMİR İŞLEMİ GÖREN ARAÇ BİLGİLERİ";
+            btnTamirIslemiGorenAracBilgileri.UseVisualStyleBackColor = true;
+            btnTamirIslemiGorenAracBilgileri.Click += btnTamirIslemiGorenAracBilgileri_Click;
+            // 
+            // btnEnCokTamirEdilenAraclarListesi
+            // 
+            btnEnCokTamirEdilenAraclarListesi.Cursor = Cursors.Hand;
+            btnEnCokTamirEdilenAraclarListesi.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnEnCokTamirEdilenAraclarListesi.Location = new Point(12, 658);
+            btnEnCokTamirEdilenAraclarListesi.Name = "btnEnCokTamirEdilenAraclarListesi";
+            btnEnCokTamirEdilenAraclarListesi.Size = new Size(626, 28);
+            btnEnCokTamirEdilenAraclarListesi.TabIndex = 19;
+            btnEnCokTamirEdilenAraclarListesi.Text = "TAMİR İŞLEMİ GÖREN ARAÇ BİLGİLERİ";
+            btnEnCokTamirEdilenAraclarListesi.UseVisualStyleBackColor = true;
+            btnEnCokTamirEdilenAraclarListesi.Click += btnEnCokTamirEdilenAraclarListesi_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 710);
+            Controls.Add(btnEnCokTamirEdilenAraclarListesi);
+            Controls.Add(btnTamirIslemiGorenAracBilgileri);
             Controls.Add(btnStoktakiParcalarinToplamDegeri);
             Controls.Add(btnMusterininTamirIcinHarcadigiToplamTutar);
             Controls.Add(btnMusterilerinEnSonSatinAldiklariParcalar);
@@ -316,5 +344,7 @@
         private Button btnMusterilerinEnSonSatinAldiklariParcalar;
         private Button btnMusterininTamirIcinHarcadigiToplamTutar;
         private Button btnStoktakiParcalarinToplamDegeri;
+        private Button btnTamirIslemiGorenAracBilgileri;
+        private Button btnEnCokTamirEdilenAraclarListesi;
     }
 }
