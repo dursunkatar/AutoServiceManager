@@ -178,5 +178,15 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportMusterininTamirIcinHarcadigiToplamTutar", "DataSetRaporMusterininTamirIcinHarcadigiToplamTutar");
         }
+
+        private void btnStoktakiParcalarinToplamDegeri_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpStoktakiParcalarinToplamDegeriTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportStoktakiParcalarinToplamDegeri", "DataSetRaporStoktakiParcalarinToplamDegeri");
+        }
     }
 }

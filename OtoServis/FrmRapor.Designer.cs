@@ -45,6 +45,7 @@
             btnMusterilereGoreToplamHarcamaMiktari = new Button();
             btnMusterilerinEnSonSatinAldiklariParcalar = new Button();
             btnMusterininTamirIcinHarcadigiToplamTutar = new Button();
+            btnStoktakiParcalarinToplamDegeri = new Button();
             SuspendLayout();
             // 
             // btn
@@ -251,11 +252,24 @@
             btnMusterininTamirIcinHarcadigiToplamTutar.UseVisualStyleBackColor = true;
             btnMusterininTamirIcinHarcadigiToplamTutar.Click += btnMusterininTamirIcinHarcadigiToplamTutar_Click;
             // 
+            // btnStoktakiParcalarinToplamDegeri
+            // 
+            btnStoktakiParcalarinToplamDegeri.Cursor = Cursors.Hand;
+            btnStoktakiParcalarinToplamDegeri.Font = new Font("Microsoft Sans Serif", 11.25F);
+            btnStoktakiParcalarinToplamDegeri.Location = new Point(12, 590);
+            btnStoktakiParcalarinToplamDegeri.Name = "btnStoktakiParcalarinToplamDegeri";
+            btnStoktakiParcalarinToplamDegeri.Size = new Size(626, 28);
+            btnStoktakiParcalarinToplamDegeri.TabIndex = 17;
+            btnStoktakiParcalarinToplamDegeri.Text = "STOKTAKİ PARÇALARIN TOPLAM DEĞERİ";
+            btnStoktakiParcalarinToplamDegeri.UseVisualStyleBackColor = true;
+            btnStoktakiParcalarinToplamDegeri.Click += btnStoktakiParcalarinToplamDegeri_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1127, 710);
+            Controls.Add(btnStoktakiParcalarinToplamDegeri);
             Controls.Add(btnMusterininTamirIcinHarcadigiToplamTutar);
             Controls.Add(btnMusterilerinEnSonSatinAldiklariParcalar);
             Controls.Add(btnMusterilereGoreToplamHarcamaMiktari);
@@ -301,5 +315,6 @@
         private Button btnMusterilereGoreToplamHarcamaMiktari;
         private Button btnMusterilerinEnSonSatinAldiklariParcalar;
         private Button btnMusterininTamirIcinHarcadigiToplamTutar;
+        private Button btnStoktakiParcalarinToplamDegeri;
     }
 }
