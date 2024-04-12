@@ -208,7 +208,7 @@
             btnModelYilinaGoreAracSayisi.Name = "btnModelYilinaGoreAracSayisi";
             btnModelYilinaGoreAracSayisi.Size = new Size(626, 28);
             btnModelYilinaGoreAracSayisi.TabIndex = 13;
-            btnModelYilinaGoreAracSayisi.Text = "MEKANİK USTALARIN TAMİR ETTİĞİ ARAÇ SAYISI";
+            btnModelYilinaGoreAracSayisi.Text = "MODEL YILINA GÖRE PARÇA SAYISI";
             btnModelYilinaGoreAracSayisi.UseVisualStyleBackColor = true;
             btnModelYilinaGoreAracSayisi.Click += btnModelYilinaGoreAracSayisi_Click;
             // 

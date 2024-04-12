@@ -300,6 +300,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="ModelAdi" DataSetColumn="ModelAdi" />
               <Mapping SourceColumn="Yil" DataSetColumn="Yil" />
               <Mapping SourceColumn="AracSayisi" DataSetColumn="AracSayisi" />
             </Mappings>
@@ -688,6 +689,13 @@
         <xs:element name="SpModelYilinaGoreAracSayisi" msprop:Generator_RowEvHandlerName="SpModelYilinaGoreAracSayisiRowChangeEventHandler" msprop:Generator_RowDeletedName="SpModelYilinaGoreAracSayisiRowDeleted" msprop:Generator_RowDeletingName="SpModelYilinaGoreAracSayisiRowDeleting" msprop:Generator_RowEvArgName="SpModelYilinaGoreAracSayisiRowChangeEvent" msprop:Generator_TablePropName="SpModelYilinaGoreAracSayisi" msprop:Generator_RowChangedName="SpModelYilinaGoreAracSayisiRowChanged" msprop:Generator_RowChangingName="SpModelYilinaGoreAracSayisiRowChanging" msprop:Generator_TableClassName="SpModelYilinaGoreAracSayisiDataTable" msprop:Generator_RowClassName="SpModelYilinaGoreAracSayisiRow" msprop:Generator_TableVarName="tableSpModelYilinaGoreAracSayisi" msprop:Generator_UserTableName="SpModelYilinaGoreAracSayisi">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="ModelAdi" msprop:Generator_ColumnPropNameInRow="ModelAdi" msprop:Generator_ColumnPropNameInTable="ModelAdiColumn" msprop:Generator_ColumnVarNameInTable="columnModelAdi" msprop:Generator_UserColumnName="ModelAdi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Yil" msprop:Generator_ColumnPropNameInRow="Yil" msprop:Generator_ColumnPropNameInTable="YilColumn" msprop:Generator_ColumnVarNameInTable="columnYil" msprop:Generator_UserColumnName="Yil" type="xs:int" />
               <xs:element name="AracSayisi" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="AracSayisi" msprop:Generator_ColumnPropNameInTable="AracSayisiColumn" msprop:Generator_ColumnVarNameInTable="columnAracSayisi" msprop:Generator_UserColumnName="AracSayisi" type="xs:int" minOccurs="0" />
             </xs:sequence>

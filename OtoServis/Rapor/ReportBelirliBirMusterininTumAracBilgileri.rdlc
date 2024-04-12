@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f2ff4add-7d4c-40bb-b39f-84e30513077e</rd:DataSourceID>
+      <rd:DataSourceID>bc897e1c-5712-42c2-bc38-c45694a813eb</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -475,7 +475,7 @@
             <Top>3.35648cm</Top>
             <Left>1.19564cm</Left>
             <Height>1.2cm</Height>
-            <Width>24.60437cm</Width>
+            <Width>24.60438cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

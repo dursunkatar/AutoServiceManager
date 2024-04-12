@@ -4846,6 +4846,8 @@ namespace OtoServis {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SpModelYilinaGoreAracSayisiDataTable : global::System.Data.TypedTableBase<SpModelYilinaGoreAracSayisiRow> {
             
+            private global::System.Data.DataColumn columnModelAdi;
+            
             private global::System.Data.DataColumn columnYil;
             
             private global::System.Data.DataColumn columnAracSayisi;
@@ -4881,6 +4883,14 @@ namespace OtoServis {
             protected SpModelYilinaGoreAracSayisiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ModelAdiColumn {
+                get {
+                    return this.columnModelAdi;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4936,9 +4946,10 @@ namespace OtoServis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SpModelYilinaGoreAracSayisiRow AddSpModelYilinaGoreAracSayisiRow(int Yil, int AracSayisi) {
+            public SpModelYilinaGoreAracSayisiRow AddSpModelYilinaGoreAracSayisiRow(string ModelAdi, int Yil, int AracSayisi) {
                 SpModelYilinaGoreAracSayisiRow rowSpModelYilinaGoreAracSayisiRow = ((SpModelYilinaGoreAracSayisiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        ModelAdi,
                         Yil,
                         AracSayisi};
                 rowSpModelYilinaGoreAracSayisiRow.ItemArray = columnValuesArray;
@@ -4963,6 +4974,7 @@ namespace OtoServis {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnModelAdi = base.Columns["ModelAdi"];
                 this.columnYil = base.Columns["Yil"];
                 this.columnAracSayisi = base.Columns["AracSayisi"];
             }
@@ -4970,10 +4982,14 @@ namespace OtoServis {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnModelAdi = new global::System.Data.DataColumn("ModelAdi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModelAdi);
                 this.columnYil = new global::System.Data.DataColumn("Yil", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnYil);
                 this.columnAracSayisi = new global::System.Data.DataColumn("AracSayisi", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAracSayisi);
+                this.columnModelAdi.AllowDBNull = false;
+                this.columnModelAdi.MaxLength = 50;
                 this.columnYil.AllowDBNull = false;
                 this.columnAracSayisi.ReadOnly = true;
             }
@@ -7858,6 +7874,17 @@ namespace OtoServis {
             internal SpModelYilinaGoreAracSayisiRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableSpModelYilinaGoreAracSayisi = ((SpModelYilinaGoreAracSayisiDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ModelAdi {
+                get {
+                    return ((string)(this[this.tableSpModelYilinaGoreAracSayisi.ModelAdiColumn]));
+                }
+                set {
+                    this[this.tableSpModelYilinaGoreAracSayisi.ModelAdiColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11628,6 +11655,7 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SpModelYilinaGoreAracSayisi";
+            tableMapping.ColumnMappings.Add("ModelAdi", "ModelAdi");
             tableMapping.ColumnMappings.Add("Yil", "Yil");
             tableMapping.ColumnMappings.Add("AracSayisi", "AracSayisi");
             this._adapter.TableMappings.Add(tableMapping);
