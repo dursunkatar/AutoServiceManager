@@ -108,5 +108,15 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportHerBirRoldekiPersonelSayisi", "DataSetRaporHerBirRoldekiPersonelSayisi");
         }
+
+        private void btnMarkayaGoreSatilanParcaSayisi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpMarkayaGoreSatilanParcaSayisiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportMarkayaGoreSatilanParcaSayisi", "DataSetRaporMarkayaGoreSatilanParcaSayisi");
+        }
     }
 }

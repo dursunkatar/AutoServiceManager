@@ -38,6 +38,7 @@
             btnHerBirParcaninOrtalamaSatisFiyati = new Button();
             btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi = new Button();
             btnHerBirRoldekiPersonelSayisi = new Button();
+            btnMarkayaGoreSatilanParcaSayisi = new Button();
             SuspendLayout();
             // 
             // btnTamirEdilenAracRapor
@@ -160,11 +161,24 @@
             btnHerBirRoldekiPersonelSayisi.UseVisualStyleBackColor = true;
             btnHerBirRoldekiPersonelSayisi.Click += btnHerBirRoldekiPersonelSayisi_Click;
             // 
+            // btnMarkayaGoreSatilanParcaSayisi
+            // 
+            btnMarkayaGoreSatilanParcaSayisi.Cursor = Cursors.Hand;
+            btnMarkayaGoreSatilanParcaSayisi.Font = new Font("Arial", 18F);
+            btnMarkayaGoreSatilanParcaSayisi.Location = new Point(8, 532);
+            btnMarkayaGoreSatilanParcaSayisi.Name = "btnMarkayaGoreSatilanParcaSayisi";
+            btnMarkayaGoreSatilanParcaSayisi.Size = new Size(812, 46);
+            btnMarkayaGoreSatilanParcaSayisi.TabIndex = 10;
+            btnMarkayaGoreSatilanParcaSayisi.Text = "MARKAYA GÖRE SATILAN PARÇA SAYISI";
+            btnMarkayaGoreSatilanParcaSayisi.UseVisualStyleBackColor = true;
+            btnMarkayaGoreSatilanParcaSayisi.Click += btnMarkayaGoreSatilanParcaSayisi_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 624);
+            Controls.Add(btnMarkayaGoreSatilanParcaSayisi);
             Controls.Add(btnHerBirRoldekiPersonelSayisi);
             Controls.Add(btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi);
             Controls.Add(btnHerBirParcaninOrtalamaSatisFiyati);
@@ -196,5 +210,6 @@
         private Button btnHerBirParcaninOrtalamaSatisFiyati;
         private Button btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi;
         private Button btnHerBirRoldekiPersonelSayisi;
+        private Button btnMarkayaGoreSatilanParcaSayisi;
     }
 }
