@@ -28,7 +28,7 @@ namespace OtoServis
 
             var parameters = new[] { new ReportParameter("RParamTamirEdilenAraclar", dateTamirBaslangicTarih.Value.ToString("yyyy-MM-dd")) };
 
-            using var fs = new FileStream("ReportTamirEdilenAraclar.rdlc", FileMode.Open);
+            using var fs = new FileStream("Rapor/ReportTamirEdilenAraclar.rdlc", FileMode.Open);
             reportViewer.LocalReport.LoadReportDefinition(fs);
             reportViewer.LocalReport.DataSources.Clear();
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSetTamirEdilenAraclar", dataTable));

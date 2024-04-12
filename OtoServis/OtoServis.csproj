@@ -29,7 +29,7 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtoServisDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Update="ReportTamirEdilenAraclar.rdlc">
+    <None Update="Rapor\ReportTamirEdilenAraclar.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
