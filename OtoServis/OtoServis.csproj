@@ -29,6 +29,9 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtoServisDataSet.Designer.cs</LastGenOutput>
     </None>
+    <None Update="Rapor\ReportBelirliBirMusterininTumAracBilgileri.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Rapor\ReportTamirEdilenAraclar.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

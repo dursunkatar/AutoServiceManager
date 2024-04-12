@@ -1,4 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
+using OtoServis.Helper;
 using System.Data;
 
 namespace OtoServis
@@ -28,14 +29,14 @@ namespace OtoServis
 
             var parameters = new[] { new ReportParameter("RParamTamirEdilenAraclar", dateTamirBaslangicTarih.Value.ToString("yyyy-MM-dd")) };
 
-            using var fs = new FileStream("Rapor/ReportTamirEdilenAraclar.rdlc", FileMode.Open);
-            reportViewer.LocalReport.LoadReportDefinition(fs);
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSetTamirEdilenAraclar", dataTable));
-            reportViewer.LocalReport.SetParameters(parameters);
-            reportViewer.RefreshReport();
+            RaporHelper.Yukle(
+                  reportViewer,
+                  dataTable,
+                  "ReportTamirEdilenAraclar",
+                  "DataSetTamirEdilenAraclar",
+                  parameters
+                );
         }
-
 
 
         private void dateTamirBaslangicTarih_ValueChanged(object sender, EventArgs e)
