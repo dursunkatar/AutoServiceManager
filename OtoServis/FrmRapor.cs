@@ -98,5 +98,15 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi", "DataSetRaporHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi");
         }
+
+        private void btnHerBirRoldekiPersonelSayisi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpHerBirRoldekiPersonelSayisiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportHerBirRoldekiPersonelSayisi", "DataSetRaporHerBirRoldekiPersonelSayisi");
+        }
     }
 }

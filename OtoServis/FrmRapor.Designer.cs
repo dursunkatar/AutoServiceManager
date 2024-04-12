@@ -37,6 +37,7 @@
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari = new Button();
             btnHerBirParcaninOrtalamaSatisFiyati = new Button();
             btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi = new Button();
+            btnHerBirRoldekiPersonelSayisi = new Button();
             SuspendLayout();
             // 
             // btnTamirEdilenAracRapor
@@ -147,11 +148,24 @@
             btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.UseVisualStyleBackColor = true;
             btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Click += btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi_Click;
             // 
+            // btnHerBirRoldekiPersonelSayisi
+            // 
+            btnHerBirRoldekiPersonelSayisi.Cursor = Cursors.Hand;
+            btnHerBirRoldekiPersonelSayisi.Font = new Font("Arial", 18F);
+            btnHerBirRoldekiPersonelSayisi.Location = new Point(8, 480);
+            btnHerBirRoldekiPersonelSayisi.Name = "btnHerBirRoldekiPersonelSayisi";
+            btnHerBirRoldekiPersonelSayisi.Size = new Size(812, 46);
+            btnHerBirRoldekiPersonelSayisi.TabIndex = 9;
+            btnHerBirRoldekiPersonelSayisi.Text = "HER BİR ROLDEKİ PERSONEL SAYISI";
+            btnHerBirRoldekiPersonelSayisi.UseVisualStyleBackColor = true;
+            btnHerBirRoldekiPersonelSayisi.Click += btnHerBirRoldekiPersonelSayisi_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 490);
+            ClientSize = new Size(832, 624);
+            Controls.Add(btnHerBirRoldekiPersonelSayisi);
             Controls.Add(btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi);
             Controls.Add(btnHerBirParcaninOrtalamaSatisFiyati);
             Controls.Add(btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari);
@@ -181,5 +195,6 @@
         private Button btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari;
         private Button btnHerBirParcaninOrtalamaSatisFiyati;
         private Button btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi;
+        private Button btnHerBirRoldekiPersonelSayisi;
     }
 }
