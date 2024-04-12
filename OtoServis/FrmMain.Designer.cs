@@ -29,40 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            pictureBox1 = new PictureBox();
+            pictureBoxMusteriPaneli = new PictureBox();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
+            pictureBoxTamirPaneli = new PictureBox();
             label2 = new Label();
-            pictureBox3 = new PictureBox();
+            pictureBoxParcaPaneli = new PictureBox();
             label3 = new Label();
-            pictureBox4 = new PictureBox();
+            pictureBoxSatisPaneli = new PictureBox();
             label4 = new Label();
             label5 = new Label();
-            pictureBox5 = new PictureBox();
+            pictureBoxPersonelPaneli = new PictureBox();
             label6 = new Label();
-            pictureBox6 = new PictureBox();
+            pictureBoxAracPaneli = new PictureBox();
             label7 = new Label();
             pictureBox7 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMusteriPaneli).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTamirPaneli).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxParcaPaneli).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSatisPaneli).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPersonelPaneli).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxAracPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxMusteriPaneli
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(6, 7);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(217, 202);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxMusteriPaneli.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxMusteriPaneli.Cursor = Cursors.Hand;
+            pictureBoxMusteriPaneli.Image = (Image)resources.GetObject("pictureBoxMusteriPaneli.Image");
+            pictureBoxMusteriPaneli.Location = new Point(6, 7);
+            pictureBoxMusteriPaneli.Name = "pictureBoxMusteriPaneli";
+            pictureBoxMusteriPaneli.Size = new Size(217, 202);
+            pictureBoxMusteriPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMusteriPaneli.TabIndex = 0;
+            pictureBoxMusteriPaneli.TabStop = false;
+            pictureBoxMusteriPaneli.Click += pictureBoxMusteriPaneli_Click;
             // 
             // label1
             // 
@@ -77,17 +78,18 @@
             label1.Text = "MÜŞTERİ PANELİ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // pictureBoxTamirPaneli
             // 
-            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(229, 7);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(217, 202);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            pictureBoxTamirPaneli.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxTamirPaneli.Cursor = Cursors.Hand;
+            pictureBoxTamirPaneli.Image = (Image)resources.GetObject("pictureBoxTamirPaneli.Image");
+            pictureBoxTamirPaneli.Location = new Point(229, 7);
+            pictureBoxTamirPaneli.Name = "pictureBoxTamirPaneli";
+            pictureBoxTamirPaneli.Size = new Size(217, 202);
+            pictureBoxTamirPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxTamirPaneli.TabIndex = 2;
+            pictureBoxTamirPaneli.TabStop = false;
+            pictureBoxTamirPaneli.Click += pictureBoxTamirPaneli_Click;
             // 
             // label2
             // 
@@ -102,17 +104,18 @@
             label2.Text = "TAMİR PANELİ";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
+            // pictureBoxParcaPaneli
             // 
-            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Cursor = Cursors.Hand;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(452, 7);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(217, 202);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
+            pictureBoxParcaPaneli.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxParcaPaneli.Cursor = Cursors.Hand;
+            pictureBoxParcaPaneli.Image = (Image)resources.GetObject("pictureBoxParcaPaneli.Image");
+            pictureBoxParcaPaneli.Location = new Point(452, 7);
+            pictureBoxParcaPaneli.Name = "pictureBoxParcaPaneli";
+            pictureBoxParcaPaneli.Size = new Size(217, 202);
+            pictureBoxParcaPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxParcaPaneli.TabIndex = 4;
+            pictureBoxParcaPaneli.TabStop = false;
+            pictureBoxParcaPaneli.Click += pictureBoxParcaPaneli_Click;
             // 
             // label3
             // 
@@ -127,17 +130,18 @@
             label3.Text = "PARÇA PANELİ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox4
+            // pictureBoxSatisPaneli
             // 
-            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox4.Cursor = Cursors.Hand;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(6, 215);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(217, 202);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
+            pictureBoxSatisPaneli.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxSatisPaneli.Cursor = Cursors.Hand;
+            pictureBoxSatisPaneli.Image = (Image)resources.GetObject("pictureBoxSatisPaneli.Image");
+            pictureBoxSatisPaneli.Location = new Point(6, 215);
+            pictureBoxSatisPaneli.Name = "pictureBoxSatisPaneli";
+            pictureBoxSatisPaneli.Size = new Size(217, 202);
+            pictureBoxSatisPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxSatisPaneli.TabIndex = 6;
+            pictureBoxSatisPaneli.TabStop = false;
+            pictureBoxSatisPaneli.Click += pictureBoxSatisPaneli_Click;
             // 
             // label4
             // 
@@ -165,17 +169,18 @@
             label5.Text = "PERSONEL PANELİ";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox5
+            // pictureBoxPersonelPaneli
             // 
-            pictureBox5.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox5.Cursor = Cursors.Hand;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(229, 215);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(217, 202);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 8;
-            pictureBox5.TabStop = false;
+            pictureBoxPersonelPaneli.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxPersonelPaneli.Cursor = Cursors.Hand;
+            pictureBoxPersonelPaneli.Image = (Image)resources.GetObject("pictureBoxPersonelPaneli.Image");
+            pictureBoxPersonelPaneli.Location = new Point(229, 215);
+            pictureBoxPersonelPaneli.Name = "pictureBoxPersonelPaneli";
+            pictureBoxPersonelPaneli.Size = new Size(217, 202);
+            pictureBoxPersonelPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPersonelPaneli.TabIndex = 8;
+            pictureBoxPersonelPaneli.TabStop = false;
+            pictureBoxPersonelPaneli.Click += pictureBoxPersonelPaneli_Click;
             // 
             // label6
             // 
@@ -190,17 +195,18 @@
             label6.Text = "ARAÇ PANELİ";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox6
+            // pictureBoxAracPaneli
             // 
-            pictureBox6.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox6.Cursor = Cursors.Hand;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(452, 215);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(217, 202);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 10;
-            pictureBox6.TabStop = false;
+            pictureBoxAracPaneli.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxAracPaneli.Cursor = Cursors.Hand;
+            pictureBoxAracPaneli.Image = (Image)resources.GetObject("pictureBoxAracPaneli.Image");
+            pictureBoxAracPaneli.Location = new Point(452, 215);
+            pictureBoxAracPaneli.Name = "pictureBoxAracPaneli";
+            pictureBoxAracPaneli.Size = new Size(217, 202);
+            pictureBoxAracPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxAracPaneli.TabIndex = 10;
+            pictureBoxAracPaneli.TabStop = false;
+            pictureBoxAracPaneli.Click += pictureBoxAracPaneli_Click;
             // 
             // label7
             // 
@@ -236,46 +242,46 @@
             Controls.Add(label7);
             Controls.Add(pictureBox7);
             Controls.Add(label6);
-            Controls.Add(pictureBox6);
+            Controls.Add(pictureBoxAracPaneli);
             Controls.Add(label5);
-            Controls.Add(pictureBox5);
+            Controls.Add(pictureBoxPersonelPaneli);
             Controls.Add(label4);
-            Controls.Add(pictureBox4);
+            Controls.Add(pictureBoxSatisPaneli);
             Controls.Add(label3);
-            Controls.Add(pictureBox3);
+            Controls.Add(pictureBoxParcaPaneli);
             Controls.Add(label2);
-            Controls.Add(pictureBox2);
+            Controls.Add(pictureBoxTamirPaneli);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxMusteriPaneli);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            Text = "Oto Servis | Ahmet Köse";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMusteriPaneli).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTamirPaneli).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxParcaPaneli).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSatisPaneli).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPersonelPaneli).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxAracPaneli).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxMusteriPaneli;
         private Label label1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxTamirPaneli;
         private Label label2;
-        private PictureBox pictureBox3;
+        private PictureBox pictureBoxParcaPaneli;
         private Label label3;
-        private PictureBox pictureBox4;
+        private PictureBox pictureBoxSatisPaneli;
         private Label label4;
         private Label label5;
-        private PictureBox pictureBox5;
+        private PictureBox pictureBoxPersonelPaneli;
         private Label label6;
-        private PictureBox pictureBox6;
+        private PictureBox pictureBoxAracPaneli;
         private Label label7;
         private PictureBox pictureBox7;
     }
