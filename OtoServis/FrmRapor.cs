@@ -68,5 +68,15 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportEnCokKullanilanParcalarVeAraclardakiKullanimSikligi", "DataSetRaporEnCokKullanilanParcalarVeAraclardakiKullanimSikligi");
         }
+
+        private void btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpHerBirMarkayaAitAracSayisiVeOrtalamaYaslariTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportHerBirMarkayaAitAracSayisiVeOrtalamaYaslari", "DataSetRaporHerBirMarkayaAitAracSayisiVeOrtalamaYaslari");
+        }
     }
 }

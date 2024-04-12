@@ -34,6 +34,7 @@
             btnBirYildaYapilanToplamSatisMiktari = new Button();
             btnEnCokGelirGetirenIlkBesParca = new Button();
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi = new Button();
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari = new Button();
             SuspendLayout();
             // 
             // btnTamirEdilenAracRapor
@@ -108,11 +109,24 @@
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.UseVisualStyleBackColor = true;
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.Click += btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi_Click;
             // 
+            // btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari
+            // 
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Cursor = Cursors.Hand;
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Location = new Point(10, 528);
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Name = "btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari";
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Size = new Size(812, 80);
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.TabIndex = 6;
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Text = "HER BİR MARKAYA AİT ARAÇ SAYISI VE ORTALAMA YAŞLARI";
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.UseVisualStyleBackColor = true;
+            btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Click += btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 533);
+            ClientSize = new Size(1348, 661);
+            Controls.Add(btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari);
             Controls.Add(btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi);
             Controls.Add(btnEnCokGelirGetirenIlkBesParca);
             Controls.Add(btnBirYildaYapilanToplamSatisMiktari);
@@ -136,5 +150,6 @@
         private Button btnBirYildaYapilanToplamSatisMiktari;
         private Button btnEnCokGelirGetirenIlkBesParca;
         private Button btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi;
+        private Button btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari;
     }
 }
