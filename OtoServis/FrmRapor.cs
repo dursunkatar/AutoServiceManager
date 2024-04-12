@@ -78,5 +78,25 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportHerBirMarkayaAitAracSayisiVeOrtalamaYaslari", "DataSetRaporHerBirMarkayaAitAracSayisiVeOrtalamaYaslari");
         }
+
+        private void btnHerBirParcaninOrtalamaSatisFiyati_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpHerBirParcaninOrtalamaSatisFiyatiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportHerBirParcaninOrtalamaSatisFiyati", "DataSetRaporHerBirParcaninOrtalamaSatisFiyati");
+        }
+
+        private void btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdediTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi", "DataSetRaporHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi");
+        }
     }
 }

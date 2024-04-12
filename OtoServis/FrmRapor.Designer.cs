@@ -35,6 +35,8 @@
             btnEnCokGelirGetirenIlkBesParca = new Button();
             btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi = new Button();
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari = new Button();
+            btnHerBirParcaninOrtalamaSatisFiyati = new Button();
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi = new Button();
             SuspendLayout();
             // 
             // btnTamirEdilenAracRapor
@@ -121,11 +123,37 @@
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.UseVisualStyleBackColor = true;
             btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.Click += btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari_Click;
             // 
+            // btnHerBirParcaninOrtalamaSatisFiyati
+            // 
+            btnHerBirParcaninOrtalamaSatisFiyati.Cursor = Cursors.Hand;
+            btnHerBirParcaninOrtalamaSatisFiyati.Font = new Font("Arial", 18F);
+            btnHerBirParcaninOrtalamaSatisFiyati.Location = new Point(12, 376);
+            btnHerBirParcaninOrtalamaSatisFiyati.Name = "btnHerBirParcaninOrtalamaSatisFiyati";
+            btnHerBirParcaninOrtalamaSatisFiyati.Size = new Size(812, 46);
+            btnHerBirParcaninOrtalamaSatisFiyati.TabIndex = 7;
+            btnHerBirParcaninOrtalamaSatisFiyati.Text = "HER BİR PARÇANIN ORTALAMA SATIŞ FİYATI";
+            btnHerBirParcaninOrtalamaSatisFiyati.UseVisualStyleBackColor = true;
+            btnHerBirParcaninOrtalamaSatisFiyati.Click += btnHerBirParcaninOrtalamaSatisFiyati_Click;
+            // 
+            // btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi
+            // 
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Cursor = Cursors.Hand;
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Font = new Font("Arial", 18F);
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Location = new Point(8, 428);
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Name = "btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi";
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Size = new Size(812, 46);
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.TabIndex = 8;
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Text = "HER BİR PERSONEL İÇİN YAPILAN TOPLAM SATIŞ TUTARI VE SATIŞ ADEDİ";
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.UseVisualStyleBackColor = true;
+            btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.Click += btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi_Click;
+            // 
             // FrmRapor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 377);
+            ClientSize = new Size(832, 490);
+            Controls.Add(btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi);
+            Controls.Add(btnHerBirParcaninOrtalamaSatisFiyati);
             Controls.Add(btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari);
             Controls.Add(btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi);
             Controls.Add(btnEnCokGelirGetirenIlkBesParca);
@@ -151,5 +179,7 @@
         private Button btnEnCokGelirGetirenIlkBesParca;
         private Button btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi;
         private Button btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari;
+        private Button btnHerBirParcaninOrtalamaSatisFiyati;
+        private Button btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi;
     }
 }

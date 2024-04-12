@@ -47,6 +47,12 @@
     <None Update="Rapor\ReportHerBirMarkayaAitAracSayisiVeOrtalamaYaslari.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Rapor\ReportHerBirParcaninOrtalamaSatisFiyati.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Rapor\ReportHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Rapor\ReportTamirEdilenAraclar.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
