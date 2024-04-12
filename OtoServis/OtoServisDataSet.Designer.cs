@@ -24,7 +24,7 @@ namespace OtoServis {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class OtoServisDataSet : global::System.Data.DataSet {
         
-        private spDeneme2DataTable tablespDeneme2;
+        private SpTamirEdilenAraclarDataTable tableSpTamirEdilenAraclar;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace OtoServis {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["spDeneme2"] != null)) {
-                    base.Tables.Add(new spDeneme2DataTable(ds.Tables["spDeneme2"]));
+                if ((ds.Tables["SpTamirEdilenAraclar"] != null)) {
+                    base.Tables.Add(new SpTamirEdilenAraclarDataTable(ds.Tables["SpTamirEdilenAraclar"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace OtoServis {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public spDeneme2DataTable spDeneme2 {
+        public SpTamirEdilenAraclarDataTable SpTamirEdilenAraclar {
             get {
-                return this.tablespDeneme2;
+                return this.tableSpTamirEdilenAraclar;
             }
         }
         
@@ -152,8 +152,8 @@ namespace OtoServis {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["spDeneme2"] != null)) {
-                    base.Tables.Add(new spDeneme2DataTable(ds.Tables["spDeneme2"]));
+                if ((ds.Tables["SpTamirEdilenAraclar"] != null)) {
+                    base.Tables.Add(new SpTamirEdilenAraclarDataTable(ds.Tables["SpTamirEdilenAraclar"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace OtoServis {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablespDeneme2 = ((spDeneme2DataTable)(base.Tables["spDeneme2"]));
+            this.tableSpTamirEdilenAraclar = ((SpTamirEdilenAraclarDataTable)(base.Tables["SpTamirEdilenAraclar"]));
             if ((initTable == true)) {
-                if ((this.tablespDeneme2 != null)) {
-                    this.tablespDeneme2.InitVars();
+                if ((this.tableSpTamirEdilenAraclar != null)) {
+                    this.tableSpTamirEdilenAraclar.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace OtoServis {
             this.Namespace = "http://tempuri.org/OtoServisDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablespDeneme2 = new spDeneme2DataTable();
-            base.Tables.Add(this.tablespDeneme2);
+            this.tableSpTamirEdilenAraclar = new SpTamirEdilenAraclarDataTable();
+            base.Tables.Add(this.tableSpTamirEdilenAraclar);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializespDeneme2() {
+        private bool ShouldSerializeSpTamirEdilenAraclar() {
             return false;
         }
         
@@ -270,22 +270,16 @@ namespace OtoServis {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void spDeneme2RowChangeEventHandler(object sender, spDeneme2RowChangeEvent e);
+        public delegate void SpTamirEdilenAraclarRowChangeEventHandler(object sender, SpTamirEdilenAraclarRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class spDeneme2DataTable : global::System.Data.TypedTableBase<spDeneme2Row> {
-            
-            private global::System.Data.DataColumn columnMusteriAdi;
+        public partial class SpTamirEdilenAraclarDataTable : global::System.Data.TypedTableBase<SpTamirEdilenAraclarRow> {
             
             private global::System.Data.DataColumn columnPlaka;
-            
-            private global::System.Data.DataColumn columnAracRenk;
-            
-            private global::System.Data.DataColumn columnTamirEdenPersonel;
             
             private global::System.Data.DataColumn columnTamirTarihi;
             
@@ -293,8 +287,8 @@ namespace OtoServis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spDeneme2DataTable() {
-                this.TableName = "spDeneme2";
+            public SpTamirEdilenAraclarDataTable() {
+                this.TableName = "SpTamirEdilenAraclar";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +296,7 @@ namespace OtoServis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal spDeneme2DataTable(global::System.Data.DataTable table) {
+            internal SpTamirEdilenAraclarDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,17 +313,9 @@ namespace OtoServis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected spDeneme2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SpTamirEdilenAraclarDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MusteriAdiColumn {
-                get {
-                    return this.columnMusteriAdi;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -337,22 +323,6 @@ namespace OtoServis {
             public global::System.Data.DataColumn PlakaColumn {
                 get {
                     return this.columnPlaka;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AracRenkColumn {
-                get {
-                    return this.columnAracRenk;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TamirEdenPersonelColumn {
-                get {
-                    return this.columnTamirEdenPersonel;
                 }
             }
             
@@ -383,50 +353,47 @@ namespace OtoServis {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spDeneme2Row this[int index] {
+            public SpTamirEdilenAraclarRow this[int index] {
                 get {
-                    return ((spDeneme2Row)(this.Rows[index]));
+                    return ((SpTamirEdilenAraclarRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spDeneme2RowChangeEventHandler spDeneme2RowChanging;
+            public event SpTamirEdilenAraclarRowChangeEventHandler SpTamirEdilenAraclarRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spDeneme2RowChangeEventHandler spDeneme2RowChanged;
+            public event SpTamirEdilenAraclarRowChangeEventHandler SpTamirEdilenAraclarRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spDeneme2RowChangeEventHandler spDeneme2RowDeleting;
+            public event SpTamirEdilenAraclarRowChangeEventHandler SpTamirEdilenAraclarRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event spDeneme2RowChangeEventHandler spDeneme2RowDeleted;
+            public event SpTamirEdilenAraclarRowChangeEventHandler SpTamirEdilenAraclarRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddspDeneme2Row(spDeneme2Row row) {
+            public void AddSpTamirEdilenAraclarRow(SpTamirEdilenAraclarRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spDeneme2Row AddspDeneme2Row(string MusteriAdi, string Plaka, string AracRenk, string TamirEdenPersonel, System.DateTime TamirTarihi, string Aciklama) {
-                spDeneme2Row rowspDeneme2Row = ((spDeneme2Row)(this.NewRow()));
+            public SpTamirEdilenAraclarRow AddSpTamirEdilenAraclarRow(string Plaka, System.DateTime TamirTarihi, string Aciklama) {
+                SpTamirEdilenAraclarRow rowSpTamirEdilenAraclarRow = ((SpTamirEdilenAraclarRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MusteriAdi,
                         Plaka,
-                        AracRenk,
-                        TamirEdenPersonel,
                         TamirTarihi,
                         Aciklama};
-                rowspDeneme2Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowspDeneme2Row);
-                return rowspDeneme2Row;
+                rowSpTamirEdilenAraclarRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSpTamirEdilenAraclarRow);
+                return rowSpTamirEdilenAraclarRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                spDeneme2DataTable cln = ((spDeneme2DataTable)(base.Clone()));
+                SpTamirEdilenAraclarDataTable cln = ((SpTamirEdilenAraclarDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -434,16 +401,13 @@ namespace OtoServis {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new spDeneme2DataTable();
+                return new SpTamirEdilenAraclarDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnMusteriAdi = base.Columns["MusteriAdi"];
                 this.columnPlaka = base.Columns["Plaka"];
-                this.columnAracRenk = base.Columns["AracRenk"];
-                this.columnTamirEdenPersonel = base.Columns["TamirEdenPersonel"];
                 this.columnTamirTarihi = base.Columns["TamirTarihi"];
                 this.columnAciklama = base.Columns["Aciklama"];
             }
@@ -451,53 +415,42 @@ namespace OtoServis {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnMusteriAdi = new global::System.Data.DataColumn("MusteriAdi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMusteriAdi);
                 this.columnPlaka = new global::System.Data.DataColumn("Plaka", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlaka);
-                this.columnAracRenk = new global::System.Data.DataColumn("AracRenk", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAracRenk);
-                this.columnTamirEdenPersonel = new global::System.Data.DataColumn("TamirEdenPersonel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTamirEdenPersonel);
                 this.columnTamirTarihi = new global::System.Data.DataColumn("TamirTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTamirTarihi);
                 this.columnAciklama = new global::System.Data.DataColumn("Aciklama", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAciklama);
-                this.columnMusteriAdi.ReadOnly = true;
-                this.columnMusteriAdi.MaxLength = 101;
                 this.columnPlaka.AllowDBNull = false;
                 this.columnPlaka.MaxLength = 20;
-                this.columnAracRenk.MaxLength = 50;
-                this.columnTamirEdenPersonel.AllowDBNull = false;
-                this.columnTamirEdenPersonel.MaxLength = 50;
                 this.columnTamirTarihi.AllowDBNull = false;
                 this.columnAciklama.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spDeneme2Row NewspDeneme2Row() {
-                return ((spDeneme2Row)(this.NewRow()));
+            public SpTamirEdilenAraclarRow NewSpTamirEdilenAraclarRow() {
+                return ((SpTamirEdilenAraclarRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new spDeneme2Row(builder);
+                return new SpTamirEdilenAraclarRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(spDeneme2Row);
+                return typeof(SpTamirEdilenAraclarRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.spDeneme2RowChanged != null)) {
-                    this.spDeneme2RowChanged(this, new spDeneme2RowChangeEvent(((spDeneme2Row)(e.Row)), e.Action));
+                if ((this.SpTamirEdilenAraclarRowChanged != null)) {
+                    this.SpTamirEdilenAraclarRowChanged(this, new SpTamirEdilenAraclarRowChangeEvent(((SpTamirEdilenAraclarRow)(e.Row)), e.Action));
                 }
             }
             
@@ -505,8 +458,8 @@ namespace OtoServis {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.spDeneme2RowChanging != null)) {
-                    this.spDeneme2RowChanging(this, new spDeneme2RowChangeEvent(((spDeneme2Row)(e.Row)), e.Action));
+                if ((this.SpTamirEdilenAraclarRowChanging != null)) {
+                    this.SpTamirEdilenAraclarRowChanging(this, new SpTamirEdilenAraclarRowChangeEvent(((SpTamirEdilenAraclarRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,8 +467,8 @@ namespace OtoServis {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.spDeneme2RowDeleted != null)) {
-                    this.spDeneme2RowDeleted(this, new spDeneme2RowChangeEvent(((spDeneme2Row)(e.Row)), e.Action));
+                if ((this.SpTamirEdilenAraclarRowDeleted != null)) {
+                    this.SpTamirEdilenAraclarRowDeleted(this, new SpTamirEdilenAraclarRowChangeEvent(((SpTamirEdilenAraclarRow)(e.Row)), e.Action));
                 }
             }
             
@@ -523,14 +476,14 @@ namespace OtoServis {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.spDeneme2RowDeleting != null)) {
-                    this.spDeneme2RowDeleting(this, new spDeneme2RowChangeEvent(((spDeneme2Row)(e.Row)), e.Action));
+                if ((this.SpTamirEdilenAraclarRowDeleting != null)) {
+                    this.SpTamirEdilenAraclarRowDeleting(this, new SpTamirEdilenAraclarRowChangeEvent(((SpTamirEdilenAraclarRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovespDeneme2Row(spDeneme2Row row) {
+            public void RemoveSpTamirEdilenAraclarRow(SpTamirEdilenAraclarRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -557,7 +510,7 @@ namespace OtoServis {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "spDeneme2DataTable";
+                attribute2.FixedValue = "SpTamirEdilenAraclarDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -601,68 +554,25 @@ namespace OtoServis {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class spDeneme2Row : global::System.Data.DataRow {
+        public partial class SpTamirEdilenAraclarRow : global::System.Data.DataRow {
             
-            private spDeneme2DataTable tablespDeneme2;
+            private SpTamirEdilenAraclarDataTable tableSpTamirEdilenAraclar;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal spDeneme2Row(global::System.Data.DataRowBuilder rb) : 
+            internal SpTamirEdilenAraclarRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablespDeneme2 = ((spDeneme2DataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string MusteriAdi {
-                get {
-                    try {
-                        return ((string)(this[this.tablespDeneme2.MusteriAdiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MusteriAdi\' in table \'spDeneme2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespDeneme2.MusteriAdiColumn] = value;
-                }
+                this.tableSpTamirEdilenAraclar = ((SpTamirEdilenAraclarDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Plaka {
                 get {
-                    return ((string)(this[this.tablespDeneme2.PlakaColumn]));
+                    return ((string)(this[this.tableSpTamirEdilenAraclar.PlakaColumn]));
                 }
                 set {
-                    this[this.tablespDeneme2.PlakaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string AracRenk {
-                get {
-                    try {
-                        return ((string)(this[this.tablespDeneme2.AracRenkColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AracRenk\' in table \'spDeneme2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespDeneme2.AracRenkColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TamirEdenPersonel {
-                get {
-                    return ((string)(this[this.tablespDeneme2.TamirEdenPersonelColumn]));
-                }
-                set {
-                    this[this.tablespDeneme2.TamirEdenPersonelColumn] = value;
+                    this[this.tableSpTamirEdilenAraclar.PlakaColumn] = value;
                 }
             }
             
@@ -670,10 +580,10 @@ namespace OtoServis {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime TamirTarihi {
                 get {
-                    return ((global::System.DateTime)(this[this.tablespDeneme2.TamirTarihiColumn]));
+                    return ((global::System.DateTime)(this[this.tableSpTamirEdilenAraclar.TamirTarihiColumn]));
                 }
                 set {
-                    this[this.tablespDeneme2.TamirTarihiColumn] = value;
+                    this[this.tableSpTamirEdilenAraclar.TamirTarihiColumn] = value;
                 }
             }
             
@@ -682,51 +592,27 @@ namespace OtoServis {
             public string Aciklama {
                 get {
                     try {
-                        return ((string)(this[this.tablespDeneme2.AciklamaColumn]));
+                        return ((string)(this[this.tableSpTamirEdilenAraclar.AciklamaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Aciklama\' in table \'spDeneme2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Aciklama\' in table \'SpTamirEdilenAraclar\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespDeneme2.AciklamaColumn] = value;
+                    this[this.tableSpTamirEdilenAraclar.AciklamaColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMusteriAdiNull() {
-                return this.IsNull(this.tablespDeneme2.MusteriAdiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMusteriAdiNull() {
-                this[this.tablespDeneme2.MusteriAdiColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAracRenkNull() {
-                return this.IsNull(this.tablespDeneme2.AracRenkColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAracRenkNull() {
-                this[this.tablespDeneme2.AracRenkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsAciklamaNull() {
-                return this.IsNull(this.tablespDeneme2.AciklamaColumn);
+                return this.IsNull(this.tableSpTamirEdilenAraclar.AciklamaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAciklamaNull() {
-                this[this.tablespDeneme2.AciklamaColumn] = global::System.Convert.DBNull;
+                this[this.tableSpTamirEdilenAraclar.AciklamaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -734,22 +620,22 @@ namespace OtoServis {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class spDeneme2RowChangeEvent : global::System.EventArgs {
+        public class SpTamirEdilenAraclarRowChangeEvent : global::System.EventArgs {
             
-            private spDeneme2Row eventRow;
+            private SpTamirEdilenAraclarRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spDeneme2RowChangeEvent(spDeneme2Row row, global::System.Data.DataRowAction action) {
+            public SpTamirEdilenAraclarRowChangeEvent(SpTamirEdilenAraclarRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public spDeneme2Row Row {
+            public SpTamirEdilenAraclarRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -777,7 +663,7 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class spDeneme2TableAdapter : global::System.ComponentModel.Component {
+    public partial class SpTamirEdilenAraclarTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -791,7 +677,7 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public spDeneme2TableAdapter() {
+        public SpTamirEdilenAraclarTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -888,11 +774,8 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "spDeneme2";
-            tableMapping.ColumnMappings.Add("MusteriAdi", "MusteriAdi");
+            tableMapping.DataSetTable = "SpTamirEdilenAraclar";
             tableMapping.ColumnMappings.Add("Plaka", "Plaka");
-            tableMapping.ColumnMappings.Add("AracRenk", "AracRenk");
-            tableMapping.ColumnMappings.Add("TamirEdenPersonel", "TamirEdenPersonel");
             tableMapping.ColumnMappings.Add("TamirTarihi", "TamirTarihi");
             tableMapping.ColumnMappings.Add("Aciklama", "Aciklama");
             this._adapter.TableMappings.Add(tableMapping);
@@ -902,8 +785,8 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=AMDPC\\SQLEXPRESS;Initial Catalog=OtoServis;Integrated Security=True;E" +
-                "ncrypt=True;TrustServerCertificate=True";
+            this._connection.ConnectionString = "Data Source=AMDPC\\SQLEXPRESS;Initial Catalog=OtoServis;Integrated Security=True;T" +
+                "rustServerCertificate=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -912,20 +795,20 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.spDeneme2";
+            this._commandCollection[0].CommandText = "dbo.SpTamirEdilenAraclar";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tarih", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaslangicTarihi", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(OtoServisDataSet.spDeneme2DataTable dataTable, global::System.Nullable<global::System.DateTime> tarih) {
+        public virtual int Fill(OtoServisDataSet.SpTamirEdilenAraclarDataTable dataTable, global::System.Nullable<global::System.DateTime> BaslangicTarihi) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((tarih.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(tarih.Value));
+            if ((BaslangicTarihi.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(BaslangicTarihi.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -941,15 +824,15 @@ namespace OtoServis.OtoServisDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual OtoServisDataSet.spDeneme2DataTable GetData(global::System.Nullable<global::System.DateTime> tarih) {
+        public virtual OtoServisDataSet.SpTamirEdilenAraclarDataTable GetData(global::System.Nullable<global::System.DateTime> BaslangicTarihi) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((tarih.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(tarih.Value));
+            if ((BaslangicTarihi.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(BaslangicTarihi.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            OtoServisDataSet.spDeneme2DataTable dataTable = new OtoServisDataSet.spDeneme2DataTable();
+            OtoServisDataSet.SpTamirEdilenAraclarDataTable dataTable = new OtoServisDataSet.SpTamirEdilenAraclarDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

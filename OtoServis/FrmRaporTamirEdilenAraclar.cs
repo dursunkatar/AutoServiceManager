@@ -3,25 +3,30 @@ using System.Data;
 
 namespace OtoServis
 {
-    public partial class FrmRapor : Form
+    public partial class FrmRaporTamirEdilenAraclar : Form
     {
         private readonly ReportViewer reportViewer;
-        public FrmRapor()
+        public FrmRaporTamirEdilenAraclar()
         {
             InitializeComponent();
             reportViewer = new ReportViewer();
             reportViewer.Dock = DockStyle.Fill;
-            Controls.Add(reportViewer);
+            tableLayoutPanel.Controls.Add(reportViewer, 0, 1);
         }
 
-        private void FrmRapor_Load(object sender, EventArgs e)
+        private void FrmRaporTamirEdilenAraclar_Load(object sender, EventArgs e)
+        {
+            RaporuYukle();
+        }
+
+        void RaporuYukle()
         {
             using OtoServisDataSet dataSet = new OtoServisDataSet();
             using OtoServisDataSetTableAdapters.SpTamirEdilenAraclarTableAdapter tableAdapter = new();
 
-            DataTable dataTable = tableAdapter.GetData(DateTime.Now);
+            DataTable dataTable = tableAdapter.GetData(dateTimePicker1.Value);
 
-            var parameters = new[] { new ReportParameter("RParamTamirEdilenAraclar", DateTime.Now.ToString("yyyy-MM-dd")) };
+            var parameters = new[] { new ReportParameter("RParamTamirEdilenAraclar", dateTimePicker1.Value.ToString("yyyy-MM-dd")) };
 
             using var fs = new FileStream("ReportTamirEdilenAraclar.rdlc", FileMode.Open);
             reportViewer.LocalReport.LoadReportDefinition(fs);
@@ -29,6 +34,11 @@ namespace OtoServis
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("DataSetTamirEdilenAraclar", dataTable));
             reportViewer.LocalReport.SetParameters(parameters);
             reportViewer.RefreshReport();
+        }
+
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            RaporuYukle();
         }
     }
 }
