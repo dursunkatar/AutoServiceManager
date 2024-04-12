@@ -41,6 +41,9 @@
     <None Update="Rapor\ReportEnCokGelirGetirenIlkBesParca.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Rapor\ReportEnCokKullanilanParcalarVeAraclardakiKullanimSikligi.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Rapor\ReportTamirEdilenAraclar.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

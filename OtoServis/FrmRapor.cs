@@ -58,5 +58,15 @@ namespace OtoServis
             form.Show();
             form.RaporuYukle(dataTable, "ReportEnCokGelirGetirenIlkBesParca", "DataSetRaporEnCokGelirGetirenIlkBesParca");
         }
+
+        private void btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi_Click(object sender, EventArgs e)
+        {
+            using OtoServisDataSetTableAdapters.SpEnCokKullanilanParcalarVeAraclardakiKullanimSikligiTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
+            form.Show();
+            form.RaporuYukle(dataTable, "ReportEnCokKullanilanParcalarVeAraclardakiKullanimSikligi", "DataSetRaporEnCokKullanilanParcalarVeAraclardakiKullanimSikligi");
+        }
     }
 }
