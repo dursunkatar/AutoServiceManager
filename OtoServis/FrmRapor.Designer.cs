@@ -67,7 +67,7 @@
             // 
             btnBelirliBirMusterininTumAracBilgileri.Cursor = Cursors.Hand;
             btnBelirliBirMusterininTumAracBilgileri.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnBelirliBirMusterininTumAracBilgileri.Location = new Point(12, 46);
+            btnBelirliBirMusterininTumAracBilgileri.Location = new Point(8, 46);
             btnBelirliBirMusterininTumAracBilgileri.Name = "btnBelirliBirMusterininTumAracBilgileri";
             btnBelirliBirMusterininTumAracBilgileri.Size = new Size(626, 28);
             btnBelirliBirMusterininTumAracBilgileri.TabIndex = 1;
@@ -79,7 +79,7 @@
             // 
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Cursor = Cursors.Hand;
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Location = new Point(12, 80);
+            btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Location = new Point(8, 80);
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Name = "btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi";
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.Size = new Size(626, 28);
             btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi.TabIndex = 2;
@@ -175,7 +175,7 @@
             // 
             btnMarkayaGoreSatilanParcaSayisi.Cursor = Cursors.Hand;
             btnMarkayaGoreSatilanParcaSayisi.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMarkayaGoreSatilanParcaSayisi.Location = new Point(12, 352);
+            btnMarkayaGoreSatilanParcaSayisi.Location = new Point(640, 46);
             btnMarkayaGoreSatilanParcaSayisi.Name = "btnMarkayaGoreSatilanParcaSayisi";
             btnMarkayaGoreSatilanParcaSayisi.Size = new Size(626, 28);
             btnMarkayaGoreSatilanParcaSayisi.TabIndex = 10;
@@ -187,9 +187,9 @@
             // 
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Cursor = Cursors.Hand;
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Location = new Point(12, 386);
+            btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Location = new Point(8, 352);
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Name = "btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri";
-            btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Size = new Size(626, 28);
+            btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Size = new Size(1258, 28);
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.TabIndex = 11;
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.Text = "MEKANİK USTALARIN YAPTIĞI TAMİRLER VE TOPLAM ÇALIŞMA SAATLERİ ";
             btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             // 
             btnMekanikUstalarinTamirEttigiAracSayisi.Cursor = Cursors.Hand;
             btnMekanikUstalarinTamirEttigiAracSayisi.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMekanikUstalarinTamirEttigiAracSayisi.Location = new Point(12, 420);
+            btnMekanikUstalarinTamirEttigiAracSayisi.Location = new Point(640, 80);
             btnMekanikUstalarinTamirEttigiAracSayisi.Name = "btnMekanikUstalarinTamirEttigiAracSayisi";
             btnMekanikUstalarinTamirEttigiAracSayisi.Size = new Size(626, 28);
             btnMekanikUstalarinTamirEttigiAracSayisi.TabIndex = 12;
@@ -211,7 +211,7 @@
             // 
             btnModelYilinaGoreAracSayisi.Cursor = Cursors.Hand;
             btnModelYilinaGoreAracSayisi.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnModelYilinaGoreAracSayisi.Location = new Point(12, 454);
+            btnModelYilinaGoreAracSayisi.Location = new Point(640, 114);
             btnModelYilinaGoreAracSayisi.Name = "btnModelYilinaGoreAracSayisi";
             btnModelYilinaGoreAracSayisi.Size = new Size(626, 28);
             btnModelYilinaGoreAracSayisi.TabIndex = 13;
@@ -223,7 +223,7 @@
             // 
             btnMusterilereGoreToplamHarcamaMiktari.Cursor = Cursors.Hand;
             btnMusterilereGoreToplamHarcamaMiktari.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMusterilereGoreToplamHarcamaMiktari.Location = new Point(12, 488);
+            btnMusterilereGoreToplamHarcamaMiktari.Location = new Point(640, 148);
             btnMusterilereGoreToplamHarcamaMiktari.Name = "btnMusterilereGoreToplamHarcamaMiktari";
             btnMusterilereGoreToplamHarcamaMiktari.Size = new Size(626, 28);
             btnMusterilereGoreToplamHarcamaMiktari.TabIndex = 14;
@@ -235,7 +235,7 @@
             // 
             btnMusterilerinEnSonSatinAldiklariParcalar.Cursor = Cursors.Hand;
             btnMusterilerinEnSonSatinAldiklariParcalar.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMusterilerinEnSonSatinAldiklariParcalar.Location = new Point(12, 522);
+            btnMusterilerinEnSonSatinAldiklariParcalar.Location = new Point(640, 182);
             btnMusterilerinEnSonSatinAldiklariParcalar.Name = "btnMusterilerinEnSonSatinAldiklariParcalar";
             btnMusterilerinEnSonSatinAldiklariParcalar.Size = new Size(626, 28);
             btnMusterilerinEnSonSatinAldiklariParcalar.TabIndex = 15;
@@ -247,7 +247,7 @@
             // 
             btnMusterininTamirIcinHarcadigiToplamTutar.Cursor = Cursors.Hand;
             btnMusterininTamirIcinHarcadigiToplamTutar.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnMusterininTamirIcinHarcadigiToplamTutar.Location = new Point(12, 556);
+            btnMusterininTamirIcinHarcadigiToplamTutar.Location = new Point(640, 216);
             btnMusterininTamirIcinHarcadigiToplamTutar.Name = "btnMusterininTamirIcinHarcadigiToplamTutar";
             btnMusterininTamirIcinHarcadigiToplamTutar.Size = new Size(626, 28);
             btnMusterininTamirIcinHarcadigiToplamTutar.TabIndex = 16;
@@ -259,7 +259,7 @@
             // 
             btnStoktakiParcalarinToplamDegeri.Cursor = Cursors.Hand;
             btnStoktakiParcalarinToplamDegeri.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnStoktakiParcalarinToplamDegeri.Location = new Point(12, 590);
+            btnStoktakiParcalarinToplamDegeri.Location = new Point(640, 250);
             btnStoktakiParcalarinToplamDegeri.Name = "btnStoktakiParcalarinToplamDegeri";
             btnStoktakiParcalarinToplamDegeri.Size = new Size(626, 28);
             btnStoktakiParcalarinToplamDegeri.TabIndex = 17;
@@ -271,7 +271,7 @@
             // 
             btnTamirIslemiGorenAracBilgileri.Cursor = Cursors.Hand;
             btnTamirIslemiGorenAracBilgileri.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnTamirIslemiGorenAracBilgileri.Location = new Point(12, 624);
+            btnTamirIslemiGorenAracBilgileri.Location = new Point(640, 284);
             btnTamirIslemiGorenAracBilgileri.Name = "btnTamirIslemiGorenAracBilgileri";
             btnTamirIslemiGorenAracBilgileri.Size = new Size(626, 28);
             btnTamirIslemiGorenAracBilgileri.TabIndex = 18;
@@ -283,7 +283,7 @@
             // 
             btnEnCokTamirEdilenAraclarListesi.Cursor = Cursors.Hand;
             btnEnCokTamirEdilenAraclarListesi.Font = new Font("Microsoft Sans Serif", 11.25F);
-            btnEnCokTamirEdilenAraclarListesi.Location = new Point(12, 658);
+            btnEnCokTamirEdilenAraclarListesi.Location = new Point(640, 318);
             btnEnCokTamirEdilenAraclarListesi.Name = "btnEnCokTamirEdilenAraclarListesi";
             btnEnCokTamirEdilenAraclarListesi.Size = new Size(626, 28);
             btnEnCokTamirEdilenAraclarListesi.TabIndex = 19;
@@ -307,7 +307,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1291, 710);
+            ClientSize = new Size(1274, 390);
             Controls.Add(btnEnCokTamirEdilenAracModelleri);
             Controls.Add(btnEnCokTamirEdilenAraclarListesi);
             Controls.Add(btnTamirIslemiGorenAracBilgileri);
