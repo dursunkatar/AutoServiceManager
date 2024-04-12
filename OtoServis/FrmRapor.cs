@@ -1,4 +1,6 @@
-﻿namespace OtoServis
+﻿using System.Data;
+
+namespace OtoServis
 {
     public partial class FrmRapor : Form
     {
@@ -34,8 +36,12 @@
 
         private void btnBirYildaYapilanToplamSatisMiktari_Click(object sender, EventArgs e)
         {
-            var form = new FrmRaporBirYildaYapilanToplamSatisMiktari();
+            using OtoServisDataSetTableAdapters.SpBirYildaYapilanToplamSatisMiktariTableAdapter tableAdapter = new();
+
+            DataTable dataTable = tableAdapter.GetData();
+            var form = new FrmRaporView();
             form.Show();
+            form.RaporuYukle(dataTable, "ReportBirYildaYapilanToplamSatisMiktari", "DataSetReportBirYildaYapilanToplamSatisMiktari");
 
         }
     }
