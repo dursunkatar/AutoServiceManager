@@ -17,15 +17,19 @@ namespace OtoServis.DataAccess.Entities
 
         [ForeignKey("Musteri")]
         public int MusteriID { get; set; }
+
+        [ForeignKey("Arac")]
+        public int AracId { get; set; }
+
         public int Miktar { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
         public decimal ToplamTutar { get; set; }
         public DateTime Tarih { get; set; }
-        public bool Silindimi { get; set; }
 
         public virtual Parca Parca { get; set; }
         public virtual Personel SatisPersonel { get; set; }
         public virtual Musteri Musteri { get; set; }
+        public virtual Arac Arac { get; set; }
     }
 }

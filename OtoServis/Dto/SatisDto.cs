@@ -10,6 +10,7 @@ namespace OtoServis.Dto
         public decimal ToplamTutar { get; set; }
         public DateTime Tarih { get; set; }
         public string SatisPersonel { get; set; }
+        public string Arac { get; set; }
         public Satis Data { get; set; }
     }
 }

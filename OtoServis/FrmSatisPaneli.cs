@@ -24,12 +24,15 @@ namespace OtoServis
             var data = dbContext.Satislar
                 .Include(x => x.Musteri)
                 .Include(x => x.SatisPersonel)
-
-
-                .Where(x => (musteriId == -1 || x.MusteriID == musteriId) && !x.Silindimi)
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Model)
+                .Include(x => x.Arac)
+                .ThenInclude(x => x.Marka)
+                .Where(x => musteriId == -1 || x.MusteriID == musteriId)
                 .Select(x => new SatisDto
                 {
                     Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad}",
+                    Arac = $"{x.Arac.Plaka} - ({x.Arac.Marka.MarkaAdi}  {x.Arac.Model.ModelAdi})",
                     Miktar = x.Miktar,
                     SatisPersonel = $"{x.SatisPersonel.Ad} {x.SatisPersonel.Soyad}",
                     Parca = x.Parca.ParcaAdi,
@@ -52,6 +55,7 @@ namespace OtoServis
             }
 
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+            var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
             var secilenParca = cmbParca.SelectedItem as TextValueDto<int>;
             var secilenSatisPersonel = cmbSatisPersonel.SelectedItem as TextValueDto<int>;
 
@@ -63,7 +67,11 @@ namespace OtoServis
                 MessageBox.Show("Müşteri seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
+            if (secilenArac is null || secilenArac.Value == -1)
+            {
+                MessageBox.Show("Araç seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (secilenParca is null || secilenParca.Value == -1)
             {
                 MessageBox.Show("Parça seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -132,6 +140,7 @@ namespace OtoServis
 
             dbContext.Entry<Parca>(parca).State = EntityState.Modified;
 
+            satis.Data.AracId = secilenArac.Value;
             satis.Data.Miktar = miktar;
             satis.Data.MusteriID = secilenMusteri.Value;
             satis.Data.ParcaID = secilenParca.Value;
@@ -141,13 +150,13 @@ namespace OtoServis
             dbContext.Entry<Satis>(satis.Data).State = EntityState.Modified;
             dbContext.SaveChanges();
             SatislariYukle();
-            InputlariTemizle();
             MessageBox.Show("Güncelleme başarılı", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         void SatisEkle()
         {
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
+            var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
             var secilenParca = cmbParca.SelectedItem as TextValueDto<int>;
             var secilenSatisPersonel = cmbSatisPersonel.SelectedItem as TextValueDto<int>;
 
@@ -159,7 +168,11 @@ namespace OtoServis
                 MessageBox.Show("Müşteri seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
+            if (secilenArac is null || secilenArac.Value == -1)
+            {
+                MessageBox.Show("Araç seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (secilenParca is null || secilenParca.Value == -1)
             {
                 MessageBox.Show("Parça seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -189,7 +202,7 @@ namespace OtoServis
                 return;
             }
 
-            var parca = dbContext.Parcalar.Where(p => p.ParcaID == secilenParca.Value).First();
+            var parca = dbContext.Parcalar.Where(p => p.ParcaID == secilenArac.Value).First();
 
             if (miktar > parca.StokAdet)
             {
@@ -199,6 +212,7 @@ namespace OtoServis
 
             dbContext.Satislar.Add(new Satis
             {
+                AracId = secilenArac.Value,
                 Miktar = miktar,
                 MusteriID = secilenMusteri.Value,
                 ParcaID = secilenParca.Value,
@@ -221,8 +235,10 @@ namespace OtoServis
             txtMiktar.Clear();
             txtTutar.Clear();
             cmbMusteri.SelectedIndex = 0;
+            cmbArac.SelectedIndex = 0;
             cmbParca.SelectedIndex = 0;
-            cmbSatisPersonel.SelectedIndex = 0;
+            cmbMusteri.Enabled = true;
+            cmbArac.Enabled = true;
             isSaving = true;
             btnKaydet.Text = "Kaydet";
         }
@@ -267,6 +283,29 @@ namespace OtoServis
             ComboBoxHelper.LoadData(cmbSatisPersonel, data, "Text", "Value");
         }
 
+        void AraclariYukle(int musteriId)
+        {
+            var data = dbContext.Araclar
+                .Include(x => x.Marka)
+                .Include(x => x.Model)
+                .Where(x => x.MusteriID == musteriId)
+                .Select(x => new TextValueDto<int>
+                {
+                    Text = $"{x.Plaka} - ({x.Marka.MarkaAdi}  {x.Model.ModelAdi})",
+                    Value = x.AracID
+
+                }).ToList();
+
+
+            data.Insert(0, new TextValueDto<int>
+            {
+                Text = "Seçiniz",
+                Value = -1
+            });
+
+            ComboBoxHelper.LoadData(cmbArac, data, "Text", "Value");
+        }
+
         void MusterileriYukle()
         {
             var data = dbContext.Musteriler.Where(x => !x.Silindimi).Select(x => new TextValueDto<int>
@@ -295,7 +334,12 @@ namespace OtoServis
 
         private void cmbMusteri_SelectedIndexChanged(object sender, EventArgs e)
         {
+            TextValueDto<int> selectedData = cmbMusteri.SelectedItem as TextValueDto<int>;
 
+            if (selectedData != null)
+            {
+                AraclariYukle(selectedData.Value);
+            }
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -355,6 +399,7 @@ namespace OtoServis
             if (!ok) return;
 
             ComboBoxHelper.SelectItemByValue(cmbMusteri, satis.Data.MusteriID);
+            ComboBoxHelper.SelectItemByValue(cmbArac, satis.Data.AracId);
             ComboBoxHelper.SelectItemByValue(cmbSatisPersonel, satis.Data.SatisPersonelID);
             ComboBoxHelper.SelectItemByValue(cmbParca, satis.Data.ParcaID);
 
@@ -365,45 +410,6 @@ namespace OtoServis
             txtTutar.Text = toplamTutarStr;
             btnKaydet.Text = "Güncelle";
             isSaving = false;
-        }
-
-        private void btnTemizle_Click(object sender, EventArgs e)
-        {
-            InputlariTemizle();
-        }
-
-        private void btnSil_Click(object sender, EventArgs e)
-        {
-            if (isSaving)
-            {
-                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            var (ok, satis) = DataGridViewHelper.GetSelectedValue<SatisDto>(dgvSatis);
-
-            if (!ok)
-            {
-                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz ?", "OtoServis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.No)
-            {
-                return;
-            }
-
-            satis.Data.Silindimi = true;
-            var parca = dbContext.Parcalar.First(p => p.ParcaID == satis.Data.ParcaID);
-
-            parca.StokAdet += satis.Data.Miktar;
-
-            dbContext.Entry<Parca>(parca).State = EntityState.Modified;
-            dbContext.Entry<Satis>(satis.Data).State = EntityState.Modified;
-            dbContext.SaveChanges();
-            InputlariTemizle();
-            SatislariYukle();
-            MessageBox.Show("Kayıt silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
