@@ -155,7 +155,7 @@
             // btnKaydet
             // 
             btnKaydet.Cursor = Cursors.Hand;
-            btnKaydet.Location = new Point(5, 349);
+            btnKaydet.Location = new Point(12, 349);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(248, 23);
             btnKaydet.TabIndex = 5;
@@ -203,7 +203,7 @@
             cmbPersonelAktifPasif.Size = new Size(234, 23);
             cmbPersonelAktifPasif.TabIndex = 0;
             // 
-            // FrmPersonelYonetim
+            // FrmPersonelPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -218,7 +218,7 @@
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "FrmPersonelYonetim";
+            Name = "FrmPersonelPaneli";
             Text = "Personel Yönetim Paneli";
             FormClosing += FrmPersonelYonetim_FormClosing;
             Load += FrmPersonelYonetim_Load;
