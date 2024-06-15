@@ -26,6 +26,7 @@ namespace OtoServis.DataAccess.Entities
         [Column(TypeName = "decimal(10, 2)")]
         public decimal ToplamTutar { get; set; }
         public DateTime Tarih { get; set; }
+        public bool Silindimi { get; set; }
 
         public virtual Parca Parca { get; set; }
         public virtual Personel SatisPersonel { get; set; }

@@ -36,6 +36,7 @@ namespace OtoServis
         {
             var personeller = dbContext.Personeller
                 .Include(p => p.Rol)
+                .Where(p => !p.Silindimi)
                 .Select(p => new PersonelDto
                 {
 
@@ -147,6 +148,7 @@ namespace OtoServis
             txtSifre.Clear();
             cmbRol.SelectedIndex = 0;
             cmbPersonelAktifPasif.SelectedIndex = 0;
+            isSaving = true;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -195,6 +197,36 @@ namespace OtoServis
             cmbRol.SelectedItem = personel.Data.Rol;
             ComboBoxHelper.SelectItemByValue<bool?>(cmbPersonelAktifPasif, personel.Data.Aktifmi);
             isSaving = false;
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (isSaving)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            var (ok, personel) = DataGridViewHelper.GetSelectedValue<PersonelDto>(dgvPersonel);
+
+            if (!ok)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz ?", "OtoServis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            personel.Data.Silindimi = true;
+
+            dbContext.Entry<Personel>(personel.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            inputlariTemizle();
+            PersonelleriYukle();
+            MessageBox.Show("Kayıt silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

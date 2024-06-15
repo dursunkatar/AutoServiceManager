@@ -2,6 +2,7 @@
 using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
 using OtoServis.DataAccess.Entities;
+using OtoServis.Dto;
 using OtoServis.Helper;
 
 namespace OtoServis
@@ -18,8 +19,14 @@ namespace OtoServis
 
         void ParcalariYukle()
         {
-            var parcalar = dbContext.Parcalar.ToList();
-            DataGridViewHelper.LoadData<Parca>(dgvParca, parcalar);
+            var parcalar = dbContext.Parcalar.Where(x => !x.Silindimi).Select(x => new ParcaDto
+            {
+                Fiyat = x.Fiyat,
+                ParcaAdi = x.ParcaAdi,
+                StokAdet = x.StokAdet,
+                Data = x
+            }).ToList();
+            DataGridViewHelper.LoadData<ParcaDto>(dgvParca, parcalar);
         }
 
         void ParcaEkle()
@@ -71,11 +78,12 @@ namespace OtoServis
             txtParcaAdi.Clear();
             txtStok.Clear();
             txtFiyat.Clear();
+            isSaving = true;
         }
 
         void ParcaGuncelle()
         {
-            var (ok, data) = DataGridViewHelper.GetSelectedValue<Parca>(dgvParca);
+            var (ok, parca) = DataGridViewHelper.GetSelectedValue<ParcaDto>(dgvParca);
 
             if (!ok)
             {
@@ -105,7 +113,7 @@ namespace OtoServis
                 return;
             }
 
-            bool parcaEklenmismi = dbContext.Parcalar.Any(x => x.ParcaID != data.ParcaID && x.ParcaAdi == parcaAdi);
+            bool parcaEklenmismi = dbContext.Parcalar.Any(x => x.ParcaID != parca.Data.ParcaID && x.ParcaAdi == parcaAdi);
 
             if (parcaEklenmismi)
             {
@@ -113,13 +121,13 @@ namespace OtoServis
                 return;
             }
 
-            data.ParcaAdi = parcaAdi;
-            data.StokAdet = stok;
-            data.Fiyat = fiyat;
+            parca.Data.ParcaAdi = parcaAdi;
+            parca.Data.StokAdet = stok;
+            parca.Data.Fiyat = fiyat;
 
-            dbContext.Entry<Parca>(data).State = EntityState.Modified;
+            dbContext.Entry<Parca>(parca.Data).State = EntityState.Modified;
             dbContext.SaveChanges();
-            isSaving = true;
+            InputlariTemizle();
             MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -152,7 +160,7 @@ namespace OtoServis
 
         private void dgvParca_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var (ok, data) = DataGridViewHelper.GetSelectedValue<Parca>(dgvParca);
+            var (ok, data) = DataGridViewHelper.GetSelectedValue<ParcaDto>(dgvParca);
 
             if (!ok) return;
 
@@ -161,6 +169,36 @@ namespace OtoServis
             txtFiyat.Text = data.Fiyat.ToString();
 
             isSaving = false;
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (isSaving)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            var (ok, parca) = DataGridViewHelper.GetSelectedValue<ParcaDto>(dgvParca);
+
+            if (!ok)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz ?", "OtoServis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            parca.Data.Silindimi = true;
+
+            dbContext.Entry<Parca>(parca.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            InputlariTemizle();
+            ParcalariYukle();
+            MessageBox.Show("Kayıt silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

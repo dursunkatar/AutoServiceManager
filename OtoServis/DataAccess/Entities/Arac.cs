@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OtoServis.DataAccess.Entities
 {
@@ -31,6 +26,7 @@ namespace OtoServis.DataAccess.Entities
         public int MarkaID { get; set; }
 
         public int Yil { get; set; }
+        public bool Silindimi { get; set; }
 
         public virtual Musteri Musteri { get; set; }
         public virtual Model Model { get; set; }

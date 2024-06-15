@@ -37,6 +37,7 @@
             groupBox1 = new GroupBox();
             txtParcaAdi = new TextBox();
             btnKaydet = new Button();
+            btnSil = new Button();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvParca).BeginInit();
             groupBox3.SuspendLayout();
@@ -127,17 +128,29 @@
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 183);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(248, 236);
+            btnKaydet.Size = new Size(248, 113);
             btnKaydet.TabIndex = 11;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
             btnKaydet.Click += btnKaydet_Click;
             // 
-            // FrmParcaYonetimPaneli
+            // btnSil
+            // 
+            btnSil.Cursor = Cursors.Hand;
+            btnSil.Location = new Point(12, 301);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(248, 113);
+            btnSil.TabIndex = 12;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
+            // 
+            // FrmParcaPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(809, 424);
+            Controls.Add(btnSil);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -145,7 +158,7 @@
             Controls.Add(groupBox6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "FrmParcaYonetimPaneli";
+            Name = "FrmParcaPaneli";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmParcaYonetimPaneli";
             Load += FrmParcaYonetimPaneli_Load;
@@ -171,5 +184,6 @@
         private GroupBox groupBox1;
         private TextBox txtParcaAdi;
         private Button btnKaydet;
+        private Button btnSil;
     }
 }

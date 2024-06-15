@@ -1,18 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using OtoServis.DataAccess.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OtoServis.DataAccess.Entities
+namespace OtoServis.Dto
 {
-    [Table("Parcalar")]
-    public class Parca
+    public class ParcaDto
     {
-        [Key]
-        public int ParcaID { get; set; }
         public string ParcaAdi { get; set; }
         public int StokAdet { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
         public decimal Fiyat { get; set; }
-        public bool Silindimi { get; set; }
+        public Parca Data { get; set; }
     }
 }

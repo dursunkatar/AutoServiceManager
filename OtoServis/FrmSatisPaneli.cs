@@ -28,7 +28,7 @@ namespace OtoServis
                 .ThenInclude(x => x.Model)
                 .Include(x => x.Arac)
                 .ThenInclude(x => x.Marka)
-                .Where(x => musteriId == -1 || x.MusteriID == musteriId)
+                .Where(x => (musteriId == -1 || x.MusteriID == musteriId) && !x.Silindimi)
                 .Select(x => new SatisDto
                 {
                     Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad}",
@@ -410,6 +410,36 @@ namespace OtoServis
             txtTutar.Text = toplamTutarStr;
             btnKaydet.Text = "Güncelle";
             isSaving = false;
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (isSaving)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            var (ok, satis) = DataGridViewHelper.GetSelectedValue<SatisDto>(dgvSatis);
+
+            if (!ok)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz ?", "OtoServis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            satis.Data.Silindimi = true;
+
+            dbContext.Entry<Satis>(satis.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            InputlariTemizle();
+            SatislariYukle();
+            MessageBox.Show("Kayıt silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

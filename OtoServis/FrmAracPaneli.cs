@@ -53,7 +53,7 @@ namespace OtoServis
                 .Include(x => x.Musteri)
                 .Include(x => x.Marka)
                 .Include(x => x.Model)
-                .Where(x => musteriId == -1 || x.MusteriID == musteriId)
+                .Where(x => (musteriId == -1 || x.MusteriID == musteriId) && !x.Silindimi)
                 .Select(x => new AracDto
                 {
                     Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad} - ({x.Musteri.Telefon})",
@@ -307,6 +307,36 @@ namespace OtoServis
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             InputlariTemizle();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (isSaving)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            var (ok, arac) = DataGridViewHelper.GetSelectedValue<AracDto>(dgvArac);
+
+            if (!ok)
+            {
+                MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Bu kaydı silmek istediğinize emin misiniz ?", "OtoServis", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            arac.Data.Silindimi = true;
+
+            dbContext.Entry<Arac>(arac.Data).State = EntityState.Modified;
+            dbContext.SaveChanges();
+            InputlariTemizle();
+            AraclariYukle();
+            MessageBox.Show("Kayıt silindi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

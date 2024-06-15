@@ -43,6 +43,7 @@
             dgvPersonel = new DataGridView();
             groupBox7 = new GroupBox();
             cmbPersonelAktifPasif = new ComboBox();
+            btnSil = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -157,7 +158,7 @@
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 349);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(248, 23);
+            btnKaydet.Size = new Size(119, 23);
             btnKaydet.TabIndex = 5;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
@@ -203,11 +204,23 @@
             cmbPersonelAktifPasif.Size = new Size(234, 23);
             cmbPersonelAktifPasif.TabIndex = 0;
             // 
+            // btnSil
+            // 
+            btnSil.Cursor = Cursors.Hand;
+            btnSil.Location = new Point(137, 349);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(129, 23);
+            btnSil.TabIndex = 8;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
+            // 
             // FrmPersonelPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(949, 380);
+            Controls.Add(btnSil);
             Controls.Add(groupBox7);
             Controls.Add(groupBox6);
             Controls.Add(btnKaydet);
@@ -254,5 +267,6 @@
         private DataGridView dgvPersonel;
         private GroupBox groupBox7;
         private ComboBox cmbPersonelAktifPasif;
+        private Button btnSil;
     }
 }

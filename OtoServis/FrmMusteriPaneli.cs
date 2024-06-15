@@ -47,6 +47,7 @@ namespace OtoServis
             });
             dbContext.SaveChanges();
             InputlariTemizle();
+            MusterileriYukle();
             MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -126,6 +127,7 @@ namespace OtoServis
             txtSoyad.Clear();
             txtEmail.Clear();
             txtTelefon.Clear();
+            isSaving = true;
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)

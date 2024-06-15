@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OtoServis.DataAccess.Entities
 {
@@ -24,6 +19,7 @@ namespace OtoServis.DataAccess.Entities
 
         [ForeignKey("Rol")]
         public int RolID { get; set; }
+        public bool Silindimi { get; set; }
         public virtual Rol Rol { get; set; }
     }
 }

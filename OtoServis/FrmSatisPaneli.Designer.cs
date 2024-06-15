@@ -45,6 +45,7 @@
             groupBox8 = new GroupBox();
             dgvSatis = new DataGridView();
             btnKaydet = new Button();
+            btnSil = new Button();
             groupBox7.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -210,7 +211,7 @@
             groupBox8.Location = new Point(357, 12);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(7);
-            groupBox8.Size = new Size(1104, 360);
+            groupBox8.Size = new Size(1104, 422);
             groupBox8.TabIndex = 27;
             groupBox8.TabStop = false;
             groupBox8.Text = "Personeller";
@@ -221,7 +222,7 @@
             dgvSatis.Dock = DockStyle.Fill;
             dgvSatis.Location = new Point(7, 23);
             dgvSatis.Name = "dgvSatis";
-            dgvSatis.Size = new Size(1090, 330);
+            dgvSatis.Size = new Size(1090, 392);
             dgvSatis.TabIndex = 0;
             dgvSatis.CellClick += dgvSatis_CellClick;
             // 
@@ -230,17 +231,29 @@
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 411);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(114, 23);
+            btnKaydet.Size = new Size(171, 23);
             btnKaydet.TabIndex = 28;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
             btnKaydet.Click += btnKaydet_Click;
             // 
+            // btnSil
+            // 
+            btnSil.Cursor = Cursors.Hand;
+            btnSil.Location = new Point(189, 411);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(162, 23);
+            btnSil.TabIndex = 29;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
+            // 
             // FrmSatisPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1509, 482);
+            ClientSize = new Size(1472, 443);
+            Controls.Add(btnSil);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox8);
             Controls.Add(groupBox6);
@@ -286,5 +299,6 @@
         private GroupBox groupBox8;
         private DataGridView dgvSatis;
         private Button btnKaydet;
+        private Button btnSil;
     }
 }

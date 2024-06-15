@@ -44,6 +44,7 @@
             txtPlaka = new TextBox();
             btnKaydet = new Button();
             btnTemizle = new Button();
+            btnSil = new Button();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArac).BeginInit();
             groupBox5.SuspendLayout();
@@ -205,7 +206,7 @@
             btnKaydet.Cursor = Cursors.Hand;
             btnKaydet.Location = new Point(12, 354);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(176, 23);
+            btnKaydet.Size = new Size(112, 23);
             btnKaydet.TabIndex = 15;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
@@ -214,19 +215,31 @@
             // btnTemizle
             // 
             btnTemizle.Cursor = Cursors.Hand;
-            btnTemizle.Location = new Point(194, 354);
+            btnTemizle.Location = new Point(130, 354);
             btnTemizle.Name = "btnTemizle";
-            btnTemizle.Size = new Size(157, 23);
+            btnTemizle.Size = new Size(100, 23);
             btnTemizle.TabIndex = 16;
             btnTemizle.Text = "Temizle";
             btnTemizle.UseVisualStyleBackColor = true;
             btnTemizle.Click += btnTemizle_Click;
             // 
-            // FrmAracYonetimPaneli
+            // btnSil
+            // 
+            btnSil.Cursor = Cursors.Hand;
+            btnSil.Location = new Point(236, 354);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(108, 23);
+            btnSil.TabIndex = 17;
+            btnSil.Text = "Sil";
+            btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
+            // 
+            // FrmAracPaneli
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1276, 386);
+            Controls.Add(btnSil);
             Controls.Add(btnTemizle);
             Controls.Add(btnKaydet);
             Controls.Add(groupBox3);
@@ -238,7 +251,7 @@
             Controls.Add(groupBox6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "FrmAracYonetimPaneli";
+            Name = "FrmAracPaneli";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Araç Yönetim Paneli";
             Load += FrmAracYonetimPaneli_Load;
@@ -274,5 +287,6 @@
         private TextBox txtPlaka;
         private Button btnKaydet;
         private Button btnTemizle;
+        private Button btnSil;
     }
 }
