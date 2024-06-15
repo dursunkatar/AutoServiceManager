@@ -43,6 +43,7 @@
             pictureBoxAracPaneli = new PictureBox();
             label7 = new Label();
             pictureBoxRapor = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMusteriPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTamirPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxParcaPaneli).BeginInit();
@@ -50,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxPersonelPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAracPaneli).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRapor).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBoxMusteriPaneli
@@ -188,7 +190,7 @@
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(452, 394);
+            label6.Location = new Point(145, 0);
             label6.Name = "label6";
             label6.Size = new Size(217, 23);
             label6.TabIndex = 11;
@@ -200,9 +202,9 @@
             pictureBoxAracPaneli.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxAracPaneli.Cursor = Cursors.Hand;
             pictureBoxAracPaneli.Image = (Image)resources.GetObject("pictureBoxAracPaneli.Image");
-            pictureBoxAracPaneli.Location = new Point(452, 215);
+            pictureBoxAracPaneli.Location = new Point(3, 3);
             pictureBoxAracPaneli.Name = "pictureBoxAracPaneli";
-            pictureBoxAracPaneli.Size = new Size(217, 202);
+            pictureBoxAracPaneli.Size = new Size(136, 111);
             pictureBoxAracPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxAracPaneli.TabIndex = 10;
             pictureBoxAracPaneli.TabStop = false;
@@ -234,16 +236,24 @@
             pictureBoxRapor.TabStop = false;
             pictureBoxRapor.Click += pictureBoxRapor_Click;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(pictureBoxAracPaneli);
+            flowLayoutPanel1.Controls.Add(label6);
+            flowLayoutPanel1.Location = new Point(429, 464);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(466, 294);
+            flowLayoutPanel1.TabIndex = 14;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1061, 423);
+            ClientSize = new Size(1451, 784);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(label7);
             Controls.Add(pictureBoxRapor);
-            Controls.Add(label6);
-            Controls.Add(pictureBoxAracPaneli);
             Controls.Add(label5);
             Controls.Add(pictureBoxPersonelPaneli);
             Controls.Add(label4);
@@ -266,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxPersonelPaneli).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAracPaneli).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRapor).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -285,5 +296,6 @@
         private PictureBox pictureBoxAracPaneli;
         private Label label7;
         private PictureBox pictureBoxRapor;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
