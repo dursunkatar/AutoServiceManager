@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OtoServis.DataAccess.Entities
 {
@@ -15,9 +10,13 @@ namespace OtoServis.DataAccess.Entities
         [ForeignKey("Rol")]
         public int RolId { get; set; }
 
+        [ForeignKey("UygulamaForm")]
+        public int FormId { get; set; }
+
         [ForeignKey("Yetki")]
         public int YetkiId { get; set; }
         public Yetki Yetki { get; set; }
+        public UygulamaForm UygulamaForm { get; set; }
         public Rol Rol { get; set; }
     }
 }

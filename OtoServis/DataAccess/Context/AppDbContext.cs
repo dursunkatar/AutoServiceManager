@@ -20,5 +20,8 @@ namespace OtoServis.DataAccess.Context
         public DbSet<Satis> Satislar { get; set; }
         public DbSet<Tamir> Tamirler { get; set; }
         public DbSet<TamirDurum> TamirDurum { get; set; }
+        public DbSet<UygulamaForm> UygulamaFormlari { get; set; }
+        public DbSet<Yetki> Yetkiler { get; set; }
+        public DbSet<RolYetkisi> RolYetkiler { get; set; }
     }
 }

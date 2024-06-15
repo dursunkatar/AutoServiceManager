@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OtoServis.DataAccess.Entities
 {
-    [Table("Yetki")]
-    public class Yetki
+    [Table("UygulamaFormlari")]
+    public class UygulamaForm
     {
         [Key]
         public int Id { get; set; }
-        public string YetkiAdi { get; set; }
-        public virtual ICollection<RolYetkisi> RolYetkileri { get; set; }
+        public string FormAdi { get; set; }
+        public string FormAciklama { get; set; }
     }
 }
