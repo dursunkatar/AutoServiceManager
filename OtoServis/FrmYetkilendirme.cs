@@ -100,19 +100,14 @@ namespace OtoServis
         {
             if (e.NewValue == CheckState.Checked)
             {
-                // Tüm öğeleri döngüye alalım
                 for (int i = 0; i < checkedListBoxEkranlar.Items.Count; i++)
                 {
-                    // Eğer şu anki öğe, yeni seçilen öğe değilse
                     if (i != e.Index)
                     {
-                        // Bu öğenin işaretini kaldıralım
                         checkedListBoxEkranlar.SetItemChecked(i, false);
                     }
                 }
             }
-
-
         }
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,6 +118,47 @@ namespace OtoServis
         private void checkedListBoxEkranlar_SelectedIndexChanged(object sender, EventArgs e)
         {
             secilmisYetkileriIsaretle();
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (cmbRol.SelectedIndex == 0)
+            {
+                MessageBox.Show("Rol Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (checkedListBoxEkranlar.CheckedItems is null || checkedListBoxEkranlar.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Ekran seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (checkedListBoxYetkiler.CheckedItems is null || checkedListBoxYetkiler.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Yetki seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var rol = cmbRol.SelectedItem as Rol;
+            var form = checkedListBoxEkranlar.CheckedItems[0] as UygulamaFormDto;
+            var rolYetkiler = dbContext.RolYetkiler.Where(p => p.RolId == rol.RolID && p.FormId == form.ID).ToList();
+            dbContext.RolYetkiler.RemoveRange(rolYetkiler);
+
+            foreach (var item in checkedListBoxYetkiler.CheckedItems)
+            {
+                var yetki = item as YetkiDto;
+                dbContext.RolYetkiler.Add(new RolYetkisi
+                {
+                    FormId = form.ID,
+                    RolId = rol.RolID,
+                    YetkiId = yetki.Id
+                });
+            }
+
+            dbContext.SaveChanges();
+            rolYetkileriniYukle();
+            MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

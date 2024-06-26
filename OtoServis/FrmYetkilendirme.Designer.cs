@@ -36,6 +36,7 @@
             checkedListBoxYetkiler = new CheckedListBox();
             groupBox6 = new GroupBox();
             dgvYetkiler = new DataGridView();
+            btnKaydet = new Button();
             groupBox5.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -72,7 +73,7 @@
             groupBox1.Location = new Point(9, 69);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(5);
-            groupBox1.Size = new Size(261, 250);
+            groupBox1.Size = new Size(242, 250);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Ekranlar";
@@ -84,7 +85,7 @@
             checkedListBoxEkranlar.FormattingEnabled = true;
             checkedListBoxEkranlar.Location = new Point(5, 21);
             checkedListBoxEkranlar.Name = "checkedListBoxEkranlar";
-            checkedListBoxEkranlar.Size = new Size(251, 224);
+            checkedListBoxEkranlar.Size = new Size(232, 224);
             checkedListBoxEkranlar.TabIndex = 8;
             checkedListBoxEkranlar.ItemCheck += checkedListBoxEkranlar_ItemCheck;
             checkedListBoxEkranlar.SelectedIndexChanged += checkedListBoxEkranlar_SelectedIndexChanged;
@@ -92,10 +93,10 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(checkedListBoxYetkiler);
-            groupBox2.Location = new Point(271, 69);
+            groupBox2.Location = new Point(257, 69);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(5);
-            groupBox2.Size = new Size(246, 250);
+            groupBox2.Size = new Size(255, 250);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             groupBox2.Text = "Yetkiler";
@@ -107,7 +108,7 @@
             checkedListBoxYetkiler.FormattingEnabled = true;
             checkedListBoxYetkiler.Location = new Point(5, 21);
             checkedListBoxYetkiler.Name = "checkedListBoxYetkiler";
-            checkedListBoxYetkiler.Size = new Size(236, 224);
+            checkedListBoxYetkiler.Size = new Size(245, 224);
             checkedListBoxYetkiler.TabIndex = 8;
             // 
             // groupBox6
@@ -130,17 +131,30 @@
             dgvYetkiler.Size = new Size(498, 210);
             dgvYetkiler.TabIndex = 0;
             // 
+            // btnKaydet
+            // 
+            btnKaydet.Cursor = Cursors.Hand;
+            btnKaydet.Location = new Point(9, 567);
+            btnKaydet.Name = "btnKaydet";
+            btnKaydet.Size = new Size(508, 38);
+            btnKaydet.TabIndex = 13;
+            btnKaydet.Text = "Kaydet";
+            btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
+            // 
             // FrmYetkilendirme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(524, 567);
+            ClientSize = new Size(524, 613);
+            Controls.Add(btnKaydet);
             Controls.Add(groupBox6);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(groupBox5);
             Name = "FrmYetkilendirme";
-            Text = "FrmYetkilendirme";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Yetkilendirme";
             Load += FrmYetkilendirme_Load;
             groupBox5.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -160,5 +174,6 @@
         private CheckedListBox checkedListBoxYetkiler;
         private GroupBox groupBox6;
         private DataGridView dgvYetkiler;
+        private Button btnKaydet;
     }
 }
