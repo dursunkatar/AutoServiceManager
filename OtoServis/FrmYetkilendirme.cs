@@ -18,7 +18,7 @@ namespace OtoServis
 
         void RolleriYukle()
         {
-            var roller = dbContext.Roller.ToList();
+            var roller = dbContext.Roller.Where(p => p.RolID != 1).ToList();
             roller.Insert(0, new Rol
             {
                 RolAdi = "Seçiniz",

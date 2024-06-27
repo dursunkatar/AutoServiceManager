@@ -13,6 +13,11 @@ namespace OtoServis
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
 
+        public bool GoruntulemeYetkisiVarmi { get; set; }
+        public bool DuzenlemeYetkisiVarmi { get; set; }
+        public bool EklemeYetkisiVarmi { get; set; }
+        public bool SilmeYetkisiVarmi { get; set; }
+
         public FrmPersonelPaneli()
         {
             InitializeComponent();
@@ -34,6 +39,8 @@ namespace OtoServis
 
         void PersonelleriYukle()
         {
+            if (!GoruntulemeYetkisiVarmi) return;
+
             var personeller = dbContext.Personeller
                 .Include(p => p.Rol)
                 .Where(p => !p.Silindimi)
@@ -69,6 +76,19 @@ namespace OtoServis
 
         void PersonelEkle()
         {
+            if (!EklemeYetkisiVarmi) return;
+
+            if (cmbRol.SelectedIndex == 0)
+            {
+                MessageBox.Show("Rol Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (cmbPersonelAktifPasif.SelectedIndex == 0)
+            {
+                MessageBox.Show("Personel Durum Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
             string email = txtEmail.Text;
@@ -100,6 +120,19 @@ namespace OtoServis
 
         void PersonelGuncelle()
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
+            if (cmbRol.SelectedIndex == 0)
+            {
+                MessageBox.Show("Rol Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (cmbPersonelAktifPasif.SelectedIndex == 0)
+            {
+                MessageBox.Show("Personel Durum Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             var (ok, personel) = DataGridViewHelper.GetSelectedValue<PersonelDto>(dgvPersonel);
 
             if (!ok)
@@ -155,16 +188,7 @@ namespace OtoServis
         {
             try
             {
-                if (cmbRol.SelectedIndex == 0)
-                {
-                    MessageBox.Show("Rol Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-                if (cmbPersonelAktifPasif.SelectedIndex == 0)
-                {
-                    MessageBox.Show("Personel Durum Seçiniz", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+
                 if (isSaving) PersonelEkle(); else PersonelGuncelle();
 
             }
@@ -186,6 +210,8 @@ namespace OtoServis
 
         private void dgvPersonel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, personel) = DataGridViewHelper.GetSelectedValue<PersonelDto>(dgvPersonel);
 
             if (!ok) return;
@@ -201,6 +227,8 @@ namespace OtoServis
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (!SilmeYetkisiVarmi) return;
+
             if (isSaving)
             {
                 MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

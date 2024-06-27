@@ -11,12 +11,16 @@ namespace OtoServis
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
+        public bool GoruntulemeYetkisiVarmi { get; set; }
+        public bool DuzenlemeYetkisiVarmi { get; set; }
+        public bool EklemeYetkisiVarmi { get; set; }
+        public bool SilmeYetkisiVarmi { get; set; }
+
         public FrmAracPaneli()
         {
             InitializeComponent();
             dbContext = DbContextBuilder.Build();
         }
-
 
         void MusterileriYukle()
         {
@@ -49,6 +53,8 @@ namespace OtoServis
         }
         void AraclariYukle(int musteriId = -1)
         {
+            if (!GoruntulemeYetkisiVarmi) return;
+
             var data = dbContext.Araclar
                 .Include(x => x.Musteri)
                 .Include(x => x.Marka)
@@ -138,6 +144,8 @@ namespace OtoServis
 
         void AracEkle()
         {
+            if (!EklemeYetkisiVarmi) return;
+
             string plaka = txtPlaka.Text.Trim();
             string renk = txtRenk.Text.Trim();
             string yil = txtYil.Text.Trim();
@@ -278,6 +286,8 @@ namespace OtoServis
 
         private void dgvArac_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, data) = DataGridViewHelper.GetSelectedValue<AracDto>(dgvArac);
 
             if (!ok) return;
@@ -311,6 +321,8 @@ namespace OtoServis
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (!SilmeYetkisiVarmi) return;
+
             if (isSaving)
             {
                 MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -12,6 +12,10 @@ namespace OtoServis
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
+        public bool GoruntulemeYetkisiVarmi { get; set; }
+        public bool DuzenlemeYetkisiVarmi { get; set; }
+        public bool EklemeYetkisiVarmi { get; set; }
+        public bool SilmeYetkisiVarmi { get; set; }
         public FrmMusteriPaneli()
         {
             InitializeComponent();
@@ -25,6 +29,8 @@ namespace OtoServis
 
         void MusteriEkle()
         {
+            if (!EklemeYetkisiVarmi) return;
+
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
             string email = txtEmail.Text;
@@ -53,6 +59,7 @@ namespace OtoServis
 
         void MusterileriYukle()
         {
+            if (!GoruntulemeYetkisiVarmi) return;
             var musteriler = dbContext.Musteriler
                 .Where(p => !p.Silindimi)
                .Select(p => new MusteriDto
@@ -70,6 +77,8 @@ namespace OtoServis
 
         void MusteriGuncelle()
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, musteri) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
 
             if (!ok)
@@ -107,6 +116,7 @@ namespace OtoServis
 
         void MusteriSil()
         {
+            if (!SilmeYetkisiVarmi) return;
             var (ok, musteri) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
 
             if (!ok) return;
@@ -151,6 +161,8 @@ namespace OtoServis
 
         private void dgvMusteri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, musteri) = DataGridViewHelper.GetSelectedValue<MusteriDto>(dgvMusteri);
 
             if (!ok) return;

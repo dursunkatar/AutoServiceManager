@@ -4,7 +4,6 @@ namespace OtoServis
 {
     public partial class FrmRapor : Form
     {
-
         public FrmRapor()
         {
             InitializeComponent();

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
+using OtoServis.DataAccess.Entities;
 
 namespace OtoServis
 {
@@ -9,10 +10,15 @@ namespace OtoServis
         private readonly MenuStrip menuStrip;
         public int PersonelId { get; set; } = 7;
         private readonly AppDbContext dbContext;
+        private readonly Personel personel;
         public FrmMain()
         {
             InitializeComponent();
             dbContext = DbContextBuilder.Build();
+            personel = dbContext.Personeller
+                .Include(p => p.Rol)
+                .ThenInclude(p => p.RolYetkileri)
+                .Where(p => p.PersonelID == PersonelId).First();
             menuStrip = new MenuStrip();
             CreateDynamicMenu();
         }
@@ -21,70 +27,57 @@ namespace OtoServis
 
         private void CreateDynamicMenu()
         {
-
-            // Ana menü öðesini oluþtur
             ToolStripMenuItem fileMenu = new ToolStripMenuItem("Ekranlar");
 
-            var data = dbContext.Personeller
-                 .Include(p => p.Rol)
-                 .ThenInclude(p => p.RolYetkileri)
-                 .Where(p => p.PersonelID == PersonelId).ToList();
 
-            bool aracPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 1));
-            bool musteriPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 2));
-            bool parcaPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 3));
-            bool personelPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 4));
-            bool satisPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 5));
-            bool tamirPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 6));
-            bool raporPaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 7));
-            bool yetkilendirmePaneliGoruntulemeYetkisiVarmi = data.Any(p => p.Rol.RolYetkileri.Any(r => r.YetkiId == 4 && r.FormId == 8));
+            bool aracPaneliGoruntulemeYetkisiVarmi = personel.Rol.RolYetkileri.Any(r => r.FormId == 1);
+            bool musteriPaneliGoruntulemeYetkisiVarmi = personel.Rol.RolYetkileri.Any(r => r.FormId == 2);
+            bool parcaPaneliGoruntulemeYetkisiVarmi = personel.Rol.RolYetkileri.Any(r => r.FormId == 3);
+            bool personelPaneliGoruntulemeYetkisiVarmi = personel.Rol.RolYetkileri.Any(r => r.FormId == 4);
+            bool satisPaneliGoruntulemeYetkisiVarmi = personel.Rol.RolYetkileri.Any(r => r.FormId == 5);
+            bool tamirPaneliGoruntulemeYetkisiVarmi = personel.Rol.RolYetkileri.Any(r => r.FormId == 6);
 
-            if (aracPaneliGoruntulemeYetkisiVarmi)
+            if (aracPaneliGoruntulemeYetkisiVarmi || personel.RolID == 1)
             {
                 ToolStripMenuItem aracItem = new ToolStripMenuItem("Araç", null, AracPaneli_Click);
                 fileMenu.DropDownItems.Add(aracItem);
             }
-            if (musteriPaneliGoruntulemeYetkisiVarmi)
+            if (musteriPaneliGoruntulemeYetkisiVarmi || personel.RolID == 1)
             {
                 ToolStripMenuItem musteriItem = new ToolStripMenuItem("Müþteri", null, MusteriPaneli_Click);
                 fileMenu.DropDownItems.Add(musteriItem);
             }
-            if (parcaPaneliGoruntulemeYetkisiVarmi)
+            if (parcaPaneliGoruntulemeYetkisiVarmi || personel.RolID == 1)
             {
                 ToolStripMenuItem parcaItem = new ToolStripMenuItem("Parça", null, ParcaPaneli_Click);
                 fileMenu.DropDownItems.Add(parcaItem);
             }
-            if (personelPaneliGoruntulemeYetkisiVarmi)
+            if (personelPaneliGoruntulemeYetkisiVarmi || personel.RolID == 1)
             {
                 ToolStripMenuItem personelItem = new ToolStripMenuItem("Personel", null, PersonelPaneli_Click);
                 fileMenu.DropDownItems.Add(personelItem);
             }
 
-            if (satisPaneliGoruntulemeYetkisiVarmi)
+            if (satisPaneliGoruntulemeYetkisiVarmi || personel.RolID == 1)
             {
                 ToolStripMenuItem satisItem = new ToolStripMenuItem("Satýþ", null, SatisPaneli_Click);
                 fileMenu.DropDownItems.Add(satisItem);
             }
 
-            if (tamirPaneliGoruntulemeYetkisiVarmi)
+            if (tamirPaneliGoruntulemeYetkisiVarmi || personel.RolID == 1)
             {
                 ToolStripMenuItem tamirItem = new ToolStripMenuItem("Tamir", null, TamirPaneli_Click);
                 fileMenu.DropDownItems.Add(tamirItem);
             }
 
-            if (yetkilendirmePaneliGoruntulemeYetkisiVarmi)
+            if (personel.RolID == 1)
             {
                 ToolStripMenuItem yetkilendirmeItem = new ToolStripMenuItem("Yetkilendirme", null, YetkilendirmePaneli_Click);
                 fileMenu.DropDownItems.Add(yetkilendirmeItem);
-            }
 
-            if (raporPaneliGoruntulemeYetkisiVarmi)
-            {
                 ToolStripMenuItem raporItem = new ToolStripMenuItem("Rapor", null, RaporPaneli_Click);
                 fileMenu.DropDownItems.Add(raporItem);
             }
-
-
 
             menuStrip.Items.Add(fileMenu);
 
@@ -94,83 +87,85 @@ namespace OtoServis
 
         private void AracPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yeni öðe oluþturuldu.");
+            var form = new FrmAracPaneli
+            {
+                GoruntulemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 1 && p.YetkiId == 4),
+                EklemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 1 && p.YetkiId == 1),
+                DuzenlemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 1 && p.YetkiId == 2),
+                SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 1 && p.YetkiId == 3),
+            };
+            form.Show();
         }
 
         private void RaporPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yeni öðe oluþturuldu.");
+            var form = new FrmRapor();
+            form.Show();
         }
 
         private void YetkilendirmePaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yeni öðe oluþturuldu.");
+            var form = new FrmYetkilendirme();
+            form.Show();
         }
 
         private void TamirPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yeni öðe oluþturuldu.");
+            var form = new FrmTamirPaneli
+            {
+                GoruntulemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 6 && p.YetkiId == 4),
+                EklemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 6 && p.YetkiId == 1),
+                DuzenlemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 6 && p.YetkiId == 2),
+                SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 6 && p.YetkiId == 3),
+            };
+            form.Show();
         }
 
         private void PersonelPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yeni öðe oluþturuldu.");
+            var form = new FrmPersonelPaneli
+            {
+                GoruntulemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 4),
+                EklemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 1),
+                DuzenlemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 2),
+                SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 3),
+            };
+            form.Show();
         }
 
         private void SatisPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yeni öðe oluþturuldu.");
+            var form = new FrmSatisPaneli
+            {
+                GoruntulemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 5 && p.YetkiId == 4),
+                EklemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 5 && p.YetkiId == 1),
+                DuzenlemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 5 && p.YetkiId == 2),
+                SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 5 && p.YetkiId == 3),
+            };
+            form.Show();
         }
 
         private void MusteriPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Öðe açýldý.");
+            var form = new FrmMusteriPaneli
+            {
+                GoruntulemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 4),
+                EklemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 1),
+                DuzenlemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 2),
+                SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 2 && p.YetkiId == 3),
+            };
+            form.Show();
         }
 
         private void ParcaPaneli_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Öðe kaydedildi.");
-        }
-
-        private void pictureBoxMusteriPaneli_Click(object sender, EventArgs e)
-        {
-            var form = new FrmMusteriPaneli();
-            form.Show();
-        }
-
-        private void pictureBoxTamirPaneli_Click(object sender, EventArgs e)
-        {
-            var form = new FrmTamirPaneli();
-            form.Show();
-        }
-
-        private void pictureBoxParcaPaneli_Click(object sender, EventArgs e)
-        {
-            var form = new FrmParcaPaneli();
-            form.Show();
-        }
-
-        private void pictureBoxSatisPaneli_Click(object sender, EventArgs e)
-        {
-            var form = new FrmSatisPaneli();
-            form.Show();
-        }
-
-        private void pictureBoxPersonelPaneli_Click(object sender, EventArgs e)
-        {
-            var form = new FrmPersonelPaneli();
-            form.Show();
-        }
-
-        private void pictureBoxAracPaneli_Click(object sender, EventArgs e)
-        {
-            var form = new FrmAracPaneli();
-            form.Show();
-        }
-
-        private void pictureBoxRapor_Click(object sender, EventArgs e)
-        {
-            var form = new FrmRapor();
+            var form = new FrmParcaPaneli
+            {
+                GoruntulemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 3 && p.YetkiId == 4),
+                EklemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 3 && p.YetkiId == 1),
+                DuzenlemeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 3 && p.YetkiId == 2),
+                SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 3 && p.YetkiId == 3),
+            };
             form.Show();
         }
     }

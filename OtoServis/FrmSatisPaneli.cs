@@ -13,6 +13,10 @@ namespace OtoServis
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
+        public bool GoruntulemeYetkisiVarmi { get; set; }
+        public bool DuzenlemeYetkisiVarmi { get; set; }
+        public bool EklemeYetkisiVarmi { get; set; }
+        public bool SilmeYetkisiVarmi { get; set; }
         public FrmSatisPaneli()
         {
             InitializeComponent();
@@ -21,6 +25,8 @@ namespace OtoServis
 
         void SatislariYukle(int musteriId = -1)
         {
+            if (!GoruntulemeYetkisiVarmi) return;
+
             var data = dbContext.Satislar
                 .Include(x => x.Musteri)
                 .Include(x => x.SatisPersonel)
@@ -46,6 +52,8 @@ namespace OtoServis
 
         void SatisGuncelle()
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, satis) = DataGridViewHelper.GetSelectedValue<SatisDto>(dgvSatis);
 
             if (!ok)
@@ -155,6 +163,8 @@ namespace OtoServis
         }
         void SatisEkle()
         {
+            if (!EklemeYetkisiVarmi) return;
+
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
             var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
             var secilenParca = cmbParca.SelectedItem as TextValueDto<int>;
@@ -394,6 +404,8 @@ namespace OtoServis
 
         private void dgvSatis_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, satis) = DataGridViewHelper.GetSelectedValue<SatisDto>(dgvSatis);
 
             if (!ok) return;
@@ -414,6 +426,9 @@ namespace OtoServis
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+
+            if (!SilmeYetkisiVarmi) return;
+
             if (isSaving)
             {
                 MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

@@ -12,6 +12,12 @@ namespace OtoServis
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
+
+        public bool GoruntulemeYetkisiVarmi { get; set; }
+        public bool DuzenlemeYetkisiVarmi { get; set; }
+        public bool EklemeYetkisiVarmi { get; set; }
+        public bool SilmeYetkisiVarmi { get; set; }
+
         public FrmTamirPaneli()
         {
             InitializeComponent();
@@ -76,6 +82,8 @@ namespace OtoServis
 
         void TamirKayitlariniYukle(int musteriId = -1)
         {
+            if (!GoruntulemeYetkisiVarmi) return;
+
             var data = dbContext.Tamirler
                 .Include(x => x.Arac)
                 .ThenInclude(x => x.Musteri)
@@ -101,6 +109,8 @@ namespace OtoServis
         }
         void TamirEkle()
         {
+            if (!EklemeYetkisiVarmi) return;
+
             string aciklama = txtAciklama.Text.Trim();
             var secilenMusteri = cmbMusteri.SelectedItem as TextValueDto<int>;
             var secilenArac = cmbArac.SelectedItem as TextValueDto<int>;
@@ -148,6 +158,8 @@ namespace OtoServis
 
         void TamirGuncelle()
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, tamir) = DataGridViewHelper.GetSelectedValue<TamirDto>(dgvTamir);
 
             if (!ok)
@@ -275,6 +287,8 @@ namespace OtoServis
 
         private void dgvTamir_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, tamir) = DataGridViewHelper.GetSelectedValue<TamirDto>(dgvTamir);
 
             if (!ok) return;
@@ -298,6 +312,8 @@ namespace OtoServis
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (!SilmeYetkisiVarmi) return;
+
             if (isSaving)
             {
                 MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

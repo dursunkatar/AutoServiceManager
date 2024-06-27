@@ -11,6 +11,11 @@ namespace OtoServis
     {
         private readonly AppDbContext dbContext;
         private bool isSaving = true;
+        public bool GoruntulemeYetkisiVarmi { get; set; }
+        public bool DuzenlemeYetkisiVarmi { get; set; }
+        public bool EklemeYetkisiVarmi { get; set; }
+        public bool SilmeYetkisiVarmi { get; set; }
+
         public FrmParcaPaneli()
         {
             InitializeComponent();
@@ -19,6 +24,8 @@ namespace OtoServis
 
         void ParcalariYukle()
         {
+            if (!GoruntulemeYetkisiVarmi) return;
+
             var parcalar = dbContext.Parcalar.Where(x => !x.Silindimi).Select(x => new ParcaDto
             {
                 Fiyat = x.Fiyat,
@@ -31,6 +38,7 @@ namespace OtoServis
 
         void ParcaEkle()
         {
+            if (!EklemeYetkisiVarmi) return;
             string parcaAdi = txtParcaAdi.Text.Trim();
             string stokBilgisi = txtStok.Text.Trim();
             string fiyatBilgisi = txtFiyat.Text.Trim();
@@ -83,6 +91,8 @@ namespace OtoServis
 
         void ParcaGuncelle()
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, parca) = DataGridViewHelper.GetSelectedValue<ParcaDto>(dgvParca);
 
             if (!ok)
@@ -160,6 +170,8 @@ namespace OtoServis
 
         private void dgvParca_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (!DuzenlemeYetkisiVarmi) return;
+
             var (ok, data) = DataGridViewHelper.GetSelectedValue<ParcaDto>(dgvParca);
 
             if (!ok) return;
@@ -173,6 +185,8 @@ namespace OtoServis
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (!SilmeYetkisiVarmi) return;
+
             if (isSaving)
             {
                 MessageBox.Show("Silmek için kayıt seçin", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
