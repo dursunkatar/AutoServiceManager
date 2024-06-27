@@ -1,4 +1,5 @@
-﻿using OtoServis.DataAccess;
+﻿using Microsoft.EntityFrameworkCore;
+using OtoServis.DataAccess;
 using OtoServis.DataAccess.Context;
 
 namespace OtoServis
@@ -23,15 +24,29 @@ namespace OtoServis
                 return;
             }
 
-            bool personelVarmi = dbContext.Personeller.Any(p => p.Email == email && p.Sifre == sifre && !p.Silindimi);
+            var personelVarmi = dbContext.Personeller.FirstOrDefault(p => p.Email == email && p.Sifre == sifre && !p.Silindimi);
 
-            if (!personelVarmi)
+            if (personelVarmi is null)
             {
                 MessageBox.Show("Personel email veya şifre yanlış", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            var frmMain = new FrmMain();
+            bool yetkiVarmi = dbContext.Personeller
+            .Include(p => p.Rol)
+                .ThenInclude(p => p.RolYetkileri)
+                .Where(p => p.PersonelID == personelVarmi.PersonelID).Any(p => p.Rol.RolYetkileri.Any());
+
+            if (!yetkiVarmi)
+            {
+                MessageBox.Show("Yetkilendirme işleminiz yapılmamış", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var frmMain = new FrmMain
+            {
+                PersonelId = personelVarmi.PersonelID
+            };
             frmMain.Show();
 
             this.Hide();

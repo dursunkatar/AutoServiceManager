@@ -7,20 +7,13 @@ namespace OtoServis
 {
     public partial class FrmMain : Form
     {
-        private readonly MenuStrip menuStrip;
-        public int PersonelId { get; set; } = 1;
-        private readonly AppDbContext dbContext;
-        private readonly Personel personel;
+        private MenuStrip menuStrip;
+        public int PersonelId { get; set; }
+        private AppDbContext dbContext;
+        private Personel personel;
         public FrmMain()
         {
             InitializeComponent();
-            dbContext = DbContextBuilder.Build();
-            personel = dbContext.Personeller
-                .Include(p => p.Rol)
-                .ThenInclude(p => p.RolYetkileri)
-                .Where(p => p.PersonelID == PersonelId).First();
-            menuStrip = new MenuStrip();
-            CreateDynamicMenu();
         }
 
 
@@ -167,6 +160,17 @@ namespace OtoServis
                 SilmeYetkisiVarmi = personel.RolID == 1 || personel.Rol.RolYetkileri.Any(p => p.FormId == 3 && p.YetkiId == 3),
             };
             form.Show();
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            dbContext = DbContextBuilder.Build();
+            personel = dbContext.Personeller
+                .Include(p => p.Rol)
+                .ThenInclude(p => p.RolYetkileri)
+                .Where(p => p.PersonelID == PersonelId).First();
+            menuStrip = new MenuStrip();
+            CreateDynamicMenu();
         }
     }
 }
