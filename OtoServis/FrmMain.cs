@@ -8,7 +8,7 @@ namespace OtoServis
     public partial class FrmMain : Form
     {
         private readonly MenuStrip menuStrip;
-        public int PersonelId { get; set; } = 7;
+        public int PersonelId { get; set; } = 1;
         private readonly AppDbContext dbContext;
         private readonly Personel personel;
         public FrmMain()
