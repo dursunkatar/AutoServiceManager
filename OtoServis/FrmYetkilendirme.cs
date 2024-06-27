@@ -160,5 +160,48 @@ namespace OtoServis
             rolYetkileriniYukle();
             MessageBox.Show("Kaydedildi", "OtoServis", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void checkedListBoxYetkiler_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            const int YETKI_DUZENLE_ID = 2;
+            const int YETKI_GORUNTULE_ID = 4;
+            const int YETKI_SIL_ID = 3;
+
+            var yetki = checkedListBoxYetkiler.Items[e.Index] as YetkiDto;
+            if ((yetki.Id == YETKI_DUZENLE_ID || yetki.Id == YETKI_SIL_ID) && e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < checkedListBoxYetkiler.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        var item = checkedListBoxYetkiler.Items[i] as YetkiDto;
+                        if (item.Id == YETKI_GORUNTULE_ID)
+                        {
+                            checkedListBoxYetkiler.SetItemChecked(i, true);
+                            break;
+                        }
+
+                    }
+                }
+            }
+
+            if (yetki.Id == YETKI_GORUNTULE_ID && e.NewValue == CheckState.Unchecked)
+            {
+                for (int i = 0; i < checkedListBoxYetkiler.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        var item = checkedListBoxYetkiler.Items[i] as YetkiDto;
+                        if (item.Id == YETKI_SIL_ID || item.Id == YETKI_DUZENLE_ID)
+                        {
+                            checkedListBoxYetkiler.SetItemChecked(i, false);
+                        }
+
+                    }
+                }
+            }
+
+
+        }
     }
 }

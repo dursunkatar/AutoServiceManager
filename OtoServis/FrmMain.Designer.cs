@@ -59,7 +59,7 @@
             pictureBoxMusteriPaneli.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxMusteriPaneli.Cursor = Cursors.Hand;
             pictureBoxMusteriPaneli.Image = (Image)resources.GetObject("pictureBoxMusteriPaneli.Image");
-            pictureBoxMusteriPaneli.Location = new Point(6, 7);
+            pictureBoxMusteriPaneli.Location = new Point(71, 169);
             pictureBoxMusteriPaneli.Name = "pictureBoxMusteriPaneli";
             pictureBoxMusteriPaneli.Size = new Size(217, 202);
             pictureBoxMusteriPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -73,7 +73,7 @@
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(6, 186);
+            label1.Location = new Point(71, 348);
             label1.Name = "label1";
             label1.Size = new Size(217, 23);
             label1.TabIndex = 1;
@@ -85,7 +85,7 @@
             pictureBoxTamirPaneli.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxTamirPaneli.Cursor = Cursors.Hand;
             pictureBoxTamirPaneli.Image = (Image)resources.GetObject("pictureBoxTamirPaneli.Image");
-            pictureBoxTamirPaneli.Location = new Point(229, 7);
+            pictureBoxTamirPaneli.Location = new Point(294, 169);
             pictureBoxTamirPaneli.Name = "pictureBoxTamirPaneli";
             pictureBoxTamirPaneli.Size = new Size(217, 202);
             pictureBoxTamirPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(229, 186);
+            label2.Location = new Point(294, 348);
             label2.Name = "label2";
             label2.Size = new Size(217, 23);
             label2.TabIndex = 3;
@@ -111,7 +111,7 @@
             pictureBoxParcaPaneli.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxParcaPaneli.Cursor = Cursors.Hand;
             pictureBoxParcaPaneli.Image = (Image)resources.GetObject("pictureBoxParcaPaneli.Image");
-            pictureBoxParcaPaneli.Location = new Point(452, 7);
+            pictureBoxParcaPaneli.Location = new Point(517, 169);
             pictureBoxParcaPaneli.Name = "pictureBoxParcaPaneli";
             pictureBoxParcaPaneli.Size = new Size(217, 202);
             pictureBoxParcaPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -125,7 +125,7 @@
             label3.BorderStyle = BorderStyle.FixedSingle;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(452, 186);
+            label3.Location = new Point(517, 348);
             label3.Name = "label3";
             label3.Size = new Size(217, 23);
             label3.TabIndex = 5;
@@ -137,7 +137,7 @@
             pictureBoxSatisPaneli.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxSatisPaneli.Cursor = Cursors.Hand;
             pictureBoxSatisPaneli.Image = (Image)resources.GetObject("pictureBoxSatisPaneli.Image");
-            pictureBoxSatisPaneli.Location = new Point(6, 215);
+            pictureBoxSatisPaneli.Location = new Point(71, 377);
             pictureBoxSatisPaneli.Name = "pictureBoxSatisPaneli";
             pictureBoxSatisPaneli.Size = new Size(217, 202);
             pictureBoxSatisPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -151,7 +151,7 @@
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(6, 394);
+            label4.Location = new Point(71, 556);
             label4.Name = "label4";
             label4.Size = new Size(217, 23);
             label4.TabIndex = 7;
@@ -164,7 +164,7 @@
             label5.BorderStyle = BorderStyle.FixedSingle;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(229, 394);
+            label5.Location = new Point(294, 556);
             label5.Name = "label5";
             label5.Size = new Size(217, 23);
             label5.TabIndex = 9;
@@ -176,7 +176,7 @@
             pictureBoxPersonelPaneli.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxPersonelPaneli.Cursor = Cursors.Hand;
             pictureBoxPersonelPaneli.Image = (Image)resources.GetObject("pictureBoxPersonelPaneli.Image");
-            pictureBoxPersonelPaneli.Location = new Point(229, 215);
+            pictureBoxPersonelPaneli.Location = new Point(294, 377);
             pictureBoxPersonelPaneli.Name = "pictureBoxPersonelPaneli";
             pictureBoxPersonelPaneli.Size = new Size(217, 202);
             pictureBoxPersonelPaneli.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -228,7 +228,7 @@
             pictureBoxRapor.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxRapor.Cursor = Cursors.Hand;
             pictureBoxRapor.Image = (Image)resources.GetObject("pictureBoxRapor.Image");
-            pictureBoxRapor.Location = new Point(675, 7);
+            pictureBoxRapor.Location = new Point(730, 101);
             pictureBoxRapor.Name = "pictureBoxRapor";
             pictureBoxRapor.Size = new Size(379, 410);
             pictureBoxRapor.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -240,7 +240,7 @@
             // 
             flowLayoutPanel1.Controls.Add(pictureBoxAracPaneli);
             flowLayoutPanel1.Controls.Add(label6);
-            flowLayoutPanel1.Location = new Point(429, 464);
+            flowLayoutPanel1.Location = new Point(940, 465);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(466, 294);
             flowLayoutPanel1.TabIndex = 14;

@@ -110,6 +110,7 @@
             checkedListBoxYetkiler.Name = "checkedListBoxYetkiler";
             checkedListBoxYetkiler.Size = new Size(245, 224);
             checkedListBoxYetkiler.TabIndex = 8;
+            checkedListBoxYetkiler.ItemCheck += checkedListBoxYetkiler_ItemCheck;
             // 
             // groupBox6
             // 
