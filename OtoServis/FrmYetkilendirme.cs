@@ -65,7 +65,7 @@ namespace OtoServis
                   .Select(p => new RolYetkiDto
                   {
                       Rol = p.Rol.RolAdi,
-                      Form = p.UygulamaForm.FormAdi,
+                      Form = p.UygulamaForm.FormAciklama,
                       Yetki = p.Yetki.YetkiAdi,
                       Data = p
                   }).ToList();
