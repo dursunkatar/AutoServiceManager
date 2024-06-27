@@ -153,6 +153,8 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(groupBox5);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmYetkilendirme";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Yetkilendirme";
