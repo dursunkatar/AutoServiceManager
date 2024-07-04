@@ -17,11 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="OtoServisDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>OtoServisDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Update="OtoServisDataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -30,10 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="OtoServisDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OtoServisDataSet.Designer.cs</LastGenOutput>
-    </None>
     <None Update="OtoServisDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtoServisDataSet1.Designer.cs</LastGenOutput>
