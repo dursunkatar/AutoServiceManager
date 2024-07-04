@@ -22,7 +22,7 @@ namespace OtoServis
 
         void RaporuYukle()
         {
-            using OtoServisDataSetTableAdapters.SpTamirEdilenAraclarTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpTamirEdilenAraclarTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData(dateTamirBaslangicTarih.Value);
 

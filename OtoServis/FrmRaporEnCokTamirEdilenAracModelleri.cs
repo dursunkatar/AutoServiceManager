@@ -18,7 +18,7 @@ namespace OtoServis
 
         void RaporuYukle()
         {
-            using OtoServisDataSetTableAdapters.SpEnCokTamirEdilenAracModelleriTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpEnCokTamirEdilenAracModelleriTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData(dateTamirBaslangicTarih.Value);
 

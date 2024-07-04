@@ -29,7 +29,7 @@ namespace OtoServis
 
         private void btnBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpBirYildaTamirEdilenHerBirAracinBilgieriVeTamirSayisiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -39,7 +39,7 @@ namespace OtoServis
 
         private void btnBirYildaYapilanToplamSatisMiktari_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpBirYildaYapilanToplamSatisMiktariTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpBirYildaYapilanToplamSatisMiktariTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -50,7 +50,7 @@ namespace OtoServis
 
         private void btnEnCokGelirGetirenIlkBesParca_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpEnCokGelirGetirenIlkBesParcaTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpEnCokGelirGetirenIlkBesParcaTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -60,7 +60,7 @@ namespace OtoServis
 
         private void btnEnCokKullanilanParcalarVeAraclardakiKullanimSikligi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpEnCokKullanilanParcalarVeAraclardakiKullanimSikligiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpEnCokKullanilanParcalarVeAraclardakiKullanimSikligiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -70,7 +70,7 @@ namespace OtoServis
 
         private void btnHerBirMarkayaAitAracSayisiVeOrtalamaYaslari_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpHerBirMarkayaAitAracSayisiVeOrtalamaYaslariTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpHerBirMarkayaAitAracSayisiVeOrtalamaYaslariTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -80,7 +80,7 @@ namespace OtoServis
 
         private void btnHerBirParcaninOrtalamaSatisFiyati_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpHerBirParcaninOrtalamaSatisFiyatiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpHerBirParcaninOrtalamaSatisFiyatiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -90,7 +90,7 @@ namespace OtoServis
 
         private void btnHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdedi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdediTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpHerBirPersonelIcinYapilanToplamSatisTutariVeSatisAdediTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -100,7 +100,7 @@ namespace OtoServis
 
         private void btnHerBirRoldekiPersonelSayisi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpHerBirRoldekiPersonelSayisiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpHerBirRoldekiPersonelSayisiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -110,7 +110,7 @@ namespace OtoServis
 
         private void btnMarkayaGoreSatilanParcaSayisi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpMarkayaGoreSatilanParcaSayisiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpMarkayaGoreSatilanParcaSayisiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -120,7 +120,7 @@ namespace OtoServis
 
         private void btnMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleri_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleriTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpMekanikUstalarininYaptigiTamirlerVeToplamCalismaSaatleriTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -130,7 +130,7 @@ namespace OtoServis
 
         private void btnMekanikUstalarinTamirEttigiAracSayisi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpMekanikUstalarinTamirEttigiAracSayisiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpMekanikUstalarinTamirEttigiAracSayisiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -140,7 +140,7 @@ namespace OtoServis
 
         private void btnModelYilinaGoreAracSayisi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpModelYilinaGoreAracSayisiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpModelYilinaGoreAracSayisiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -150,7 +150,7 @@ namespace OtoServis
 
         private void btnMusterilereGoreToplamHarcamaMiktari_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpMusterilereGoreToplamHarcamaMiktariTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpMusterilereGoreToplamHarcamaMiktariTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -160,7 +160,7 @@ namespace OtoServis
 
         private void btnMusterilerinEnSonSatinAldiklariParcalar_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpMusterilerinEnSonSatinAldiklariParcalarTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpMusterilerinEnSonSatinAldiklariParcalarTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -170,7 +170,7 @@ namespace OtoServis
 
         private void btnMusterininTamirIcinHarcadigiToplamTutar_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpMusterininTamirIcinHarcadigiToplamTutarTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpMusterininTamirIcinHarcadigiToplamTutarTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -180,7 +180,7 @@ namespace OtoServis
 
         private void btnStoktakiParcalarinToplamDegeri_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpStoktakiParcalarinToplamDegeriTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpStoktakiParcalarinToplamDegeriTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -190,7 +190,7 @@ namespace OtoServis
 
         private void btnTamirIslemiGorenAracBilgileri_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpTamirIslemiGorenAracBilgileriTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpTamirIslemiGorenAracBilgileriTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();
@@ -200,7 +200,7 @@ namespace OtoServis
 
         private void btnEnCokTamirEdilenAraclarListesi_Click(object sender, EventArgs e)
         {
-            using OtoServisDataSetTableAdapters.SpEncokTamirEdilenAraclarListesiTableAdapter tableAdapter = new();
+            using OtoServisDataSet1TableAdapters.SpEncokTamirEdilenAraclarListesiTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData();
             var form = new FrmRaporView();

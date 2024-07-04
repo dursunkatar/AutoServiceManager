@@ -60,6 +60,7 @@ namespace OtoServis
                 .Include(x => x.Marka)
                 .Include(x => x.Model)
                 .Where(x => (musteriId == -1 || x.MusteriID == musteriId) && !x.Silindimi)
+                .OrderByDescending(x => x.AracID)
                 .Select(x => new AracDto
                 {
                     Musteri = $"{x.Musteri.Ad} {x.Musteri.Soyad} - ({x.Musteri.Telefon})",
