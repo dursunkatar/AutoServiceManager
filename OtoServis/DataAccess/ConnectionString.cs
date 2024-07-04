@@ -8,6 +8,6 @@ namespace OtoServis.DataAccess
 {
     public class ConnectionString
     {
-        public const string Value = "Server=AMDPC\\SQLEXPRESS;Database=OtoServis;Trusted_Connection=True;TrustServerCertificate=True";
+        public const string Value = "Server=DESKTOP-962GML9;Database=OtoServis;Trusted_Connection=True;TrustServerCertificate=True";
     }
 }

@@ -52,8 +52,9 @@ namespace OtoServis
 
         void RaporuYukle(int? musteriId = null)
         {
-            using OtoServisDataSet dataSet = new OtoServisDataSet();
-            using OtoServisDataSetTableAdapters.SpBelirliBirMusterininTumAracBilgileriTableAdapter tableAdapter = new();
+         
+            
+            using OtoServisDataSet1TableAdapters.SpBelirliBirMusterininTumAracBilgileriTableAdapter tableAdapter = new();
 
             DataTable dataTable = tableAdapter.GetData(musteriId);
 

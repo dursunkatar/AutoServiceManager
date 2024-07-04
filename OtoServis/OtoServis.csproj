@@ -22,12 +22,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>OtoServisDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Update="OtoServisDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OtoServisDataSet1.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="OtoServisDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtoServisDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="OtoServisDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OtoServisDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Update="Rapor\ReportBelirliBirMusterininTumAracBilgileri.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="OtoServisDataSet">
+    <DataSource Name="OtoServisDataSet1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>6da23833-cdde-4563-8feb-f456822100b1</rd:DataSourceID>
+      <rd:DataSourceID>ff502793-5e0f-44a6-9665-92e0cbc44066</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSetTamirEdilenAraclar">
       <Query>
-        <DataSourceName>OtoServisDataSet</DataSourceName>
+        <DataSourceName>OtoServisDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -31,8 +31,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OtoServisDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Admin\source\repos\OtoServis\OtoServis\OtoServisDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>OtoServisDataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Serhat Deniz\Source\Repos\OtoServisLast\OtoServis\OtoServisDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>SpTamirEdilenAraclar</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

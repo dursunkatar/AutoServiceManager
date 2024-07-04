@@ -165,7 +165,7 @@
         <Top>1.92828cm</Top>
         <Left>3.48933cm</Left>
         <Height>1.2cm</Height>
-        <Width>9.65667cm</Width>
+        <Width>9.65666cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -189,18 +189,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="OtoServisDataSet">
+    <DataSource Name="OtoServisDataSet1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>58fa94f3-5629-4dc0-af6c-f57bce225610</rd:DataSourceID>
+      <rd:DataSourceID>861cae00-7a62-43b6-ac70-a2a480f74322</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSetRaporEnCokGelirGetirenIlkBesParca">
       <Query>
-        <DataSourceName>OtoServisDataSet</DataSourceName>
+        <DataSourceName>OtoServisDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -214,8 +214,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OtoServisDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Admin\source\repos\OtoServis\OtoServis\OtoServisDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>OtoServisDataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Serhat Deniz\Source\Repos\OtoServisLast\OtoServis\OtoServisDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>SpEnCokGelirGetirenIlkBesParca</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

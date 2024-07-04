@@ -253,18 +253,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="OtoServisDataSet">
+    <DataSource Name="OtoServisDataSet1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>459d6420-0083-4fa3-92c6-efcd2e69702c</rd:DataSourceID>
+      <rd:DataSourceID>bc8057ea-f590-4d15-bde1-6940353efbaf</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSetRaporModelYilinaGoreAracSayisi">
       <Query>
-        <DataSourceName>OtoServisDataSet</DataSourceName>
+        <DataSourceName>OtoServisDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -282,8 +282,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OtoServisDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Admin\source\repos\OtoServis\OtoServis\OtoServisDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>OtoServisDataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Serhat Deniz\Source\Repos\OtoServisLast\OtoServis\OtoServisDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>SpModelYilinaGoreAracSayisi</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
