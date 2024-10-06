@@ -1,6 +1,6 @@
-# OtoServis Management System
+# AutoService Manager
 
-OtoServis is a desktop application built for managing auto repair shops efficiently. It allows users to handle customers, vehicles, parts, repairs, sales, and personnel with ease.
+AutoService Manager is a desktop application built for managing auto repair shops efficiently. It allows users to handle customers, vehicles, parts, repairs, sales, and personnel with ease.
 
 ## Features
 
