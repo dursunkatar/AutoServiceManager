@@ -15,14 +15,6 @@ AutoService Manager is a desktop application built for managing auto repair shop
 - .NET Framework 4.8 or higher
 - Microsoft SQL Server (Any version supported)
 
-## Getting Started
-
-1. Clone the repository to your local machine.
-2. Restore the database using the provided SQL scripts in the `Database` folder.
-3. Configure the connection string in the `app.config` file to connect to your SQL Server instance.
-4. Open the solution in Visual Studio and build the project.
-5. Run the application and start managing your auto service operations.
-
 ## Project Structure
 
 - **Forms**: The project has various Windows Forms like Customer, Vehicle, Parts, and Personnel panels for seamless management.
