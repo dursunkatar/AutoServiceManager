@@ -31,7 +31,10 @@ OtoServis is a desktop application built for managing auto repair shops efficien
 
 ## Screenshots
 
-Include screenshots of different panels such as Customer, Vehicle, and Repair panels to give users an overview of the interface.
+![oto1](https://github.com/dursunkatar/OtoServisLast/blob/master/oto1.png)
+![oto2](https://github.com/dursunkatar/OtoServisLast/blob/master/oto2.png)
+![oto3](https://github.com/dursunkatar/OtoServisLast/blob/master/oto3.png)
+![oto4](https://github.com/dursunkatar/OtoServisLast/blob/master/oto4.png)
 
 ---
 
